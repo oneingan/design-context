@@ -9,8 +9,8 @@ Create a reusable, language-agnostic agent context framework inspired by `tenets
 - agents have limited context windows
 - the repo must support progressive loading
 - canonical guidance should remain language neutral
-- examples must help without dominating the corpus
 - the repo should scale to many topics without becoming a giant unreadable handbook
+- reusable content should stay separated from repo maintenance machinery
 
 ## 3. Recommended content model
 
@@ -25,18 +25,18 @@ The repository should separate content into clear layers:
 4. **Playbooks**
    - task-oriented instructions such as modeling a domain, defining a boundary, reviewing a design, or adding an integration
 5. **Glossary**
-   - ubiquitous language for the framework itself and future exemplar domains
+   - ubiquitous language for the framework itself and project-specific domain glossaries
 6. **Manifests**
    - machine-readable summaries for retrieval and automation
-7. **ADRs**
+7. **Review**
+   - quality gates and checklists
+8. **ADRs**
    - explicit, durable trade-offs
-8. **Examples**
-   - optional, isolated, non-canonical demonstrations
 
 ## 4. Proposed repository shape
 
 ```text
-agent-context-tenets/
+design-context/
   README.md
   AGENTS.md
   vision.md
@@ -46,7 +46,7 @@ agent-context-tenets/
       source-synthesis.md
       context-window-strategy.md
     adr/
-      0001-example-strategy.md
+      0001-information-architecture-and-manifests.md
   context/
     00-map.md
     manifests/
@@ -56,38 +56,24 @@ agent-context-tenets/
     playbooks/
     glossary/
     review/
-  examples/
-  templates/
   tooling/
   .pi/todos/
 ```
 
 ## 5. Content strategy
 
-### Canonical layer
-
 Keep the canonical layer mostly free of language-specific code. Prefer:
 
 - short principle docs
 - checklists
 - tables
-- state diagrams in text form
+- state descriptions in text form
 - schemas/manifests
-- pseudocode snippets where needed
+- short pseudocode only when it clarifies behavior better than prose
 
-### Example layer
+Avoid standalone illustration corpora or reusable boilerplate until real usage shows they reduce retrieval cost more than they increase maintenance cost.
 
-Use examples only when they clarify trade-offs that prose alone cannot show.
-
-Recommended order:
-
-1. no code
-2. pseudocode
-3. tiny polyglot examples in isolated folders
-
-Large framework-specific examples should be a later phase, not part of the core.
-
-## 6. Initial roadmap
+## 6. Roadmap
 
 ### Phase 0 — Bootstrap
 - initialize repo
@@ -116,24 +102,21 @@ Large framework-specific examples should be a later phase, not part of the core.
 - author principles for errors, invariants, and integration seams
 - author review checklists
 
-### Phase 4 — Playbooks and templates
+### Phase 4 — Playbooks and review artifacts
 - domain modeling playbook
-- bounded context definition template
-- workflow modeling template
-- integration review checklist
-- ADR template
+- bounded context definition playbook
+- workflow modeling playbook
+- integration and contract review checklist
+- ADR writing playbook
 
-### Phase 5 — Example corpus
-- choose one exemplar domain
-- author glossary, boundaries, workflows, invariants
-- add pseudocode first
-- add optional polyglot micro-examples only where useful
-
-### Phase 6 — Optional tooling
-- manifest generator/linter
+### Phase 5 — Lightweight tooling
+- manifest validator
 - doc size checker
-- retrieval helper scripts
-- optional installers for Claude/Cursor/Copilot/AGENTS flows
+- local/CI command that runs both
+
+### Phase 6 — Optional exports
+- evaluate installer/export flows for Claude, Cursor, Copilot, and AGENTS
+- keep generated outputs derived from canonical docs, not a parallel source of truth
 
 ## 7. Acceptance criteria for v0
 
@@ -142,19 +125,18 @@ v0 is successful if:
 - a new agent can understand the repo by loading fewer than 5 files to start
 - each major directory has a clear map or manifest
 - core principles are independent of a single programming language
-- the first exemplar domain can be navigated without reading everything
+- canonical docs are compact enough for selective loading
 - backlog and ADR history make future evolution easy
 
 ## 8. Open decisions
 
 ### Decision made
-- **Default example strategy:** language-neutral docs + pseudocode first + optional polyglot micro-examples
+- **Default content strategy:** language-neutral canonical docs, compact maps/manifests, and lightweight validation first
+- **Default vendoring strategy:** copy the core context pack defined in `VENDORING.md`
 
 ### Still open
-- final repository name
-- first exemplar domain
 - whether to add installation tooling early or late
-- whether example snippets should live under `examples/` or next to playbooks
+- which export formats should be supported first if manual reuse becomes painful
 
 ## 9. Backlog link
 

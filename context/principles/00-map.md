@@ -64,7 +64,7 @@ Read:
 
 - keep one abstraction level per file
 - summarize first, elaborate second
-- treat these files as canonical over examples
+- treat these files as canonical over downstream summaries or ad hoc guidance
 - prefer links to duplication
 - update `context/manifests/principles-manifest.yaml` when adding or renaming docs
 
@@ -73,5 +73,5 @@ Read:
 - `context/00-map.md`
 - `context/manifests/project-manifest.yaml`
 - `context/manifests/principles-manifest.yaml`
-- `docs/research/dmmf-deep-synthesis.md`
-- `docs/research/aposd-follow-up-notes-for-dmmf-iteration.md`
+- `context/playbooks/00-map.md`
+- `context/review/00-map.md`

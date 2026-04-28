@@ -23,7 +23,7 @@ Not all failures are the same. Some are domain-significant and belong in the mod
 
 ### 1. Prefer prevention over rescue
 
-Use the model, templates, glossary, schemas, state tables, and checklists to make invalid interpretations harder.
+Use the model, glossary, schemas, state tables, and checklists to make invalid interpretations harder.
 
 Do not rely on a late generic catch-all as the primary design mechanism.
 
@@ -42,7 +42,7 @@ If a failure changes business meaning, the model should name it directly.
 
 Examples:
 - order already cancelled
-- renewal window expired
+- claim window expired
 - credit limit exceeded
 
 These should not be hidden under vague technical labels.

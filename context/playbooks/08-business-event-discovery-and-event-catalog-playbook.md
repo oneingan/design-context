@@ -5,6 +5,7 @@
 - Use business events to discover what the domain notices, not just what the software does.
 - Prefer past-tense event names because they describe facts, not commands.
 - Distinguish business events from commands, workflow steps, and purely technical notifications.
+- Use collaborative discovery when events cross teams, roles, or silos.
 - Turn the result into a compact event catalog that links to workflows, bounded contexts, and contracts.
 
 ## Use this when
@@ -17,6 +18,7 @@
 ## Inputs
 
 - domain narrative, interview notes, or use cases
+- participants or notes from upstream and downstream roles when the flow crosses silos
 - candidate glossary terms
 - known workflows or state changes
 - neighboring contexts or external systems
@@ -36,9 +38,11 @@ Ask:
 
 Read the domain story and underline facts that can be expressed in past tense.
 
+When the workflow crosses roles or contexts, involve people who own upstream triggers, downstream outcomes, and exception handling. Treat disagreements as findings, not interruptions.
+
 Look for phrases such as:
 - order placed
-- renewal initiated
+- payment authorized
 - payment failed
 - shipment delivered
 
@@ -50,9 +54,9 @@ Use this distinction table:
 
 | Kind | Typical shape | Example | Keep in event catalog? |
 |---|---|---|---|
-| command | imperative request | `renew subscription` | no |
+| command | imperative request | `place order` | no |
 | workflow step | internal action | `check eligibility` | no |
-| business event | past-tense fact with domain meaning | `subscription renewed` | yes |
+| business event | past-tense fact with domain meaning | `order placed` | yes |
 | technical notification | protocol or infrastructure signal | `webhook delivered` | only if it has business meaning in scope |
 
 ### 4. Group the events by context and timeline
@@ -72,6 +76,7 @@ Capture:
 - events that people describe differently
 - places where a trigger is obvious but the resulting fact is unnamed
 - places where one team's output becomes another team's input
+- stakeholders who disagree about whether a fact has occurred
 
 ### 6. Define the minimum event meaning
 
@@ -91,7 +96,7 @@ Recommended shape:
 
 | Event | Meaning | Emitting context | Trigger | Consumers | Contract notes |
 |---|---|---|---|---|---|
-| subscription renewed | renewal completed successfully | Subscription Lifecycle | successful billing outcome | Notifications, reporting | canonical success outcome |
+| order placed | order accepted for fulfillment | Ordering | successful order decision | Payment, fulfillment, reporting | canonical acceptance outcome |
 
 ### 8. Link the catalog back to workflows and contracts
 
@@ -124,5 +129,5 @@ For each important event, link or point to:
 - `context/principles/03-bounded-contexts-and-boundaries.md`
 - `context/principles/04-workflows-invariants-and-state.md`
 - `context/patterns/01-boundary-and-decomposition-patterns.md`
-- `templates/event-catalog-template.md`
-- `examples/subscription-renewal/10-event-catalog.md`
+- `context/playbooks/10-cross-context-contract-and-anti-corruption-playbook.md`
+- `context/review/05-event-and-contract-artifact-checklist.md`

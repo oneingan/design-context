@@ -5,7 +5,7 @@
 - Keep entrypoints simple and push detail into focused leaf docs.
 - A good directory behaves like a deep module: small surface, meaningful hidden detail.
 - Different layers should speak at different abstraction levels.
-- Duplication across maps, principles, patterns, and examples increases context cost.
+- Duplication across maps, principles, patterns, playbooks, and review docs increases context cost.
 - Strategic structure now reduces future prompt and review cost.
 
 ## Load this when
@@ -37,7 +37,7 @@ A file should not simultaneously be:
 - a conceptual overview
 - a task checklist
 - a design rationale log
-- a concrete example set
+- a concrete walkthrough
 
 Split these roles apart.
 
@@ -75,7 +75,7 @@ When introducing a new area, sketch the map, manifest, and one or two leaf docs 
 
 Refactor when you see:
 - giant entry docs
-- examples acting as the real specification
+- illustrative walkthroughs acting as the real specification
 - many files repeating the same rule with slightly different wording
 - leaf docs with no clear map or manifest path to them
 - a directory whose internal organization is required knowledge for basic use
@@ -92,5 +92,5 @@ Refactor when you see:
 
 - `context/principles/01-information-architecture-and-manifests.md`
 - `context/manifests/project-manifest.yaml`
-- `docs/research/context-window-strategy.md`
-- `docs/adr/0002-information-architecture-and-manifests.md`
+- `VENDORING.md`
+- `docs/adr/0001-information-architecture-and-manifests.md`

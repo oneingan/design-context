@@ -2,20 +2,21 @@
 
 ## Summary
 
-- Start with language and business change, not with tables, endpoints, or classes.
-- Capture nouns, verbs, events, invariants, and boundaries before examples grow.
+- Start with business outcomes, language, and change pressure, not with tables, endpoints, or classes.
+- Capture nouns, verbs, events, invariants, and boundaries before implementation detail grows.
 - Produce a compact artifact set that other playbooks can refine.
 - Use this playbook to discover structure, not to lock every detail too early.
 
 ## Use this when
 
-- starting a new exemplar domain
+- starting a new domain model
 - modeling a new capability
 - refactoring a vague or overloaded domain description
 
 ## Inputs
 
 - problem statement or product goal
+- business outcome, customer outcome, or decision pressure
 - sample scenarios or use cases
 - domain expert language, if available
 - known constraints or policies
@@ -29,6 +30,7 @@ Write a short scope statement.
 Answer:
 - what part of reality are we modeling?
 - what is intentionally out of scope?
+- what business outcome, customer outcome, or decision improves if this model is clearer?
 - what decision or workflow pressure makes this worth modeling now?
 
 ### 2. Harvest the language
@@ -48,7 +50,7 @@ List the events that matter to the business.
 Examples:
 - order placed
 - claim approved
-- renewal failed
+- payment authorized
 
 These help reveal workflows and state transitions.
 
@@ -105,16 +107,16 @@ Create or update:
 ## Lightweight artifact shape
 
 ```text
-Domain: Subscription Renewal
-Key terms: subscription, renewal window, billing attempt, lapse
-Key events: renewal requested, renewal paid, renewal failed, subscription lapsed
-Invariants: active subscriptions have a valid time window; lapsed subscriptions are not billable as active
-Candidate contexts: Subscription Lifecycle, Billing, Notifications
+Domain: Order Fulfillment
+Key terms: order, fulfillment window, payment authorization, shipment
+Key events: order placed, payment authorized, shipment dispatched, order cancelled
+Invariants: confirmed orders contain at least one line; cancelled orders are not shipped
+Candidate contexts: Ordering, Payment, Shipping
 ```
 
 ## Review questions
 
-- Did we start from business meaning instead of technical structure?
+- Did we start from business meaning and outcomes instead of technical structure?
 - Are the important verbs and events visible?
 - Are invariants explicit enough to guide later playbooks?
 - Are candidate contexts based on meaning and change pressure?

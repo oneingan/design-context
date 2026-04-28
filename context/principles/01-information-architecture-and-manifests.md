@@ -6,7 +6,7 @@
 - Each layer must have a clear responsibility and a different abstraction level.
 - Every major area needs a small map and, when stable enough, a manifest.
 - Documents should be independently readable and small enough to load selectively.
-- Adding content is not complete until navigation and manifests are updated.
+- Adding, removing, or renaming content is not complete until navigation and manifests are updated.
 
 ## Load this when
 
@@ -19,16 +19,15 @@
 
 | Layer | Purpose | Typical contents | Must not become |
 |---|---|---|---|
-| Root docs | explain repo purpose and operating model | `README.md`, `AGENTS.md`, `vision.md` | a complete handbook |
+| Root docs | explain repo purpose and operating model | `README.md`, `AGENTS.md`, `VENDORING.md` | a complete handbook |
 | Maps | tell the reader what exists and what to read next | `00-map.md`, area maps | full rule books |
-| Principles | state stable, canonical rules | non-negotiables, definitions, constraints | task checklists or long examples |
+| Principles | state stable, canonical rules | non-negotiables, definitions, constraints | task checklists or long tutorials |
 | Patterns | capture reusable solution shapes | alternatives, trade-offs, recurring structures | generic principles repeated verbatim |
-| Playbooks | guide task execution | ordered steps, templates, checklists | deep theory |
+| Playbooks | guide task execution | ordered steps, output shapes, checklists | deep theory |
 | Glossary | stabilize vocabulary | term definitions, aliases, anti-terms | random notes |
 | Review | evaluate quality | quality gates, review questions, rubrics | implementation tutorials |
 | Manifests | support retrieval and automation | machine-readable summaries | prose-heavy rationale |
 | ADRs | preserve important decisions | trade-offs, alternatives, consequences | day-to-day status notes |
-| Examples | illustrate, not define | pseudocode, micro-examples | the canonical source of truth |
 
 ## Standard load order
 
@@ -40,7 +39,6 @@
    - usually `context/manifests/project-manifest.yaml`
 4. smallest relevant leaf docs
 5. ADRs if trade-offs matter
-6. examples only if canonical docs are insufficient
 
 ## Directory contract
 
@@ -74,7 +72,6 @@ Use these as soft limits unless there is a strong reason not to.
 | map docs | under 150 lines |
 | leaf principle docs | about 80 to 220 lines |
 | playbooks/checklists | short enough to execute in one pass |
-| examples | small enough to compare quickly |
 
 When a file grows beyond its budget, prefer splitting by task or abstraction level rather than appending more sections.
 
@@ -84,7 +81,7 @@ When a file grows beyond its budget, prefer splitting by task or abstraction lev
 - principle docs use numbered, descriptive names
 - manifests end in `-manifest.yaml`
 - ADRs use zero-padded numeric prefixes
-- templates describe exactly what they template
+- names should describe the artifact's purpose and load condition
 
 Favor names that answer both:
 - what is this artifact?
@@ -154,9 +151,10 @@ Different layers must not collapse into one another.
 - principles answer **what is true or required**
 - patterns answer **what shape tends to work**
 - playbooks answer **what to do now**
-- examples answer **what it can look like**
+- review docs answer **whether it is good enough**
+- ADRs answer **why this decision was made**
 
-If a file tries to answer all five questions, split it.
+If a file tries to answer all of these questions, split it.
 
 ## Review questions
 
@@ -164,7 +162,7 @@ If a file tries to answer all five questions, split it.
 - Does each major area expose a small surface and hide detail beneath it?
 - Are manifests concise and machine-friendly?
 - Does each file stay at one abstraction level?
-- Would deleting an example leave the canonical guidance intact?
+- Are maps and manifests aligned with the current file set?
 
 ## Related docs
 
@@ -173,3 +171,4 @@ If a file tries to answer all five questions, split it.
 - `context/principles/06-deep-modules-and-information-hiding.md`
 - `context/manifests/project-manifest.yaml`
 - `context/manifests/principles-manifest.yaml`
+- `VENDORING.md`

@@ -17,19 +17,14 @@ Read:
 Read:
 1. `03-documentation-quality-checklist.md`
 
-### For example review
-Read:
-1. `context/review/04-example-acceptance-criteria.md`
-2. `docs/adr/0001-example-strategy.md`
-
 ### For naming and vocabulary drift review
 Read:
-1. `context/review/05-vocabulary-drift-checklist.md`
+1. `context/review/04-vocabulary-drift-checklist.md`
 2. `context/glossary/01-framework-glossary.md`
 
 ### For event, trust-boundary, and contract artifact review
 Read:
-1. `context/review/06-event-and-contract-artifact-checklist.md`
+1. `context/review/05-event-and-contract-artifact-checklist.md`
 2. `context/playbooks/08-business-event-discovery-and-event-catalog-playbook.md`
 3. `context/playbooks/10-cross-context-contract-and-anti-corruption-playbook.md`
 
@@ -41,11 +36,9 @@ Read:
   - evaluates boundaries, workflows, errors, contracts, and retrieval structure
 - `03-documentation-quality-checklist.md`
   - evaluates clarity, abstraction, discoverability, and maintenance quality
-- `04-example-acceptance-criteria.md`
-  - evaluates whether examples stay small, justified, and non-canonical
-- `05-vocabulary-drift-checklist.md`
+- `04-vocabulary-drift-checklist.md`
   - evaluates naming consistency and term stability
-- `06-event-and-contract-artifact-checklist.md`
+- `05-event-and-contract-artifact-checklist.md`
   - evaluates event catalogs, trust-boundary notes, and cross-context contract artifacts
 
 ## Directory rules

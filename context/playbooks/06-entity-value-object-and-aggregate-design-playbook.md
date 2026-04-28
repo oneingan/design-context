@@ -59,13 +59,13 @@ If multiple aggregates must interact, note the workflow, event, or orchestration
 
 Create a short classification note or table.
 
-## Output template
+## Output shape
 
 | Concept | Entity or VO | Why | Aggregate |
 |---|---|---|---|
-| subscription | entity | continuity and lifecycle matter | Subscription aggregate |
-| renewal window | value object | semantic rule set without independent identity | Subscription aggregate |
-| billing attempt | entity | attempt identity and retry history matter | Billing aggregate |
+| order | entity | continuity and lifecycle matter | Order aggregate |
+| shipping address | value object | semantic rule set without independent identity | Order aggregate |
+| payment authorization | entity | authorization identity and status history matter | Payment aggregate |
 
 ## Review questions
 
@@ -78,4 +78,4 @@ Create a short classification note or table.
 
 - `context/principles/08-entities-value-objects-and-aggregates.md`
 - `context/principles/03-bounded-contexts-and-boundaries.md`
-- `examples/subscription-renewal/07-aggregate-and-ownership-boundaries.md`
+- `context/playbooks/02-bounded-context-definition-playbook.md`

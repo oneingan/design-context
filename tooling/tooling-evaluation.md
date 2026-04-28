@@ -38,7 +38,31 @@ Deferred:
 - link graph enforcement
 - duplicate-content detection
 
-### 3. Retrieval helper scripts
+### 3. Core-pack boundary validation
+
+**Decision:** implement a lightweight check now.
+
+Reason:
+- manual vendoring is currently the supported consumption path
+- the preferred `docs/vendor/design-context/` layout should stay mechanically testable
+- the core pack should not accidentally depend on source-only machinery
+
+Implemented now:
+- `tooling/check-core-pack.sh`
+
+### 4. Source-ingestion boundary validation
+
+**Decision:** implement a lightweight check now.
+
+Reason:
+- source EPUBs are ignored local inputs and should not leak into core docs by filename
+- source-only research must remain outside the default core pack
+- the new source-ingestion workflow should stay discoverable from related research notes
+
+Implemented now:
+- `tooling/check-source-ingestion.sh`
+
+### 5. Retrieval helper scripts
 
 **Decision:** partially defer.
 
@@ -50,7 +74,7 @@ Current stance:
 - rely on maps and manifests first
 - consider a future `read-next` helper only after repeated manual patterns appear
 
-### 4. Agent-specific export paths
+### 6. Agent-specific export paths
 
 **Decision:** defer automatic export generation.
 
@@ -65,7 +89,7 @@ Recommended future export targets:
 - Copilot instruction export
 - Cursor rule export
 
-### 5. CI warning and noise management
+### 7. CI warning and noise management
 
 CI should stay aligned with the local checks and avoid optional steps that create noisy external-service warnings without enough value for a small repository.
 
@@ -74,7 +98,7 @@ Current stance:
 - pin action versions instead of following floating `@main`
 - avoid cache steps that add warning noise or external auth requirements unless the speedup clearly matters
 
-### 6. Complexity management rule
+### 8. Complexity management rule
 
 If a tool does not clearly reduce retrieval cost, validation risk, or maintenance burden, defer it.
 
@@ -83,7 +107,9 @@ If a tool does not clearly reduce retrieval cost, validation risk, or maintenanc
 Good to keep now:
 - manifest validation
 - doc budget warnings
-- one command that runs both
+- core-pack boundary validation
+- source-ingestion boundary validation
+- one command that runs all lightweight checks
 
 Good to defer:
 - full export generators
@@ -93,6 +119,9 @@ Good to defer:
 ## Related docs
 
 - `docs/research/context-window-strategy.md`
-- `docs/adr/0004-lightweight-validation-before-agent-exports.md`
+- `docs/adr/0002-lightweight-validation-before-agent-exports.md`
+- `docs/adr/0005-core-context-pack-and-vendoring-boundary.md`
 - `tooling/validate-manifests.sh`
 - `tooling/check-doc-budgets.sh`
+- `tooling/check-core-pack.sh`
+- `tooling/check-source-ingestion.sh`

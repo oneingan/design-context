@@ -19,11 +19,6 @@ Read:
 1. `context/patterns/03-error-and-edge-translation-patterns.md`
 2. `context/principles/05-errors-and-edge-responsibilities.md`
 
-### If you are linking examples back to the framework
-Read:
-1. `context/patterns/04-example-linking-patterns.md`
-2. `context/review/04-example-acceptance-criteria.md`
-
 ## Documents
 
 - `01-boundary-and-decomposition-patterns.md`
@@ -32,8 +27,6 @@ Read:
   - recurring workflow, state, and long-running behavior shapes
 - `03-error-and-edge-translation-patterns.md`
   - recurring ways to classify failures and isolate edge concerns
-- `04-example-linking-patterns.md`
-  - recurring ways to keep examples illustrative and connected to canonical docs
 
 ## Directory rules
 
@@ -47,4 +40,3 @@ Read:
 - `context/manifests/patterns-manifest.yaml`
 - `context/principles/00-map.md`
 - `context/playbooks/00-map.md`
-- `examples/00-map.md`

@@ -176,4 +176,4 @@ entries:
       - refactoring
     next_reads:
       - context/playbooks/04-adr-writing-playbook.md
-      - docs/research/dmmf-deep-synthesis.md
+      - context/review/01-quality-gates.md

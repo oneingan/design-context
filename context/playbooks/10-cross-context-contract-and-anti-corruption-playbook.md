@@ -31,8 +31,8 @@ State:
 - what business purpose the interaction serves
 
 Examples:
-- request a billing attempt
-- publish a renewal outcome
+- request payment authorization
+- publish a shipment outcome
 - consume a shipping confirmation
 
 ### 2. Choose the relationship model
@@ -118,5 +118,5 @@ Use a compact contract note with:
 - `context/principles/10-serialization-persistence-and-data-ownership.md`
 - `context/patterns/01-boundary-and-decomposition-patterns.md`
 - `context/patterns/03-error-and-edge-translation-patterns.md`
-- `templates/cross-context-contract-template.md`
-- `examples/subscription-renewal/11-context-contracts.md`
+- `context/playbooks/08-business-event-discovery-and-event-catalog-playbook.md`
+- `context/review/05-event-and-contract-artifact-checklist.md`

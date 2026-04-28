@@ -55,12 +55,12 @@ If read convenience is distorting the write model, note the need for projections
 
 Create a small table or note showing data ownership, mapping boundaries, and storage independence expectations.
 
-## Output template
+## Output shape
 
 | Context | Owned data meaning | Mapping boundaries | Notes |
 |---|---|---|---|
-| Subscription Lifecycle | subscription state and renewal meaning | API payload ↔ lifecycle command; aggregate ↔ subscription record | no direct billing-owned updates |
-| Billing | billing attempts and gateway outcomes | provider payload ↔ billing outcome; attempt ↔ billing record | gateway detail stays local |
+| Ordering | order state and fulfillment meaning | API payload ↔ order command; aggregate ↔ order record | no direct payment-owned updates |
+| Payment | authorizations and provider outcomes | provider payload ↔ payment outcome; authorization ↔ payment record | provider detail stays local |
 
 ## Review questions
 
@@ -74,4 +74,4 @@ Create a small table or note showing data ownership, mapping boundaries, and sto
 - `context/playbooks/10-cross-context-contract-and-anti-corruption-playbook.md`
 - `context/principles/10-serialization-persistence-and-data-ownership.md`
 - `context/principles/03-bounded-contexts-and-boundaries.md`
-- `examples/subscription-renewal/08-persistence-and-mapping-boundaries.md`
+- `context/playbooks/10-cross-context-contract-and-anti-corruption-playbook.md`

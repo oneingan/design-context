@@ -19,6 +19,7 @@
 - [ ] the title matches the actual purpose
 - [ ] the summary tells the reader what the doc is for
 - [ ] the "load this when" or equivalent usage guidance is clear
+- [ ] the intended impact is clear before detail is added
 - [ ] the scope is narrow enough to stay focused
 
 ### Structure
@@ -38,7 +39,7 @@
 
 - [ ] the file is within intended size budgets or has a clear reason not to be
 - [ ] wording is consistent with nearby canonical docs
-- [ ] no example has become the hidden source of truth
+- [ ] no downstream summary has become the hidden source of truth
 - [ ] important structural changes are captured in an ADR when needed
 
 ### Vocabulary
@@ -50,5 +51,5 @@
 ## Related docs
 
 - `context/review/01-quality-gates.md`
-- `context/review/05-vocabulary-drift-checklist.md`
+- `context/review/04-vocabulary-drift-checklist.md`
 - `context/principles/06-deep-modules-and-information-hiding.md`

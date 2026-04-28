@@ -13,9 +13,4 @@ cd "$repo_root"
 while IFS= read -r -d '' file; do
   yq . "$file" >/dev/null
   echo "OK  $file"
-done < <(
-  {
-    find context examples -type f -name '*manifest.yaml' -print0
-    printf '%s\0' templates/manifest-template.yaml
-  } | sort -z
-)
+done < <(find context -type f -name '*manifest.yaml' -print0 | sort -z)

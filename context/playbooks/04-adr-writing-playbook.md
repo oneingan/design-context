@@ -11,7 +11,7 @@
 
 - making a meaningful architecture or repository-structure decision
 - renaming an important concept with broad impact
-- defining an examples policy or review policy
+- defining a review policy or distribution boundary
 - resolving a recurring ambiguity that should stay resolved
 
 ## Triggers that justify an ADR
@@ -20,8 +20,8 @@ Write an ADR when a decision changes:
 - repository structure
 - canonical vocabulary or boundaries
 - retrieval behavior
-- example policy
 - review policy
+- distribution or packaging policy
 - integration strategy with other agent tools
 
 ## Steps
@@ -81,6 +81,7 @@ Update or reference:
 
 ## Related docs
 
-- `docs/adr/0001-example-strategy.md`
-- `docs/adr/0002-information-architecture-and-manifests.md`
+- `docs/adr/0001-information-architecture-and-manifests.md`
+- `docs/adr/0002-lightweight-validation-before-agent-exports.md`
+- `docs/adr/0005-core-context-pack-and-vendoring-boundary.md`
 - `context/review/01-quality-gates.md`

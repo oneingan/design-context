@@ -25,7 +25,7 @@
 
 ### 1. Name the workflow by business intent
 
-Prefer names like `renew subscription` or `approve claim` over technical labels.
+Prefer names like `approve claim` or `place order` over technical labels.
 
 ### 2. Define trigger, inputs, and outputs
 
@@ -78,20 +78,20 @@ Document waiting states, retries, duplicate handling, time windows, and compensa
 ## Example workflow skeleton
 
 ```text
-Workflow: Renew Subscription
-Trigger: renewal window opens or renewal is requested
-Input: subscription identity, billing context
-Output: renewed subscription or explicit renewal failure
+Workflow: Approve Claim
+Trigger: claimant submits a complete claim
+Input: claim identity, policy context, supporting evidence
+Output: approved claim or explicit claim rejection
 
 Core steps:
-1. verify renewal eligibility
-2. calculate renewal terms
-3. decide whether billing may proceed
+1. verify claim eligibility
+2. classify supporting evidence
+3. decide approval or rejection
 4. classify result as success or failure
 
 Edge steps:
 5. persist resulting state
-6. emit renewal outcome
+6. emit claim outcome
 ```
 
 ## Review questions

@@ -6,7 +6,8 @@
 - Each bounded context should own its vocabulary, rules, and change cadence.
 - Interactions between contexts require explicit translation, not silent leakage.
 - A context should expose a small stable surface and hide internal detail.
-- Split or merge contexts based on semantic and change pressure, not fashion.
+- Split or merge contexts based on semantic, change, and strategic pressure, not fashion.
+- Modeling depth should match the context's business importance.
 
 ## Load this when
 
@@ -26,6 +27,7 @@ The purpose of bounded contexts is to keep complexity local, protect meaning, an
 A bounded context should make the following explicit:
 
 - purpose
+- strategic role or investment level when relevant
 - primary vocabulary
 - owned decisions and rules
 - key workflows
@@ -62,6 +64,14 @@ A bounded context is healthier when it can evolve its internals without forcing 
 
 If two areas always change together for the same business reason, they may belong in one context.
 If they evolve for different reasons, at different speeds, or with different vocabularies, consider separating them.
+
+### 6. Match modeling depth to strategic importance
+
+Not every context needs the same modeling investment.
+
+Record whether the area is a core differentiator, a supporting capability, or a generic capability when that distinction changes design effort, review depth, or buy/build decisions.
+
+Use this classification to focus attention, not to weaken semantic boundaries.
 
 ## Heuristics for splitting contexts
 
@@ -108,6 +118,7 @@ The exact notation may vary, but the semantic relationship must be clear.
 - Could another context change its internals without breaking this one?
 - Are shared terms truly shared, or only assumed to be shared?
 - Is translation explicit where vocabularies differ?
+- Is the modeling depth appropriate for the business importance of this context?
 - Is the boundary earning its cost?
 
 ## Related docs

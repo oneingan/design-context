@@ -96,15 +96,8 @@ An outcome arrives that is valid at the protocol level but unexpected in the cur
 ### Risks
 - can create operational noise if overused for harmless cases
 
-## Related example
-
-The `examples/subscription-renewal/05-invariants-and-failure-model.md` example uses:
-- Classify at the Boundary for billing outcomes
-- Domain Decision, Edge Retry for renewal recovery
-- Unexpected Outcome Quarantine for out-of-sequence billing results
-
 ## Related docs
 
 - `context/principles/05-errors-and-edge-responsibilities.md`
 - `context/playbooks/03-workflow-and-state-modeling-playbook.md`
-- `examples/subscription-renewal/05-invariants-and-failure-model.md`
+- `context/playbooks/09-domain-error-and-failure-taxonomy-playbook.md`

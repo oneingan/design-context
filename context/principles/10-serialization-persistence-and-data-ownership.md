@@ -65,4 +65,4 @@ Refactor when you see:
 - `context/principles/03-bounded-contexts-and-boundaries.md`
 - `context/principles/05-errors-and-edge-responsibilities.md`
 - `context/patterns/03-error-and-edge-translation-patterns.md`
-- `docs/research/dmmf-deep-synthesis.md`
+- `context/playbooks/07-persistence-and-mapping-boundaries-playbook.md`

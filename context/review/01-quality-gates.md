@@ -24,13 +24,14 @@
 
 - [ ] each file stays at one abstraction level
 - [ ] maps do not become handbooks
-- [ ] examples do not become the main specification
+- [ ] review docs evaluate rather than explain theory
 
 ### QG-3 Canonical clarity
 
 - [ ] the canonical source of truth is obvious
 - [ ] duplicate rules were avoided or removed
-- [ ] examples point back to canonical docs
+- [ ] downstream summaries do not redefine canonical guidance
+- [ ] source-only notes do not become hidden specifications
 
 ### QG-4 Size and retrieval cost
 
@@ -54,10 +55,10 @@
 - [ ] core guidance remains distinct from edge or tool-specific details
 - [ ] operational concerns did not silently become core concepts
 
-### QG-8 Example discipline
+### QG-8 Distribution boundary
 
-- [ ] examples are justified, small, and secondary
-- [ ] no large codebase was added without an explicit reason and policy fit
+- [ ] the canonical core remains compact and reusable
+- [ ] generated/exported artifacts do not become a parallel source of truth
 
 ## Pass condition
 
@@ -67,5 +68,5 @@ A canonical change should pass all relevant gates. If a gate is not relevant, sa
 
 - `context/review/02-architecture-review-checklist.md`
 - `context/review/03-documentation-quality-checklist.md`
-- `context/review/05-vocabulary-drift-checklist.md`
-- `docs/adr/0002-information-architecture-and-manifests.md`
+- `context/review/04-vocabulary-drift-checklist.md`
+- `docs/adr/0001-information-architecture-and-manifests.md`

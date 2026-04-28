@@ -15,7 +15,7 @@ Read:
 Read:
 1. `context/playbooks/08-business-event-discovery-and-event-catalog-playbook.md`
 2. `context/principles/04-workflows-invariants-and-state.md`
-3. `examples/subscription-renewal/10-event-catalog.md`
+3. `context/playbooks/10-cross-context-contract-and-anti-corruption-playbook.md` if events cross context boundaries
 
 ### If you need to model trusted vs untrusted data
 Read:
@@ -82,7 +82,7 @@ Read:
 
 - explain what to do, not all theory behind why
 - assume principles are authoritative and link to them
-- prefer compact checklists, tables, and examples over long essays
+- prefer compact checklists and tables over long essays
 - update the playbooks manifest when adding or renaming playbooks
 
 ## Related docs

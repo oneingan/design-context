@@ -11,7 +11,7 @@ Read:
 ### If you are introducing or renaming terms
 Read:
 1. `context/glossary/02-naming-and-term-introduction.md`
-2. `context/review/05-vocabulary-drift-checklist.md`
+2. `context/review/04-vocabulary-drift-checklist.md`
 
 ## Documents
 
@@ -31,4 +31,4 @@ Read:
 
 - `context/principles/02-ubiquitous-language-and-naming.md`
 - `context/manifests/glossary-manifest.yaml`
-- `context/review/05-vocabulary-drift-checklist.md`
+- `context/review/04-vocabulary-drift-checklist.md`

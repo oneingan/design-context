@@ -1,6 +1,6 @@
 # Glossary
 
-This directory holds stable vocabulary for the framework and future exemplar domains.
+This directory holds stable vocabulary for the framework and project-specific domain glossaries.
 
 Start with:
 - `context/glossary/00-map.md`

@@ -46,10 +46,10 @@ Use at least these categories:
 
 | Category | Meaning | Example |
 |---|---|---|
-| domain rejection | the business rule says no | renewal window closed |
+| domain rejection | the business rule says no | claim window closed |
 | contract failure | the shape or boundary interaction is wrong | malformed request payload |
-| operational failure | infrastructure or dependency issue | gateway timeout |
-| unexpected outcome | valid signal at the wrong time or state | billing success with no pending renewal |
+| operational failure | infrastructure or dependency issue | provider timeout |
+| unexpected outcome | valid signal at the wrong time or state | payment success with no pending order |
 
 ### 4. Decide what crosses the boundary
 
@@ -62,7 +62,7 @@ Ask:
 ### 5. Collapse detailed edge errors into stable categories
 
 Examples:
-- provider error codes → `billing outcome unavailable`
+- provider error codes → `payment outcome unavailable`
 - storage driver exceptions → `state persistence failed`
 - transport parse errors → `invalid request`
 
@@ -81,7 +81,7 @@ Recommended shape:
 
 | Failure | Category | Detected at | Stable surface | Recovery owner | Notes |
 |---|---|---|---|---|---|
-| renewal already pending | domain rejection | Lifecycle workflow | renewal already pending | Lifecycle | prevents duplicate renewal |
+| order already submitted | domain rejection | Ordering workflow | duplicate order rejected | Ordering | prevents duplicate submission |
 
 ### 8. Link the taxonomy to trust boundaries and contracts
 
@@ -112,5 +112,5 @@ A strong taxonomy should connect back to:
 - `context/principles/07-type-shaped-models-and-illegal-states.md`
 - `context/playbooks/05-trusted-and-untrusted-representations-playbook.md`
 - `context/patterns/03-error-and-edge-translation-patterns.md`
-- `context/review/06-event-and-contract-artifact-checklist.md`
-- `examples/subscription-renewal/05-invariants-and-failure-model.md`
+- `context/review/05-event-and-contract-artifact-checklist.md`
+- `context/playbooks/10-cross-context-contract-and-anti-corruption-playbook.md`

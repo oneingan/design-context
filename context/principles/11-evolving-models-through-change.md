@@ -3,10 +3,10 @@
 ## Summary
 
 - Treat requirement changes as model changes first, not implementation patches first.
-- Re-evaluate language, invariants, workflows, and boundaries before modifying code or examples.
+- Re-evaluate language, invariants, workflows, and boundaries before modifying code or downstream docs.
 - Let trusted representations and explicit workflow steps show you where the change really lands.
 - Prefer designs that make ripple effects visible instead of hiding them.
-- Use ADRs, examples, and review checklists to keep evolution coherent over time.
+- Use ADRs, manifests, and review checklists to keep evolution coherent over time.
 
 ## Load this when
 
@@ -37,7 +37,7 @@ Walk through changes in this order:
 3. entities / value objects / aggregates
 4. workflows and effects
 5. persistence or integration mappings
-6. examples and review artifacts
+6. review artifacts and manifests
 
 ### 3. Let explicit models reveal the impact
 
@@ -49,13 +49,13 @@ If the old model no longer reflects the domain, local implementation fixes usual
 
 ### 5. Record structural change decisions
 
-When a change alters boundaries, naming, examples policy, or other durable design choices, use ADRs and update maps/manifests accordingly.
+When a change alters boundaries, naming, retrieval behavior, or other durable design choices, use ADRs and update maps/manifests accordingly.
 
 ## Warning signs
 
 Refactor when you see:
 - new rules added only in adapters or edge code
-- examples and docs drifting away from the stated model
+- downstream docs drifting away from the stated model
 - repeated special cases that suggest a missing domain distinction
 - a requirement change handled without any vocabulary or workflow review
 
@@ -64,11 +64,11 @@ Refactor when you see:
 - Did we revisit the domain meaning before editing the implementation?
 - Which invariant, state, or boundary changed?
 - Does the model now express the new requirement explicitly?
-- Were ADRs, examples, and manifests updated where needed?
+- Were ADRs, maps, and manifests updated where needed?
 
 ## Related docs
 
 - `context/principles/02-ubiquitous-language-and-naming.md`
 - `context/principles/09-workflow-pipelines-effects-and-dependencies.md`
 - `context/playbooks/04-adr-writing-playbook.md`
-- `docs/research/dmmf-deep-synthesis.md`
+- `context/review/01-quality-gates.md`

@@ -17,7 +17,7 @@
 
 ## Principle
 
-A model becomes easier to build, review, and evolve when the same important concept has the same name across discussions, documents, diagrams, tests, and code-facing examples.
+A model becomes easier to build, review, and evolve when the same important concept has the same name across discussions, documents, diagrams, tests, and code-facing artifacts.
 
 Language is not decoration around the model. It is one of the main ways the model exists.
 
@@ -30,7 +30,7 @@ Inside a bounded context, choose one preferred term for each important concept.
 Avoid uncontrolled synonym pairs such as:
 - customer / client
 - shipment / delivery
-- plan / subscription tier
+- plan / pricing tier
 - request / application
 
 If aliases matter, record them explicitly and say which one is canonical.
@@ -41,14 +41,14 @@ Domain terms describe the business reality.
 Technical terms describe implementation choices.
 
 Examples:
-- domain: order, quote, settlement window, subscription renewal
+- domain: order, quote, settlement window, claim approval
 - technical: DTO, queue topic, HTTP handler, database row
 
 Do not let technical labels replace domain language in canonical modeling docs.
 
 ### 3. Name artifacts after the language you want reinforced
 
-Choose document names, section titles, and example labels that reinforce the domain vocabulary.
+Choose document names, section titles, and artifact labels that reinforce the domain vocabulary.
 
 Prefer:
 - `cancel-order-workflow.md`
@@ -73,7 +73,7 @@ When a term changes meaning, do not silently overwrite history in many places.
 
 Instead:
 - update the glossary
-- update the affected principle/playbook/example references
+- update the affected principle, playbook, review, or manifest references
 - note the change in an ADR when it alters design structure or boundaries
 
 ### 6. Prefer domain verbs for workflows and domain nouns for core concepts
@@ -104,7 +104,6 @@ in canonical docs.
 | principle doc | stable concept or rule |
 | pattern doc | reusable structure or trade-off |
 | playbook | imperative task phrasing |
-| example | domain scenario first, language second |
 | ADR | decision or trade-off in plain language |
 
 ## Signals of vocabulary drift

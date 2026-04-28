@@ -82,7 +82,7 @@ For long-running or asynchronous workflows, document:
 Prefer names like:
 - place order
 - approve claim
-- renew subscription
+- approve claim
 
 Avoid names that mainly reflect technical implementation.
 
@@ -99,7 +99,7 @@ A canonical workflow description should usually include:
 7. failure modes
 8. external dependencies, if any
 
-## Example structure
+## Minimal workflow structure
 
 ```text
 Workflow: Place Order
@@ -133,4 +133,4 @@ Invariants:
 
 - `context/principles/03-bounded-contexts-and-boundaries.md`
 - `context/principles/05-errors-and-edge-responsibilities.md`
-- `docs/adr/0001-example-strategy.md`
+- `context/playbooks/03-workflow-and-state-modeling-playbook.md`

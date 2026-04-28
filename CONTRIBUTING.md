@@ -17,7 +17,7 @@ Start with:
 - keep one abstraction level per file
 - prefer updating existing canonical docs over adding near-duplicates
 - update maps and manifests whenever canonical docs move or new canonical docs are added
-- keep examples secondary to principles, patterns, playbooks, and review docs
+- update `VENDORING.md` when consumption or distribution boundaries change
 - preserve language-agnostic wording unless a language-specific lesson is the point
 
 ## What kind of contribution is this?
@@ -31,22 +31,21 @@ Required checks:
 - review vocabulary drift if naming changed
 - add or update an ADR if the change is structural
 
-### 2. Example change
-You are adding or modifying example material.
-
-Required checks:
-- link the example back to the canonical docs it illustrates
-- keep the example as small as possible
-- prefer pseudocode over full code
-- ensure the example does not become the hidden source of truth
-
-### 3. Tooling change
+### 2. Tooling change
 You are changing validation or automation.
 
 Required checks:
 - keep tooling lightweight unless there is strong evidence for more automation
 - avoid adding maintenance-heavy export logic too early
 - update `tooling/tooling-evaluation.md` if the tooling strategy changes
+
+### 3. Research or planning change
+You are changing background analysis or roadmap material.
+
+Required checks:
+- keep it clearly secondary to canonical docs
+- link to canonical docs instead of repeating rules
+- update maps only if the document is meant to be discoverable for normal use
 
 ## Run checks locally
 
@@ -67,7 +66,6 @@ nix shell nixpkgs#yq -c ./tooling/validate-manifests.sh
 
 - [ ] I updated maps and manifests where needed
 - [ ] I kept one abstraction level per file
-- [ ] I linked examples back to canonical docs when relevant
 - [ ] I ran `tooling/run-checks.sh`
 - [ ] I added or updated an ADR if the change altered structure or policy
 
@@ -77,16 +75,16 @@ nix shell nixpkgs#yq -c ./tooling/validate-manifests.sh
 - use short sections and scannable lists
 - prefer tables or checklists when they reduce ambiguity
 - use glossary-aligned terms consistently
-- avoid repetition across principles, patterns, playbooks, and examples
+- avoid repetition across principles, patterns, playbooks, and review docs
 
 ## When to write an ADR
 
 Write or update an ADR when you change:
 - repository structure
 - naming or boundary meaning
-- example policy
 - tooling strategy
-- export or publication strategy
+- export, vendoring, or publication strategy
+- review policy
 
 ## If you are unsure
 

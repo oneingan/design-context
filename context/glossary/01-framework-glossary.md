@@ -19,7 +19,7 @@
 | Term | Meaning | Notes |
 |---|---|---|
 | agent context framework | A repository of reusable guidance that agents can load progressively to design, review, and evolve systems. | This repository's overall role. |
-| canonical | The primary source of truth for a topic. | Canonical docs outrank examples. |
+| canonical | The primary source of truth for a topic. | Canonical docs outrank downstream summaries or ad hoc guidance. |
 | map | A navigation document that says what exists and what to read next. | Usually `00-map.md` or a local `README.md`. |
 | manifest | Machine-readable retrieval metadata for an area. | Used for discovery and automation. |
 | principle | A stable rule or design constraint. | Explains what is true or required. |
@@ -29,10 +29,10 @@
 | review artifact | A checklist, rubric, or gate used to evaluate proposed changes. | Review docs are evaluative, not explanatory. |
 | ADR | Architecture Decision Record: a durable note of a structural decision, trade-offs, and consequences. | Use for meaningful design choices. |
 | bounded context | The semantic scope within which a model and vocabulary are valid. | Boundary of meaning before technology. |
+| strategic role | A context classification that guides modeling investment, such as core differentiator, supporting capability, or generic capability. | Optional; does not replace semantic boundaries. |
 | workflow | A meaningful sequence of business steps that transforms one situation into another. | Should expose states, decisions, and outputs. |
 | invariant | A condition that must remain true within a given scope. | Often tied to states or workflows. |
 | edge concern | A transport, persistence, integration, serialization, or vendor-specific concern. | Keep these at the edges. |
-| exemplar domain | A small illustrative domain used to show the framework in practice. | Examples remain secondary to canonical docs. |
 | vocabulary drift | The gradual divergence of terms, meanings, or aliases across artifacts. | Review for this explicitly. |
 
 ## Scope rule
@@ -57,4 +57,4 @@ Aliases are allowed only when:
 
 - `context/glossary/02-naming-and-term-introduction.md`
 - `context/principles/02-ubiquitous-language-and-naming.md`
-- `context/review/05-vocabulary-drift-checklist.md`
+- `context/review/04-vocabulary-drift-checklist.md`

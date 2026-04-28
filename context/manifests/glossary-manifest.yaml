@@ -18,7 +18,7 @@ entries:
       - naming
     next_reads:
       - context/glossary/02-naming-and-term-introduction.md
-      - context/review/05-vocabulary-drift-checklist.md
+      - context/review/04-vocabulary-drift-checklist.md
 
   - path: context/glossary/02-naming-and-term-introduction.md
     title: Naming and Term Introduction
@@ -33,5 +33,5 @@ entries:
       - vocabulary
       - glossary
     next_reads:
-      - context/review/05-vocabulary-drift-checklist.md
+      - context/review/04-vocabulary-drift-checklist.md
       - context/principles/02-ubiquitous-language-and-naming.md

@@ -10,8 +10,8 @@ entries:
     summary: Guides the discovery of language, events, invariants, and candidate boundaries.
     load_when:
       - starting a new domain model
-      - shaping an exemplar domain
       - clarifying a vague capability
+      - preparing a bounded context definition
     tags:
       - playbook
       - domain-modeling
@@ -68,7 +68,7 @@ entries:
       - adr
       - governance
     next_reads:
-      - docs/adr/0002-information-architecture-and-manifests.md
+      - docs/adr/0001-information-architecture-and-manifests.md
       - context/review/01-quality-gates.md
 
   - path: context/playbooks/05-trusted-and-untrusted-representations-playbook.md
@@ -85,7 +85,7 @@ entries:
       - trusted-data
     next_reads:
       - context/principles/07-type-shaped-models-and-illegal-states.md
-      - examples/subscription-renewal/06-trusted-and-untrusted-representations.md
+      - context/principles/05-errors-and-edge-responsibilities.md
 
   - path: context/playbooks/06-entity-value-object-and-aggregate-design-playbook.md
     title: Entity, Value Object, and Aggregate Design Playbook
@@ -101,7 +101,7 @@ entries:
       - aggregates
     next_reads:
       - context/principles/08-entities-value-objects-and-aggregates.md
-      - examples/subscription-renewal/07-aggregate-and-ownership-boundaries.md
+      - context/principles/03-bounded-contexts-and-boundaries.md
 
   - path: context/playbooks/07-persistence-and-mapping-boundaries-playbook.md
     title: Persistence and Mapping Boundaries Playbook
@@ -118,7 +118,6 @@ entries:
     next_reads:
       - context/playbooks/10-cross-context-contract-and-anti-corruption-playbook.md
       - context/principles/10-serialization-persistence-and-data-ownership.md
-      - examples/subscription-renewal/08-persistence-and-mapping-boundaries.md
 
   - path: context/playbooks/08-business-event-discovery-and-event-catalog-playbook.md
     title: Business Event Discovery and Event Catalog Playbook
@@ -134,7 +133,7 @@ entries:
       - event-catalog
     next_reads:
       - context/principles/04-workflows-invariants-and-state.md
-      - examples/subscription-renewal/10-event-catalog.md
+      - context/playbooks/10-cross-context-contract-and-anti-corruption-playbook.md
 
   - path: context/playbooks/09-domain-error-and-failure-taxonomy-playbook.md
     title: Domain Error and Failure Taxonomy Playbook
@@ -151,7 +150,6 @@ entries:
     next_reads:
       - context/principles/05-errors-and-edge-responsibilities.md
       - context/patterns/03-error-and-edge-translation-patterns.md
-      - examples/subscription-renewal/05-invariants-and-failure-model.md
 
   - path: context/playbooks/10-cross-context-contract-and-anti-corruption-playbook.md
     title: Cross-Context Contract and Anti-Corruption Playbook
@@ -168,4 +166,3 @@ entries:
     next_reads:
       - context/principles/03-bounded-contexts-and-boundaries.md
       - context/principles/10-serialization-persistence-and-data-ownership.md
-      - examples/subscription-renewal/11-context-contracts.md

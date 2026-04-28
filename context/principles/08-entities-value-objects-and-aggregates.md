@@ -34,7 +34,7 @@ A value object is usually the better fit when:
 Examples:
 - email address
 - money amount
-- renewal window
+- settlement window
 - validated postal code
 
 ### 2. Use entities when continuity matters
@@ -88,4 +88,4 @@ Refactor when you see:
 - `context/principles/03-bounded-contexts-and-boundaries.md`
 - `context/principles/07-type-shaped-models-and-illegal-states.md`
 - `context/playbooks/02-bounded-context-definition-playbook.md`
-- `docs/research/dmmf-deep-synthesis.md`
+- `context/playbooks/06-entity-value-object-and-aggregate-design-playbook.md`

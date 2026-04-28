@@ -4,13 +4,15 @@
 
 - Good boundaries protect meaning, ownership, and change cadence.
 - These patterns help choose where to split, where to translate, and where to keep a shared vocabulary.
-- Use them to compare options, not as mandatory templates.
+- Use them to compare options, not as mandatory prescriptions.
+- Apply split/join heuristics to documents and modules as well as bounded contexts.
 - A pattern is useful only if it reduces ambiguity or future change cost.
 
 ## Load this when
 
 - comparing decomposition options
 - deciding whether a new bounded context is justified
+- deciding whether a document or module should split or merge
 - reviewing context leakage or ownership confusion
 
 ## Pattern 1: Single Decision Owner
@@ -97,15 +99,28 @@ A vendor, gateway, or protocol changes frequently and should not contaminate the
 ### Risks
 - if the shield is too thin, leakage still occurs; if too thick, it may become opaque and hard to review
 
-## Related example
+## Pattern 6: Split or Join by Shared Information
 
-The `examples/subscription-renewal/03-bounded-contexts.md` example combines:
-- Single Decision Owner in Subscription Lifecycle
-- Translation Seam between Lifecycle and Billing
-- Shielding Edge Context around billing details
+### Use when
+A document, module, or context is hard to understand because related decisions are scattered or unrelated decisions are forced together.
+
+### Shape
+- split when two parts have different audiences, vocabularies, change reasons, or abstraction levels
+- join when readers must constantly load both parts to understand either one
+- keep the public surface smaller than the hidden detail it protects
+- judge the boundary by reduced reader burden, not by file count
+
+### Benefits
+- lower retrieval cost
+- fewer fake seams
+- clearer ownership of decisions and rationale
+
+### Risks
+- splitting too finely can create navigation overhead
+- joining too broadly can hide independent change pressure
 
 ## Related docs
 
 - `context/principles/03-bounded-contexts-and-boundaries.md`
 - `context/playbooks/02-bounded-context-definition-playbook.md`
-- `examples/subscription-renewal/03-bounded-contexts.md`
+- `context/playbooks/10-cross-context-contract-and-anti-corruption-playbook.md`

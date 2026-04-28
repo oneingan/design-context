@@ -148,7 +148,7 @@ Before this pass, the repo had strong coverage of:
 - boundaries
 - workflows
 - error separation
-- examples and retrieval structure
+- retrieval structure
 
 But it had thinner coverage of:
 - type-shaped modeling as a language-neutral principle
@@ -206,7 +206,7 @@ It confirmed that the right next move is to operationalize the DMMF-heavy corpus
 - business event discovery
 - explicit failure taxonomy
 - cross-context contracts and anti-corruption guidance
-- reusable templates
-- richer example event and contract notes
+- compact event-catalog guidance
+- stronger contract and anti-corruption review guidance
 
 So the reread mainly refined the shape of v0.2.0 rather than expanding it into another large theory pass.

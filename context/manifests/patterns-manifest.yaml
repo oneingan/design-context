@@ -18,7 +18,6 @@ entries:
       - decomposition
     next_reads:
       - context/playbooks/02-bounded-context-definition-playbook.md
-      - examples/subscription-renewal/03-bounded-contexts.md
 
   - path: context/patterns/02-workflow-and-state-transition-patterns.md
     title: Workflow and State Transition Patterns
@@ -34,7 +33,6 @@ entries:
       - state
     next_reads:
       - context/playbooks/03-workflow-and-state-modeling-playbook.md
-      - examples/subscription-renewal/04-workflows-and-state.md
 
   - path: context/patterns/03-error-and-edge-translation-patterns.md
     title: Error and Edge Translation Patterns
@@ -50,20 +48,3 @@ entries:
       - edges
     next_reads:
       - context/principles/05-errors-and-edge-responsibilities.md
-      - examples/subscription-renewal/05-invariants-and-failure-model.md
-
-  - path: context/patterns/04-example-linking-patterns.md
-    title: Example Linking Patterns
-    canonical: true
-    summary: Reusable ways to keep examples illustrative, focused, and linked back to canonical docs.
-    load_when:
-      - adding new examples
-      - reviewing example structure
-      - connecting examples to patterns and principles
-    tags:
-      - patterns
-      - examples
-      - retrieval
-    next_reads:
-      - context/review/04-example-acceptance-criteria.md
-      - examples/00-map.md

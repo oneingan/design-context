@@ -12,7 +12,7 @@
 
 - creating a new concept
 - renaming a document, section, or model element
-- deciding how to name files or templates
+- deciding how to name files or repeatable artifact shapes
 - reviewing ambiguity across artifacts
 
 ## Naming rules
@@ -60,7 +60,7 @@ Use:
 6. **Update the right discovery artifacts**
    - glossary first, then maps/manifests if canonical docs are added or renamed
 7. **Run a vocabulary drift review**
-   - use `context/review/05-vocabulary-drift-checklist.md`
+   - use `context/review/04-vocabulary-drift-checklist.md`
 
 ## When to write an ADR for naming
 
@@ -75,6 +75,7 @@ Avoid:
 - silent renames with no glossary update
 - multiple near-synonyms in the same scope
 - technical placeholders becoming the canonical term by accident
+- extra words that do not clarify the concept or scope
 - names that only make sense if you already know the implementation
 
 ## Minimum rename checklist
@@ -91,4 +92,4 @@ Avoid:
 
 - `context/glossary/01-framework-glossary.md`
 - `context/principles/02-ubiquitous-language-and-naming.md`
-- `context/review/05-vocabulary-drift-checklist.md`
+- `context/review/04-vocabulary-drift-checklist.md`

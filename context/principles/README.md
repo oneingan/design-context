@@ -6,4 +6,4 @@ Start with:
 - `context/principles/00-map.md`
 - `context/manifests/principles-manifest.yaml`
 
-These docs should remain more authoritative than examples.
+These docs are the primary source of truth for framework rules.

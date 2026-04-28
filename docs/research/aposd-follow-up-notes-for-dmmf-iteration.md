@@ -42,7 +42,8 @@ This is one of the strongest APOSD reinforcements for the repo itself:
 - principles explain what is true
 - patterns compare reusable shapes
 - playbooks explain what to do
-- examples illustrate, but do not define
+- review docs evaluate whether an artifact is good enough
+- ADRs preserve structural rationale
 
 A deeper DMMF iteration only works if these layers stay distinct.
 
@@ -65,7 +66,7 @@ APOSD therefore reinforces:
 - glossary discipline
 - manifest consistency
 - obvious document names
-- example links that make the intended lesson explicit
+- links that make the intended next read explicit
 
 ## Resulting guidance for this iteration
 
@@ -80,7 +81,7 @@ APOSD therefore reinforces:
 This APOSD pass does not require a brand new layer. It mainly requires:
 - tighter naming and doc purpose
 - stronger manifest discipline for the new DMMF docs
-- careful linking between principles, patterns, playbooks, and examples
+- careful linking between principles, patterns, playbooks, and review docs
 - continued reliance on checklists and CI to protect consistency
 
 ## Bottom line
@@ -102,7 +103,7 @@ That applies to:
 - change-impact notes
 
 Repo implication:
-- prefer small, explicit templates over one oversized catch-all modeling document
+- prefer small, explicit output shapes over one oversized catch-all modeling document
 - compare artifact purposes so each new doc earns its own abstraction level
 
 ### 2. Names act like lightweight abstractions
@@ -117,7 +118,7 @@ For v0.2.0, this matters especially for:
 Repo implication:
 - prefer names that create a precise mental image
 - avoid vague labels such as `result`, `status`, or `integration payload`
-- use consistent term pairs across examples and templates
+- use consistent term pairs across principles, playbooks, and review docs
 
 ### 3. Consistency should be enforced, not merely hoped for
 
@@ -131,7 +132,7 @@ If new artifact types are introduced, they need:
 Repo implication:
 - add a review artifact for event and contract documents
 - update maps and manifests in the same iteration as the new docs
-- keep templates aligned with the retrieval structure
+- keep table shapes aligned with the retrieval structure
 
 ### 4. Obviousness matters more for event-driven and cross-context material
 
@@ -150,7 +151,7 @@ The v0.2.0 reread strongly supports a DMMF-compatible rule:
 - what should be hidden: vendor payload detail, transport trivia, operational noise that does not change business meaning
 
 Repo implication:
-- contract templates should emphasize meaning and ownership first
+- contract guidance should emphasize meaning and ownership first
 - edge-specific detail should appear only where needed for translation or review
 
 ### 6. Deep modules still apply to the documentation corpus itself
@@ -159,18 +160,17 @@ APOSD's deep-module idea is not just about runtime code.
 In this repo it means:
 - maps should stay small
 - leaf docs should do one thing well
-- templates should reduce repeated explanatory overhead
-- examples should remain secondary evidence rather than silently becoming the real specification
+- repeatable output shapes should reduce repeated explanatory overhead
+- downstream generated artifacts should not become a parallel specification
 
 Repo implication:
-- v0.2.0 should add new leaf docs and templates, but avoid a new sprawling top-level layer
+- v0.2.0 should add new leaf docs and review artifacts, but avoid a sprawling top-level surface
 
 ## Impact on v0.2.0 packaging
 
 The targeted reread supports the v0.2.0 packaging strategy:
 - a few sharper playbooks
-- a few reusable templates
-- one richer worked example
+- compact repeatable output shapes inside the relevant playbooks
 - review and manifest updates that keep the new material obvious
 
 In other words, APOSD continues to argue for **depth with controlled surface area** rather than breadth.

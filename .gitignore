@@ -1,4 +1,5 @@
 .DS_Store
+.pi/
 .direnv/
 result
 node_modules/
@@ -7,3 +8,4 @@ coverage/
 *.swp
 *.swo
 *~
+*.epub

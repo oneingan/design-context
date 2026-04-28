@@ -6,3 +6,5 @@ cd "$repo_root"
 
 ./tooling/check-doc-budgets.sh
 ./tooling/validate-manifests.sh
+./tooling/check-core-pack.sh
+./tooling/check-source-ingestion.sh

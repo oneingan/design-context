@@ -13,8 +13,7 @@ Agents should move through layers:
 1. repo overview
 2. map/manifests
 3. small canonical leaf docs
-4. ADRs
-5. examples only if necessary
+4. ADRs when rationale or trade-offs matter
 
 ### 2. Every major directory needs a map
 
@@ -30,9 +29,9 @@ Each major area should have either:
 
 The strongest reusable pattern from the upstream `tenets` project is **context-aware loading**. This repo should be organized so agents can load only the relevant domain, pattern, or playbook instead of the entire corpus.
 
-### 4. Canonical content must stay separated from examples
+### 4. Canonical content must stay compact
 
-Examples are useful, but they are high-volume and often noisy. Treat them as secondary evidence.
+High-volume supporting material can easily dominate retrieval. Keep the reusable core focused on canonical documents.
 
 Suggested order of authority:
 
@@ -40,7 +39,7 @@ Suggested order of authority:
 2. patterns
 3. playbooks/checklists
 4. ADRs
-5. examples
+5. research notes only when background rationale is needed
 
 ### 5. Use machine-readable manifests
 
@@ -67,7 +66,7 @@ Recommended soft limits:
 - root docs: under 200 lines
 - map docs: under 150 lines
 - leaf docs: roughly 80–220 lines
-- examples: small enough to read in one pass
+- playbooks/checklists: short enough to execute in one pass
 
 ### 8. Use stable names and IDs
 
@@ -98,7 +97,7 @@ That is more valuable than having perfect long-form documentation.
 - `context/playbooks/` — task-oriented workflows
 - `context/glossary/` — vocabulary and concept definitions
 - `context/review/` — audit and review checklists
-- `examples/` — isolated illustrations
+- `docs/adr/` — durable structural decisions
 
 ### Authoring rules
 
@@ -113,7 +112,7 @@ That is more valuable than having perfect long-form documentation.
 Reject or refactor docs that:
 
 - duplicate content from nearby files
-- mix principles and examples heavily
+- mix multiple abstraction levels heavily
 - exceed size budgets without strong reason
 - lack entrypoint guidance
 - cannot be understood independently

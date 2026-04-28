@@ -37,7 +37,7 @@ An agent using this repo should feel like it was handed:
 
 - not a giant monolithic handbook
 - not a language cookbook
-- not a full code template generator yet
+- not a code generator
 - not a replacement for project-specific context
 
 ## Desired long-term outcomes

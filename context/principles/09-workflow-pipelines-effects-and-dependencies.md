@@ -70,4 +70,4 @@ Refactor when you see:
 - `context/principles/04-workflows-invariants-and-state.md`
 - `context/principles/05-errors-and-edge-responsibilities.md`
 - `context/patterns/02-workflow-and-state-transition-patterns.md`
-- `docs/research/dmmf-deep-synthesis.md`
+- `context/playbooks/03-workflow-and-state-modeling-playbook.md`

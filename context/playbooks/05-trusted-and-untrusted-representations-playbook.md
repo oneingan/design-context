@@ -5,6 +5,7 @@
 - Model the transition from raw input to trusted domain data explicitly.
 - Use named stages so readers can see where trust is earned.
 - Keep validation close to construction instead of scattering checks everywhere.
+- Carry units, ranges, precision, and measurement meaning into the trusted representation when relevant.
 - Record which failures belong to parsing, contract, or domain meaning.
 
 ## Use this when
@@ -49,8 +50,9 @@ Prefer names that show meaning clearly.
 
 Examples:
 - `UnvalidatedOrder` → `ValidatedOrder`
-- `RawGatewayOutcome` → `ClassifiedBillingOutcome`
+- `RawProviderOutcome` → `ClassifiedPaymentOutcome`
 - `RenewalRequestPayload` → `RenewalCommand`
+- `RawQuantity` → `MeasuredQuantity`
 
 ### 4. Keep validation near construction
 
@@ -59,6 +61,7 @@ Define where the move into trusted form happens.
 Ask:
 - what checks happen here?
 - what assumptions become safe afterwards?
+- what units, ranges, or precision rules become explicit?
 - what invalid states are now prevented?
 
 ### 5. Classify failures by boundary meaning
@@ -77,16 +80,17 @@ Create a short table or note showing:
 - trusted target shape
 - failure categories
 
-## Output template
+## Output shape
 
 | Source | Transition | Trusted target | Failure categories |
 |---|---|---|---|
-| raw renewal request | parse + validate | renewal command | malformed request, invalid window |
-| raw gateway outcome | classify + translate | billing outcome | unknown category, provider timeout |
+| raw order request | parse + validate | order command | malformed request, invalid item |
+| raw provider outcome | classify + translate | payment outcome | unknown category, provider timeout |
 
 ## Review questions
 
 - Where does raw input become trusted?
+- Are units, ranges, and precision explicit before the value is trusted?
 - Are trusted representations named distinctly enough?
 - Which checks still repeat unnecessarily after trust is established?
 - Are failure categories clear at the trust boundary?
@@ -95,4 +99,4 @@ Create a short table or note showing:
 
 - `context/principles/07-type-shaped-models-and-illegal-states.md`
 - `context/principles/05-errors-and-edge-responsibilities.md`
-- `examples/subscription-renewal/06-trusted-and-untrusted-representations.md`
+- `context/playbooks/09-domain-error-and-failure-taxonomy-playbook.md`

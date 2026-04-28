@@ -25,14 +25,14 @@ entries:
     summary: Evaluates boundaries, workflows, errors, contracts, and retrieval structure.
     load_when:
       - auditing context packs
-      - reviewing exemplar domains
       - checking design quality
+      - reviewing bounded context documentation
     tags:
       - review
       - architecture
       - checklist
     next_reads:
-      - context/review/06-event-and-contract-artifact-checklist.md
+      - context/review/05-event-and-contract-artifact-checklist.md
       - context/principles/00-map.md
 
   - path: context/review/03-documentation-quality-checklist.md
@@ -47,23 +47,9 @@ entries:
       - documentation
       - checklist
     next_reads:
-      - context/review/05-vocabulary-drift-checklist.md
+      - context/review/04-vocabulary-drift-checklist.md
 
-  - path: context/review/04-example-acceptance-criteria.md
-    title: Example Acceptance Criteria
-    canonical: true
-    summary: Defines when examples are justified and how they stay secondary to canonical docs.
-    load_when:
-      - proposing new examples
-      - evaluating polyglot or pseudocode examples
-    tags:
-      - review
-      - examples
-      - policy
-    next_reads:
-      - docs/adr/0001-example-strategy.md
-
-  - path: context/review/05-vocabulary-drift-checklist.md
+  - path: context/review/04-vocabulary-drift-checklist.md
     title: Vocabulary Drift Checklist
     canonical: true
     summary: Evaluates naming consistency and protects term stability across artifacts.
@@ -79,7 +65,7 @@ entries:
       - context/glossary/01-framework-glossary.md
       - context/glossary/02-naming-and-term-introduction.md
 
-  - path: context/review/06-event-and-contract-artifact-checklist.md
+  - path: context/review/05-event-and-contract-artifact-checklist.md
     title: Event and Contract Artifact Checklist
     canonical: true
     summary: Evaluates event catalogs, trust-boundary notes, and cross-context contract artifacts.

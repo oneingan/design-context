@@ -24,17 +24,18 @@ check_file() {
 
 check_file README.md "$root_max"
 check_file AGENTS.md "$root_max"
+check_file VENDORING.md "$root_max"
 check_file vision.md "$root_max"
 
 while IFS= read -r -d '' file; do
   check_file "$file" "$map_max"
-done < <(find context examples -type f \( -name '00-map.md' -o -path '*/README.md' \) -print0)
+done < <(find context -type f \( -name '00-map.md' -o -path '*/README.md' \) -print0)
 
 while IFS= read -r -d '' file; do
   case "$file" in
     */README.md|*/00-map.md) continue ;;
   esac
   check_file "$file" "$leaf_max"
-done < <(find context docs examples -type f -name '*.md' -print0)
+done < <(find context docs -type f -name '*.md' -print0)
 
 exit "$exit_code"

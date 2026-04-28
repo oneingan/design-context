@@ -5,7 +5,7 @@
 - Workflows become easier to reason about when they use repeatable shapes.
 - These patterns help distinguish business decision flow from execution detail.
 - They are especially useful for long-running behavior and explicit state transitions.
-- Use them to compare modeling options before writing a playbook or example.
+- Use them to compare modeling options before writing detailed workflow guidance.
 
 ## Load this when
 
@@ -99,16 +99,8 @@ A business outcome must be communicated externally.
 ### Risks
 - if the emitted outcome is vague, downstream consumers may re-interpret it inconsistently
 
-## Related example
-
-The `examples/subscription-renewal/04-workflows-and-state.md` example combines:
-- Pending External Result
-- Grace Window Recovery
-- State Table First
-- Outcome Then Notification
-
 ## Related docs
 
 - `context/principles/04-workflows-invariants-and-state.md`
 - `context/playbooks/03-workflow-and-state-modeling-playbook.md`
-- `examples/subscription-renewal/04-workflows-and-state.md`
+- `context/playbooks/09-domain-error-and-failure-taxonomy-playbook.md`

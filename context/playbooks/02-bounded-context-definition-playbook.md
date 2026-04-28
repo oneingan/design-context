@@ -5,6 +5,7 @@
 - Define a bounded context by meaning, ownership, and seam clarity.
 - Make vocabulary, responsibilities, and contracts explicit.
 - Keep the context pack small but sufficient for independent understanding.
+- Record strategic importance when it affects modeling investment.
 - Translate across boundaries deliberately.
 
 ## Use this when
@@ -18,6 +19,7 @@
 - domain model notes
 - candidate concepts and workflows
 - known upstream or downstream interactions
+- business goals, risks, and investment constraints
 - current ambiguity or pain points
 
 ## Steps
@@ -25,6 +27,8 @@
 ### 1. State the context purpose
 
 Write one paragraph on what this context is for and why it exists separately.
+
+If strategic importance affects design effort, also record whether this context is a core differentiator, a supporting capability, or a generic capability. Use that role to choose modeling depth and review attention; do not use it as a substitute for clear ownership.
 
 ### 2. Define the canonical vocabulary
 
@@ -68,12 +72,13 @@ Create a compact pack with:
 - relationships and contracts
 - review questions
 
-## Context card template
+## Context card shape
 
 | Field | Description |
 |---|---|
 | Name | Canonical context name |
 | Purpose | What this context exists to decide or protect |
+| Strategic role | Core, supporting, or generic when this affects design investment |
 | Vocabulary | Core terms valid in this scope |
 | Responsibilities | Decisions owned here |
 | Non-responsibilities | Decisions owned elsewhere |
@@ -93,6 +98,7 @@ For each boundary, answer:
 ## Review questions
 
 - Is this boundary semantic or merely organizational?
+- Is the strategic role explicit when it changes modeling depth?
 - Would another team or system understand what this context owns?
 - Are translations explicit where meanings differ?
 - Is the surface small enough to stay stable while internals evolve?

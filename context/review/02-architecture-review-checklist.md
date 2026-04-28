@@ -3,7 +3,7 @@
 ## Summary
 
 - Use this checklist to review domain shape, boundaries, workflows, errors, contracts, and retrieval structure.
-- Apply it to canonical docs, exemplar domains, or project-specific context packs.
+- Apply it to canonical docs or project-specific context packs.
 - Mark findings by severity so reviewers know what must change first.
 
 ## Use this when
@@ -24,6 +24,7 @@
 
 - [ ] the bounded context has a clear purpose
 - [ ] responsibilities and non-responsibilities are explicit
+- [ ] strategic importance is recorded when it changes modeling depth
 - [ ] neighboring contexts or systems are identified
 - [ ] translations are explicit where meanings differ
 - [ ] important cross-context contracts are named and easy to find
@@ -32,6 +33,7 @@
 
 - [ ] canonical terms are stable and glossary-aligned
 - [ ] the same word is not carrying conflicting meanings in one scope
+- [ ] units, ranges, precision, and measurement meaning are explicit where relevant
 - [ ] domain language dominates technical placeholder language
 
 ### Workflows and state
@@ -53,8 +55,9 @@
 
 - [ ] the area has a clear map and manifest path
 - [ ] the canonical docs are easy to find in under two hops
-- [ ] no file is trying to be map, principle, playbook, and example at once
-- [ ] examples remain secondary to principles
+- [ ] split/join decisions reduce reader burden instead of only changing file count
+- [ ] no file is trying to be map, principle, playbook, and review checklist at once
+- [ ] downstream guidance does not redefine canonical principles
 
 ## Reporting pattern
 
