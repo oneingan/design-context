@@ -121,7 +121,7 @@ Rejected:
 Repository checks should pass after this note:
 
 ```bash
-nix shell nixpkgs#yq -c ./tooling/run-checks.sh
+nix shell nixpkgs#yq nixpkgs#ripgrep -c ./tooling/run-checks.sh
 ```
 
 ## Related docs

@@ -10,6 +10,12 @@ Current tools:
 - `tooling/check-source-ingestion.sh` — validate source-ingestion boundaries for ignored source inputs and source-only research
 - `tooling/tooling-evaluation.md` — explains what is implemented now vs deferred
 
+Local validation:
+
+```bash
+nix shell nixpkgs#yq nixpkgs#ripgrep -c ./tooling/run-checks.sh
+```
+
 Current stance:
 - implement lightweight validation now
 - defer heavy export automation until the corpus is more stable

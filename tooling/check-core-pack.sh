@@ -1,9 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-if ! command -v yq >/dev/null 2>&1; then
-  echo "error: yq is required on PATH for core pack validation" >&2
-  echo "hint: nix shell nixpkgs#yq -c ./tooling/check-core-pack.sh" >&2
+missing=0
+for cmd in yq rg; do
+  if ! command -v "$cmd" >/dev/null 2>&1; then
+    echo "error: $cmd is required on PATH for core pack validation" >&2
+    missing=1
+  fi
+done
+if [ "$missing" -ne 0 ]; then
+  echo "hint: nix shell nixpkgs#yq nixpkgs#ripgrep -c ./tooling/check-core-pack.sh" >&2
   exit 1
 fi
 

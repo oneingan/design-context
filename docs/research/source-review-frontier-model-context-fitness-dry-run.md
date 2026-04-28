@@ -116,7 +116,7 @@ Deferred actions:
 Run repository checks after adding this dry run and the workflow:
 
 ```bash
-nix shell nixpkgs#yq -c ./tooling/run-checks.sh
+nix shell nixpkgs#yq nixpkgs#ripgrep -c ./tooling/run-checks.sh
 ```
 
 ## Related docs

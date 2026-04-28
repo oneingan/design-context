@@ -9,4 +9,4 @@
 - [ ] manifests updated if needed
 - [ ] glossary drift checked if naming changed
 - [ ] ADR added or updated if structure/policy changed
-- [ ] `nix shell nixpkgs#yq -c ./tooling/run-checks.sh` passed
+- [ ] `nix shell nixpkgs#yq nixpkgs#ripgrep -c ./tooling/run-checks.sh` passed

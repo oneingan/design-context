@@ -52,7 +52,7 @@ Required checks:
 Recommended on NixOS or with Nix installed:
 
 ```bash
-nix shell nixpkgs#yq -c ./tooling/run-checks.sh
+nix shell nixpkgs#yq nixpkgs#ripgrep -c ./tooling/run-checks.sh
 ```
 
 Or run the pieces separately:
