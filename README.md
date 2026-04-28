@@ -2,6 +2,8 @@
 
 > Reusable, language-agnostic AI agent context framework for DDD, workflows, patterns, and review checklists.
 
+> Previously developed under a temporary working name. The canonical public repository name is now **`design-context`**.
+
 ## Why this repository exists
 
 This repository is meant to be a personal, reusable alternative to [bardiakhosravi/tenets](https://github.com/bardiakhosravi/tenets): a place to store opinionated context that AI agents can load when designing, reviewing, and evolving software systems.
@@ -12,6 +14,14 @@ The goal is broader than the original project:
 - focused on **architecture, domain modeling, workflows, and quality**
 - optimized for **agent consumption under limited context windows**
 - reusable across **multiple languages, stacks, and project types**
+
+## Repo identity at a glance
+
+- **Canonical name:** `design-context`
+- **Public repo:** `https://github.com/oneingan/design-context`
+- **Default agent load order:** `README.md` → `context/00-map.md` → `context/manifests/project-manifest.yaml`
+- **Default vendored path in consumer repos:** `docs/vendor/design-context/`
+- **Do not load by default:** source-repo tooling, research notes, publication notes, or other source-only maintenance material
 
 ## How to consume this repo
 
@@ -118,3 +128,8 @@ The repository now includes:
 - apply the core context pack to an external project and watch for missing guidance
 - revisit export automation later if manual vendoring becomes painful
 - keep the core compact and canonical before adding new distribution formats
+
+## Release status
+
+- current release after repository rename and packaging cleanup: **v0.3.0**
+- prior tags: `v0.1.0`, `v0.2.0`

@@ -1,6 +1,6 @@
 repo:
   name: design-context
-  status: v0.2.0-released
+  status: v0.3.0-released
   purpose: >-
     A reusable, language-agnostic AI agent context framework optimized for
     progressive loading under limited context windows.

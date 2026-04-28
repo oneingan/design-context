@@ -141,3 +141,9 @@ v0 is successful if:
 ## 9. Backlog link
 
 The actionable implementation backlog for this repo lives in `.pi/todos/`.
+
+## 10. Current refinement status
+
+Recent repository refinements aligned the public repository name, vendoring path, validation checks, and canonical packaging around **`design-context`**.
+
+The latest publication milestone is **v0.3.0**.

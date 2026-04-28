@@ -3,6 +3,7 @@
 ## Summary
 
 - v0 is ready for publication as `design-context`.
+- **v0.3.0** is the current release after the repository rename and core-pack cleanup.
 - CI should run the same lightweight checks used locally.
 - Export automation to other agent formats remains intentionally deferred.
 - The core framework should stay compact and canonical before adding distribution conveniences.
@@ -16,7 +17,9 @@
 - [x] CI workflow added
 - [x] publication baseline recorded in an ADR
 - [x] choose and add a license
-- [ ] add a GitHub remote and push when ready
+- [x] rename the public GitHub repository to `design-context`
+- [x] push the renamed repository and validate the remote
+- [x] publish release `v0.3.0`
 
 ## Local validation
 
