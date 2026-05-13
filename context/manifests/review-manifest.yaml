@@ -80,3 +80,19 @@ entries:
     next_reads:
       - context/playbooks/08-business-event-discovery-and-event-catalog-playbook.md
       - context/playbooks/10-cross-context-contract-and-anti-corruption-playbook.md
+
+  - path: context/review/06-agent-operability-checklist.md
+    title: Agent Operability Checklist
+    canonical: true
+    summary: Evaluates whether a repository is ready for safe, observable agent work.
+    load_when:
+      - auditing agent readiness
+      - reviewing autonomous or semi-autonomous agent workflows
+      - diagnosing repeated agent failures
+    tags:
+      - review
+      - agent-operability
+      - checklist
+    next_reads:
+      - context/playbooks/11-agent-ready-repository-playbook.md
+      - context/patterns/04-agent-work-orchestration-patterns.md

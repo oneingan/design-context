@@ -1,6 +1,6 @@
 repo:
   name: design-context
-  status: v0.3.0-released
+  status: v0.4.0-released
   purpose: >-
     A reusable, language-agnostic AI agent context framework optimized for
     progressive loading under limited context windows.
@@ -112,6 +112,8 @@ canonical_documents:
     topic: workflow-patterns
   - path: context/patterns/03-error-and-edge-translation-patterns.md
     topic: error-patterns
+  - path: context/patterns/04-agent-work-orchestration-patterns.md
+    topic: agent-work-orchestration-patterns
   - path: context/glossary/01-framework-glossary.md
     topic: framework-vocabulary
   - path: context/glossary/02-naming-and-term-introduction.md
@@ -136,6 +138,8 @@ canonical_documents:
     topic: failure-taxonomy-playbook
   - path: context/playbooks/10-cross-context-contract-and-anti-corruption-playbook.md
     topic: cross-context-contract-playbook
+  - path: context/playbooks/11-agent-ready-repository-playbook.md
+    topic: agent-ready-repository-playbook
   - path: context/review/01-quality-gates.md
     topic: quality-gates
   - path: context/review/02-architecture-review-checklist.md
@@ -146,6 +150,8 @@ canonical_documents:
     topic: vocabulary-review
   - path: context/review/05-event-and-contract-artifact-checklist.md
     topic: event-and-contract-review
+  - path: context/review/06-agent-operability-checklist.md
+    topic: agent-operability-review
   - path: docs/adr/0001-information-architecture-and-manifests.md
     topic: structure-decision
   - path: docs/adr/0002-lightweight-validation-before-agent-exports.md
@@ -156,6 +162,8 @@ canonical_documents:
     topic: license-choice
   - path: docs/adr/0005-core-context-pack-and-vendoring-boundary.md
     topic: vendoring-boundary
+  - path: docs/adr/0006-agent-operability-boundary.md
+    topic: agent-operability-boundary
 
 size_budgets:
   root_docs_max_lines: 200

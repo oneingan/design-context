@@ -19,7 +19,9 @@
 | Term | Meaning | Notes |
 |---|---|---|
 | agent context framework | A repository of reusable guidance that agents can load progressively to design, review, and evolve systems. | This repository's overall role. |
+| agent-operable repository | A repository whose context, work contracts, checks, isolation, and evidence surfaces let agents perform work with bounded human supervision. | Tool-agnostic; does not imply full autonomy. |
 | canonical | The primary source of truth for a topic. | Canonical docs outrank downstream summaries or ad hoc guidance. |
+| design deviation | A scoped, justified departure from canonical guidance. | Should record affected guidance, rationale, risk, and revisit trigger. |
 | map | A navigation document that says what exists and what to read next. | Usually `00-map.md` or a local `README.md`. |
 | manifest | Machine-readable retrieval metadata for an area. | Used for discovery and automation. |
 | principle | A stable rule or design constraint. | Explains what is true or required. |
@@ -33,6 +35,7 @@
 | workflow | A meaningful sequence of business steps that transforms one situation into another. | Should expose states, decisions, and outputs. |
 | invariant | A condition that must remain true within a given scope. | Often tied to states or workflows. |
 | edge concern | A transport, persistence, integration, serialization, or vendor-specific concern. | Keep these at the edges. |
+| seam | A place where behavior can vary without rewriting the caller or core decision. | Not the same as a bounded context; use for implementation or adapter variation. |
 | vocabulary drift | The gradual divergence of terms, meanings, or aliases across artifacts. | Review for this explicitly. |
 
 ## Scope rule

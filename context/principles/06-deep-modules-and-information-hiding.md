@@ -71,12 +71,32 @@ If not, the structure is leaking complexity.
 
 When introducing a new area, sketch the map, manifest, and one or two leaf docs before filling the directory with content. Thin planning is cheaper than large refactors.
 
+### 9. Use the deletion test
+
+When a module, helper, or document seems shallow, imagine deleting it.
+
+- If complexity mostly disappears, it was probably pass-through structure.
+- If complexity reappears across many callers or readers, it was hiding useful detail.
+
+### 10. Treat the interface as the test surface
+
+A module's interface is everything callers must know: inputs, outputs, invariants, ordering, errors, configuration, and performance expectations.
+
+Tests and reviews should exercise behavior through that surface instead of reaching into internal structure.
+
+### 11. Avoid speculative seams
+
+Introduce an adapter or seam when variation is real enough to justify it, such as production plus test implementations or multiple consumers with different needs. A single-adapter seam is often indirection, not depth.
+
 ## Warning signs
 
 Refactor when you see:
 - giant entry docs
+- shallow pass-through modules or docs that do not hide complexity
 - illustrative walkthroughs acting as the real specification
 - many files repeating the same rule with slightly different wording
+- tests that must know internal structure to verify behavior
+- adapters or seams created before variation is real
 - leaf docs with no clear map or manifest path to them
 - a directory whose internal organization is required knowledge for basic use
 
@@ -84,6 +104,8 @@ Refactor when you see:
 
 - Is the surface area smaller than the knowledge behind it?
 - Can an agent succeed without reading internal details first?
+- Would deleting the module or document remove useful complexity or expose it elsewhere?
+- Can tests and reviewers exercise behavior through the public surface?
 - Does each layer answer a different question?
 - Is any file carrying more than one abstraction level?
 - Are duplicates increasing maintenance and context costs?

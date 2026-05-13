@@ -21,6 +21,19 @@
 - domain expert language, if available
 - known constraints or policies
 
+## When starting from a feature or spec
+
+Before implementation planning, make sure the feature description exposes:
+
+- expected outcome and success criteria
+- new or affected domain terms
+- affected bounded context
+- context relationships or flows if boundaries are crossed
+- candidate domain concepts
+- acceptance scenarios or independently checkable behavior
+
+If these are missing, model them before turning the work into tasks.
+
 ## Steps
 
 ### 1. Set the modeling scope

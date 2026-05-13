@@ -6,7 +6,7 @@
 - Each step should have a visible purpose, input surface, output surface, and effect surface.
 - Keep pure decision steps distinct from effectful edge interactions where possible.
 - Treat dependencies as part of workflow assembly, not hidden global facts.
-- Make long-running waiting states and explicit error results part of the workflow surface.
+- Make long-running waiting states, explicit error results, and proof-of-work evidence part of the workflow surface when they matter.
 
 ## Load this when
 
@@ -46,6 +46,8 @@ Dependencies are not an afterthought. The act of wiring validators, gateways, re
 
 If a workflow waits, retries, resumes, or times out, make that visible through states, step boundaries, or outcome categories.
 
+For agent-run or background workflows, also state what evidence proves progress or completion, such as tests, logs, metrics, screenshots, review notes, or other task-appropriate proof.
+
 ### 6. Prefer composable steps over monolithic procedures
 
 Smaller named steps make change impact clearer and reduce hidden coupling.
@@ -64,6 +66,7 @@ Refactor when you see:
 - Which steps are pure decisions and which are effects?
 - Are dependencies visible where the workflow is assembled?
 - Are long-running or waiting conditions explicit?
+- Is required proof of work visible when the workflow depends on background or agent execution?
 
 ## Related docs
 

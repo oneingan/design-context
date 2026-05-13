@@ -51,6 +51,21 @@
 - [ ] transport, storage, and vendor concerns stay at the edge
 - [ ] edge effects are separated from core decisions
 
+### Modularity and depth
+
+- [ ] important interfaces hide useful complexity instead of mirroring implementation detail
+- [ ] shallow pass-through modules have been challenged with the deletion test
+- [ ] tests and examples verify behavior through public surfaces, not internal choreography
+- [ ] adapters or seams are justified by real variation, not speculative indirection
+- [ ] module names use domain language where they represent domain concepts
+
+### Design deviations
+
+- [ ] any departure from canonical guidance is named as a design deviation
+- [ ] affected principle, playbook, pattern, or review guidance is referenced
+- [ ] scope, rationale, risk, and revisit trigger are explicit
+- [ ] repeated deviations are treated as evidence that the model or guidance may need revision
+
 ### Structure and retrieval
 
 - [ ] the area has a clear map and manifest path
@@ -65,7 +80,8 @@ For each issue, record:
 - severity
 - artifact path
 - observed problem
-- recommended fix
+- canonical guidance affected, if any
+- recommended fix or required design deviation record
 
 ## Related docs
 

@@ -5,6 +5,7 @@
 - Write ADRs for structural decisions that should not be rediscovered later.
 - Keep them small, explicit, and consequence-oriented.
 - Record alternatives and trade-offs, not just conclusions.
+- Use a smaller design deviation record for narrow local exceptions.
 - Link ADRs to the maps, manifests, and canonical docs they affect.
 
 ## Use this when
@@ -23,6 +24,36 @@ Write an ADR when a decision changes:
 - review policy
 - distribution or packaging policy
 - integration strategy with other agent tools
+
+## ADR decision test
+
+Before writing an ADR, check that the decision is:
+
+- hard to reverse enough that rediscovery would be costly
+- surprising without context enough that a future reader may try to undo it
+- a real trade-off with meaningful alternatives, not just the obvious path
+
+If these are not true, prefer a smaller note, design deviation, issue comment, or no durable record.
+
+## ADR vs design deviation
+
+Not every exception needs an ADR. Use the smallest durable record that preserves future understanding.
+
+| Situation | Prefer |
+|---|---|
+| narrow local exception to canonical guidance | design deviation record |
+| temporary exception with known revisit trigger | design deviation record |
+| decision changes boundaries, vocabulary, retrieval, review, or distribution policy | ADR |
+| same deviation repeats across scopes | ADR or canonical guidance update |
+| decision affects many future contributors | ADR |
+
+A design deviation should record:
+- canonical guidance affected
+- scope
+- why the deviation is needed
+- simpler or canonical alternative rejected
+- risk
+- revisit trigger or expiry condition
 
 ## Steps
 
@@ -75,6 +106,7 @@ Update or reference:
 ## Review questions
 
 - Will future contributors need this decision explained again?
+- Is the decision hard to reverse, surprising without context, and a real trade-off?
 - Does this change affect multiple artifacts or future direction?
 - Are alternatives and consequences explicit?
 - Have the impacted maps/manifests been updated?

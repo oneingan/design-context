@@ -48,3 +48,19 @@ entries:
       - edges
     next_reads:
       - context/principles/05-errors-and-edge-responsibilities.md
+
+  - path: context/patterns/04-agent-work-orchestration-patterns.md
+    title: Agent Work Orchestration Patterns
+    canonical: true
+    summary: Reusable ways to coordinate agent work, isolation, evidence, and recovery.
+    load_when:
+      - comparing agent orchestration choices
+      - designing task-driven agent workflows
+      - reviewing agent workspace and runner boundaries
+    tags:
+      - patterns
+      - agent-operability
+      - orchestration
+    next_reads:
+      - context/playbooks/11-agent-ready-repository-playbook.md
+      - context/review/06-agent-operability-checklist.md

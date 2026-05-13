@@ -50,6 +50,12 @@ Read:
 1. `context/playbooks/07-persistence-and-mapping-boundaries-playbook.md`
 2. `context/principles/10-serialization-persistence-and-data-ownership.md`
 
+### If you need to make a repo agent-ready
+Read:
+1. `context/playbooks/11-agent-ready-repository-playbook.md`
+2. `context/patterns/04-agent-work-orchestration-patterns.md`
+3. `context/review/06-agent-operability-checklist.md`
+
 ### If you need to record a structural decision
 Read:
 1. `context/playbooks/04-adr-writing-playbook.md`
@@ -77,6 +83,8 @@ Read:
   - how to classify failures by meaning and expose stable failure surfaces
 - `10-cross-context-contract-and-anti-corruption-playbook.md`
   - how to document contracts, ownership, and translation seams between contexts
+- `11-agent-ready-repository-playbook.md`
+  - how to prepare consumer repositories for agent-operable work
 
 ## Directory rules
 

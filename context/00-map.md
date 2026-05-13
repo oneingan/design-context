@@ -25,6 +25,13 @@ Read:
 2. `context/manifests/project-manifest.yaml`
 3. `docs/adr/0005-core-context-pack-and-vendoring-boundary.md`
 
+### Make a consumer repo agent-ready
+Read:
+1. `context/playbooks/11-agent-ready-repository-playbook.md`
+2. `context/patterns/04-agent-work-orchestration-patterns.md`
+3. `context/review/06-agent-operability-checklist.md`
+4. `docs/adr/0006-agent-operability-boundary.md` if scope or tool boundary trade-offs matter
+
 ### Compare reusable design shapes
 Read:
 1. `context/patterns/00-map.md`

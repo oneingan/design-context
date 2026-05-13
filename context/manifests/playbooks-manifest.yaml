@@ -166,3 +166,20 @@ entries:
     next_reads:
       - context/principles/03-bounded-contexts-and-boundaries.md
       - context/principles/10-serialization-persistence-and-data-ownership.md
+
+  - path: context/playbooks/11-agent-ready-repository-playbook.md
+    title: Agent-Ready Repository Playbook
+    canonical: true
+    summary: Guides preparation of consumer repositories for agent-operable work.
+    load_when:
+      - preparing a repo for agent work
+      - improving agent reliability in a consumer repo
+      - designing issue or PR workflows for agents
+    tags:
+      - playbook
+      - agent-operability
+      - repository-readiness
+    next_reads:
+      - context/patterns/04-agent-work-orchestration-patterns.md
+      - context/review/06-agent-operability-checklist.md
+      - docs/adr/0006-agent-operability-boundary.md

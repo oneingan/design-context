@@ -17,6 +17,56 @@
 
 ## Sources
 
+### `tenets-upstream`
+
+| Field | Value |
+|---|---|
+| Title | `bardiakhosravi/tenets` upstream repository |
+| Author/origin | bardiakhosravi / GitHub |
+| Type | Repository |
+| Local input | Public GitHub repository inspected over the network only |
+| Status | source-only; partially canonicalized through progressive disclosure, context maps, manifests, and review artifacts |
+| Primary framework role | Initial inspiration for modular, path-aware agent guidance and architecture review mindset. |
+
+High-level relevance:
+- context-aware loading for agent tools
+- focused rule files instead of monolithic prompts
+- architecture review as a first-class agent activity
+- multi-tool distribution concerns
+- recent spec-driven development additions reviewed in `docs/research/source-review-tenets-upstream-v0.6.md`
+
+Do not import:
+- full templates, installer behavior, CLI flags, or npm packaging details
+- Spec-Kit as a required interface
+- Python- or hexagonal-architecture-specific rules as universal core policy
+- upstream examples as hidden specifications
+
+### `mattpocock-skills`
+
+| Field | Value |
+|---|---|
+| Title | `mattpocock/skills` |
+| Author/origin | Matt Pocock / GitHub |
+| Type | Repository |
+| Local input | Public GitHub repository inspected over the network only |
+| Status | source-only; partially canonicalized in `docs/research/source-review-mattpocock-skills.md` |
+| Primary framework role | Calibrate task-focused agent workflows, architecture-deepening review, durable agent briefs, and setup-boundary discipline. |
+
+High-level relevance:
+- small composable agent skills instead of monolithic process ownership
+- glossary- and ADR-aware planning conversations
+- deep-module review using deletion tests, interface-as-test-surface, and locality/leverage language
+- debugging and TDD guidance built around fast feedback loops and behavior-facing tests
+- issue/work-item briefs that are durable, behavioral, scoped, and independently verifiable
+- explicit split between portable guidance and tool-specific setup dependencies
+
+Do not import:
+- slash-command packaging, `.claude-plugin`, Claude Code hooks, or plugin manifests
+- `skills/**` directories as vendored pack content
+- GitHub/GitLab/Linear/local-issue-tracker mechanics as core workflow policy
+- npm, Husky, pre-commit, or setup scripts as framework requirements
+- personal, deprecated, or in-progress skills as canonical guidance
+
 ### `aposd`
 
 | Field | Value |
@@ -93,6 +143,32 @@ Do not import:
 - aggregate ratings as proof of correctness
 - author examples or F# mechanics as framework examples
 - second-order summaries without mapping them to claims and current canonical homes
+
+### `agent-harness-and-orchestration`
+
+| Field | Value |
+|---|---|
+| Title | Agent harness and orchestration source bundle |
+| Author/origin | OpenAI blogs/docs/repos plus community ports and AGENTS.md format material |
+| Type | Source bundle |
+| Local input | Public web pages and repositories fetched to temporary files only |
+| Status | source-only; reviewed in `docs/research/source-review-agent-harness-and-orchestration.md` |
+| Primary framework role | Calibrate agent-operability guidance for consumer repositories. |
+
+High-level relevance:
+- short agent entrypoints as maps
+- repo-local knowledge stores as source of truth
+- work contracts for issue, PR, validation, and handoff workflows
+- isolated workspaces for concurrent agent work
+- observable proof of work and operator-visible logs
+- mechanical guardrails, actionable checks, and continuous cleanup
+- runner/tracker/tool protocols as edge adapters
+
+Do not import:
+- Codex-, Symphony-, Linear-, Claude-, GitHub-, or app-server-specific behavior as core policy
+- long prompts, workflow specs, or protocol transcripts as canonical docs
+- vendor claims without mapping them to portable review claims
+- community implementation choices as required architecture
 
 ## Use rules
 

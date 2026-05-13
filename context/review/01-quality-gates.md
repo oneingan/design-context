@@ -49,16 +49,25 @@
 
 - [ ] a meaningful structural trade-off has an ADR if needed
 - [ ] consequences are explicit for future contributors
+- [ ] deviations from canonical guidance are explicit, scoped, and justified
+- [ ] each design deviation records the simpler or canonical alternative rejected
+- [ ] temporary deviations include a revisit trigger or expiry condition
 
 ### QG-7 Edge discipline
 
 - [ ] core guidance remains distinct from edge or tool-specific details
 - [ ] operational concerns did not silently become core concepts
+- [ ] agent runtimes, approvals, sandboxes, secrets, and vendor APIs remain edge concerns unless they are the explicit topic
 
 ### QG-8 Distribution boundary
 
 - [ ] the canonical core remains compact and reusable
 - [ ] generated/exported artifacts do not become a parallel source of truth
+
+### QG-9 Feedback loop discipline
+
+- [ ] repeated agent or reviewer failures are captured as docs, checks, schemas, or tooling rather than only as prompt admonitions
+- [ ] validation failures are actionable enough for the next agent or maintainer to recover
 
 ## Pass condition
 

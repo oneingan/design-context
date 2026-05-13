@@ -4,7 +4,7 @@
 
 - Prefer designs that prevent invalid states over designs that merely catch them later.
 - Make failure modes explicit in the model and at boundaries.
-- Keep transport, persistence, serialization, and vendor details at the edges.
+- Keep transport, persistence, serialization, vendor, and agent-runtime details at the edges.
 - Translate edge failures before they enter the core model.
 - Document which errors are domain-significant and which are operational noise.
 
@@ -54,6 +54,7 @@ The core model should not need to know about:
 - Kafka partitions
 - SQL driver exceptions
 - vendor SDK exception types
+- agent runner protocols or issue-tracker API details
 
 Translate these into stable boundary results or operational categories before they move inward.
 
@@ -65,6 +66,7 @@ At the edges, be clear about who handles:
 - persistence mapping
 - retries and timeouts
 - authentication or authorization seams
+- approval or sandbox policies for agent runtimes
 - logging, tracing, or metrics emission
 
 ### 6. Keep side-effect adapters replaceable

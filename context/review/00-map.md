@@ -28,6 +28,12 @@ Read:
 2. `context/playbooks/08-business-event-discovery-and-event-catalog-playbook.md`
 3. `context/playbooks/10-cross-context-contract-and-anti-corruption-playbook.md`
 
+### For agent-operability review
+Read:
+1. `context/review/06-agent-operability-checklist.md`
+2. `context/playbooks/11-agent-ready-repository-playbook.md`
+3. `context/patterns/04-agent-work-orchestration-patterns.md`
+
 ## Documents
 
 - `01-quality-gates.md`
@@ -40,6 +46,8 @@ Read:
   - evaluates naming consistency and term stability
 - `05-event-and-contract-artifact-checklist.md`
   - evaluates event catalogs, trust-boundary notes, and cross-context contract artifacts
+- `06-agent-operability-checklist.md`
+  - evaluates whether a repository is ready for safe, observable agent work
 
 ## Directory rules
 

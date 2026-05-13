@@ -100,6 +100,7 @@ Keep any illustrative material small, local to the canonical document that needs
 - `docs/adr/0003-v0-name-and-publication-baseline.md` — v0 naming and publication baseline
 - `docs/adr/0004-license-choice.md` — repository license choice
 - `docs/adr/0005-core-context-pack-and-vendoring-boundary.md` — third-party vendoring boundary
+- `docs/adr/0006-agent-operability-boundary.md` — boundary for agent-operability guidance
 
 ## Success criteria
 
@@ -115,21 +116,22 @@ A good release should let an agent:
 
 The repository now includes:
 
-- ADRs for information architecture, tooling strategy, publication baseline, license choice, and vendoring boundary
+- ADRs for information architecture, tooling strategy, publication baseline, license choice, vendoring boundary, and agent-operability boundary
 - canonical principles derived from the source books
-- reusable patterns for boundaries, workflows, and errors
+- reusable patterns for boundaries, workflows, errors, and agent work orchestration
 - glossary and naming governance
-- playbooks for domain modeling, boundaries, workflows, trusted data, aggregate design, persistence boundaries, business event discovery, failure taxonomy, and cross-context contracts
-- review checklists and repo quality gates, including event/contract artifact review
+- playbooks for domain modeling, boundaries, workflows, trusted data, aggregate design, persistence boundaries, business event discovery, failure taxonomy, cross-context contracts, and agent-ready repositories
+- review checklists and repo quality gates, including event/contract and agent-operability artifact review
 - lightweight source-repo validation scripts for manifests and doc budgets
 
 ## Recommended next steps
 
-- apply the core context pack to an external project and watch for missing guidance
+- apply the agent-ready repository playbook to an external project and watch for missing guidance
 - revisit export automation later if manual vendoring becomes painful
 - keep the core compact and canonical before adding new distribution formats
 
 ## Release status
 
-- current release after repository rename and packaging cleanup: **v0.3.0**
-- prior tags: `v0.1.0`, `v0.2.0`
+- current release after agent-operability and source-calibration updates: **v0.4.0**
+- prior tags: `v0.1.0`, `v0.2.0`, `v0.3.0`
+- changelog: `CHANGELOG.md`

@@ -3,6 +3,7 @@
 ## Summary
 
 - Design the repository as a retrieval system, not a single handbook.
+- Treat repo-local, versioned artifacts as the source of truth agents can reliably use.
 - Each layer must have a clear responsibility and a different abstraction level.
 - Every major area needs a small map and, when stable enough, a manifest.
 - Documents should be independently readable and small enough to load selectively.
@@ -39,6 +40,12 @@
    - usually `context/manifests/project-manifest.yaml`
 4. smallest relevant leaf docs
 5. ADRs if trade-offs matter
+
+## Source-of-truth contract
+
+Agents can only rely on context they can discover and inspect. Durable project knowledge should live in repo-local files, manifests, ADRs, schemas, or checks rather than only in chat, issue comments, personal memory, or external documents.
+
+If external systems remain authoritative for a workflow, document the bridge from the repo to that system and keep vendor-specific details at the edge.
 
 ## Directory contract
 

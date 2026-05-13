@@ -19,6 +19,11 @@ Read:
 1. `context/patterns/03-error-and-edge-translation-patterns.md`
 2. `context/principles/05-errors-and-edge-responsibilities.md`
 
+### If you are comparing agent work orchestration choices
+Read:
+1. `context/patterns/04-agent-work-orchestration-patterns.md`
+2. `context/playbooks/11-agent-ready-repository-playbook.md`
+
 ## Documents
 
 - `01-boundary-and-decomposition-patterns.md`
@@ -27,6 +32,8 @@ Read:
   - recurring workflow, state, and long-running behavior shapes
 - `03-error-and-edge-translation-patterns.md`
   - recurring ways to classify failures and isolate edge concerns
+- `04-agent-work-orchestration-patterns.md`
+  - recurring ways to coordinate agent work, isolation, evidence, and recovery
 
 ## Directory rules
 
