@@ -2,7 +2,7 @@
 
 ## Summary
 
-- Use this checklist to evaluate whether a repository is ready for agent work.
+- Use this checklist to evaluate whether a repository is ready for agent work that applies the design core.
 - Focus on discoverability, work contracts, validation, isolation, observability, and edge safety.
 - A repo does not need full autonomy to be agent-operable.
 - Findings should become docs, checks, schemas, or tooling when they recur.
@@ -34,6 +34,7 @@
 - [ ] durable workflow knowledge is versioned in the repo
 - [ ] project orientation context names stack versions, structure, trusted sources, conventions, and known anti-patterns
 - [ ] architecture or codemap docs explain where major responsibilities live
+- [ ] domain vocabulary, boundaries, workflows, contracts, and edge responsibilities are discoverable when relevant
 - [ ] ADRs or decision notes capture durable trade-offs
 - [ ] stale docs have an owner, status, or cleanup path
 
@@ -111,3 +112,4 @@ For each issue, record:
 - `context/review/01-quality-gates.md`
 - `context/review/03-documentation-quality-checklist.md`
 - `docs/adr/0006-agent-operability-boundary.md`
+- `docs/adr/0007-agent-enable-domain-design.md`

@@ -78,3 +78,4 @@ Deferred. The framework should first document artifact shapes and review questio
 - prefer playbooks, patterns, and review checklists over implementation tutorials
 - update maps and manifests when agent-operability docs change
 - use source review before importing additional agent-workflow sources
+- apply ADR 0007's alignment test when agent-operability guidance risks becoming a standalone AI-workflow framework

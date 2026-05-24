@@ -69,6 +69,12 @@
 - [ ] repeated agent or reviewer failures are captured as docs, checks, schemas, or tooling rather than only as prompt admonitions
 - [ ] validation failures are actionable enough for the next agent or maintainer to recover
 
+### QG-10 Agent enablement alignment
+
+- [ ] agent-operability changes name the domain-design capability they enable
+- [ ] guides, sensors, prompts, tools, or workflows do not become a second design core
+- [ ] generic AI-workflow advice remains source-only or edge-specific unless it helps apply the framework
+
 ## Pass condition
 
 A canonical change should pass all relevant gates. If a gate is not relevant, say why.
@@ -79,3 +85,4 @@ A canonical change should pass all relevant gates. If a gate is not relevant, sa
 - `context/review/03-documentation-quality-checklist.md`
 - `context/review/04-vocabulary-drift-checklist.md`
 - `docs/adr/0001-information-architecture-and-manifests.md`
+- `docs/adr/0007-agent-enable-domain-design.md`
