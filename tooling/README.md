@@ -20,6 +20,7 @@ nix shell nixpkgs#yq nixpkgs#ripgrep nixpkgs#python3 -c ./tooling/run-checks.sh
 
 Current stance:
 - implement lightweight validation now
+- apply stricter size budgets to core docs than to source-only research notes
 - defer heavy export automation until the corpus is more stable
 - keep CI aligned with the local `tooling/run-checks.sh` command
 - keep CI simple and avoid optional cache steps that add warning noise without enough payoff

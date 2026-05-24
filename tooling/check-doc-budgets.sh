@@ -7,6 +7,7 @@ cd "$repo_root"
 root_max=200
 map_max=150
 leaf_max=220
+research_max=350
 exit_code=0
 
 check_file() {
@@ -34,8 +35,9 @@ done < <(find context -type f \( -name '00-map.md' -o -path '*/README.md' \) -pr
 while IFS= read -r -d '' file; do
   case "$file" in
     */README.md|*/00-map.md) continue ;;
+    docs/research/*) check_file "$file" "$research_max" ;;
+    *) check_file "$file" "$leaf_max" ;;
   esac
-  check_file "$file" "$leaf_max"
 done < <(find context docs -type f -name '*.md' -print0)
 
 exit "$exit_code"

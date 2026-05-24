@@ -195,10 +195,21 @@ Do not import:
 - long article prose, prompts, or examples as canonical text
 - speculative autonomous-harness claims without local validation evidence
 
+### `thoughtworks-tech-radar-vol34`
+
+| Field | Value |
+|---|---|
+| Title | Thoughtworks Technology Radar, Volume 34, April 2026 |
+| Author/origin | Thoughtworks Technology Advisory Board |
+| Type | Radar / source bundle |
+| Status | source-only; reviewed in `docs/research/source-review-thoughtworks-tech-radar-vol34.md` |
+| Primary framework role | Calibrate context engineering, agent-operability, feedback sensors, sandboxing, durability, tooling-edge discipline, and AI cognitive-debt guidance. |
+| Do not import | Radar ring placement as proof, vendor/tool choices as core policy, source prose, screenshots, or fashionable terms without vocabulary review. |
+
 ## Use rules
 
 - Use source ids in research notes and gap analyses.
-- Prefer source locators such as `aposd ch.14` or `dmmf ch.7` over copied excerpts.
+- Prefer source locators such as `aposd ch.14`, `dmmf ch.7`, or `radar-vol34/<blip>` over copied excerpts.
 - Convert source material into paraphrased claims before proposing canonical changes.
 - Treat existing `context/**` docs as the current source of truth until a reviewed change updates them.
 

@@ -34,6 +34,10 @@ Reason:
 Implemented now:
 - `tooling/check-doc-budgets.sh`
 
+Budget stance:
+- core, ADR, and process docs keep tight limits because they may be loaded during normal work
+- `docs/research/**` has a looser limit because it is source-only and excluded from the default core pack
+
 Deferred:
 - full markdown style linting
 - full link graph or retrieval-effectiveness enforcement

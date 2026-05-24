@@ -43,7 +43,7 @@
 - [ ] agent-ready briefs describe behavior and acceptance criteria, not fragile implementation steps
 - [ ] briefs include current behavior, desired behavior, scope boundaries, and expected evidence
 - [ ] escalation rules distinguish missing permission, missing context, and judgment calls
-- [ ] long-running work has a plan, checkpoint, or handoff artifact
+- [ ] long-running work has a plan, checkpoint, resumable state, or handoff artifact
 
 ### Validation and guardrails
 
@@ -63,6 +63,7 @@
 ### Isolation and safety
 
 - [ ] concurrent work has isolated workspaces or clear mutation boundaries
+- [ ] agents that execute code have explicit filesystem, network, resource, and sandbox boundaries
 - [ ] ports, databases, caches, logs, and temp files avoid cross-talk
 - [ ] secrets and credentials are scoped and not copied into prompts or workspaces unnecessarily
 - [ ] destructive operations have explicit approval, rollback, or recovery rules
@@ -73,11 +74,14 @@
 - [ ] bug fixes include reproduction-before and validation-after evidence when possible
 - [ ] logs, metrics, screenshots, videos, traces, or PR notes are reachable to reviewers
 - [ ] evidence is tied to the work item or PR rather than hidden in an agent session
+- [ ] agent adoption metrics include acceptance, failed checks, rework, or review burden rather than throughput alone
 
 ### Edge adapters and operational failures
 
 - [ ] issue trackers, agent runners, browser automation, and vendor APIs are treated as edge adapters
+- [ ] simpler CLIs or scripts were considered before protocol-heavy adapters when governance does not require them
 - [ ] retries, timeouts, cancellation, and stalled-run behavior are explicit for long-running work
+- [ ] resumable state and idempotent recovery are defined where failed retries could duplicate work
 - [ ] user-input or approval requests cannot leave background work stalled indefinitely
 - [ ] vendor-specific failures are translated into stable operational categories before they shape core policy
 
