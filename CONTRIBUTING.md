@@ -47,6 +47,15 @@ Required checks:
 - link to canonical docs instead of repeating rules
 - update maps only if the document is meant to be discoverable for normal use
 
+## Agent execution and sandbox
+
+When an agent or contributor runs commands:
+
+- prefer the repo scripts and temporary Nix environments for one-off tools
+- keep filesystem mutations inside the repository unless explicitly requested
+- do not change persistent OS, shell, credential, or package-manager configuration for validation
+- do not copy secrets into prompts, logs, research notes, or PR evidence
+
 ## Run checks locally
 
 Recommended on NixOS or with Nix installed:
