@@ -177,7 +177,7 @@ Do not import:
 | Title | Martin Fowler / Thoughtworks agentic programming pattern sources, 2026 |
 | Author/origin | Martin Fowler site posts by Martin Fowler, Thoughtworks authors, and cited practitioners |
 | Type | Source bundle |
-| Local input | Public web pages fetched to temporary files only |
+| Local input | Public web pages fetched to temporary files only from `recent-changes.html` on 2026-05-24 |
 | Status | source-only; reviewed in `docs/research/source-review-martinfowler-agentic-patterns-2026.md` |
 | Primary framework role | Calibrate agent harness, sensor, intent, elicitation, vocabulary, and ADR-lifecycle guidance. |
 
