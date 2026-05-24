@@ -81,6 +81,7 @@ Deferred. The current material can remain in one repo if the dependency directio
 ## Related docs
 
 - `docs/adr/0006-agent-operability-boundary.md`
+- `context/glossary/01-framework-glossary.md`
 - `context/playbooks/11-agent-ready-repository-playbook.md`
 - `context/patterns/04-agent-work-orchestration-patterns.md`
 - `context/review/06-agent-operability-checklist.md`

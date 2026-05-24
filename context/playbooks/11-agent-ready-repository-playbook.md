@@ -182,6 +182,7 @@ Agent-generated work can amplify uneven patterns. Add a lightweight cadence for:
 
 ```text
 Agent-operability note
+Design capability enabled: <domain modeling | boundaries | workflows | contracts | persistence edges | review | evolution>
 Entrypoint: <path>
 Knowledge map: <path>
 Work contract: <path or missing>
@@ -195,6 +196,7 @@ Open gaps: <missing docs/checks/tools>
 
 ## Review questions
 
+- Which domain-design capability does this agent-operability work enable?
 - Can an agent find the right starting docs in under two hops?
 - Is the work lifecycle documented in repo-local terms?
 - Are agent-ready briefs behavioral, scoped, and independently verifiable?

@@ -69,6 +69,7 @@ Claim id:
 Evidence type:
 Claim:
 Framework consequence:
+Domain-design capability enabled (agentic/tooling claims only):
 Potential home:
 Confidence:
 Do not import:

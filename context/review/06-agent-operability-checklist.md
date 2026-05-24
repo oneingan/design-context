@@ -100,6 +100,7 @@
 For each issue, record:
 
 - severity
+- domain-design capability enabled or protected
 - artifact or workflow path
 - observed risk
 - recommended fix
