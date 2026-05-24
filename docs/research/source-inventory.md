@@ -195,6 +195,30 @@ Do not import:
 - long article prose, prompts, or examples as canonical text
 - speculative autonomous-harness claims without local validation evidence
 
+### `lattice-framework`
+
+| Field | Value |
+|---|---|
+| Title | Lattice |
+| Author/origin | Rahul Garg / GitHub |
+| Type | Repository / AI skill framework |
+| Local input | Public GitHub repository cloned temporarily; reviewed at commit `9a0ac3e` |
+| Status | source-only; reviewed in `docs/research/source-review-lattice-framework.md` |
+| Primary framework role | Calibrate artifact-backed AI collaboration workflows, standards elicitation, feature context persistence, pre-code design checkpoints, and feedback learning loops. |
+
+High-level relevance:
+- composable guardrails, workflows, and standards-calibration interviews
+- compact project orientation artifacts and feature-level decision context
+- pre-code design checkpoints before implementation
+- separate generation and verification passes
+- learning loops that route repeated failures back into shared artifacts
+
+Do not import:
+- Claude/Cursor plugin metadata, slash commands, marketplace packaging, or installer behavior
+- `.lattice/` as a required consumer directory convention
+- skill files, long templates, or opinionated Clean Architecture/DDD defaults as canonical docs
+- Lattice's artifact names as hidden specifications for consumer repositories
+
 ### `thoughtworks-tech-radar-vol34`
 
 | Field | Value |

@@ -32,6 +32,7 @@
 ### Repo-local knowledge
 
 - [ ] durable workflow knowledge is versioned in the repo
+- [ ] project orientation context names stack versions, structure, trusted sources, conventions, and known anti-patterns
 - [ ] architecture or codemap docs explain where major responsibilities live
 - [ ] ADRs or decision notes capture durable trade-offs
 - [ ] stale docs have an owner, status, or cleanup path
@@ -42,14 +43,16 @@
 - [ ] handoff expectations for issues, branches, PRs, and comments are explicit
 - [ ] agent-ready briefs describe behavior and acceptance criteria, not fragile implementation steps
 - [ ] briefs include current behavior, desired behavior, scope boundaries, and expected evidence
-- [ ] escalation rules distinguish missing permission, missing context, and judgment calls
+- [ ] escalation rules distinguish missing permission, missing context, conflicting sources, and judgment calls
 - [ ] long-running work has a plan, checkpoint, resumable state, or handoff artifact
+- [ ] non-trivial implementation has pre-code checkpoints for capabilities, responsibilities, interactions, or contracts
 
 ### Validation and guardrails
 
 - [ ] local validation commands are documented and runnable by agents
 - [ ] checks are cheap enough to run during iteration
 - [ ] failures produce actionable messages where practical
+- [ ] generated code is checked in a separate verification pass against relevant standards and anti-patterns
 - [ ] architecture, naming, schema, or lint invariants are enforced mechanically when they matter
 
 ### Guides, sensors, and harnessability

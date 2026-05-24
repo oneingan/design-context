@@ -8,6 +8,7 @@
 - The DMMF external-source pass added small business-outcome and collaborative-event refinements.
 - The Martin Fowler 2026 agentic-pattern pass added small harness, elicitation, ADR-lifecycle, and semantic-diffusion refinements.
 - The Thoughtworks Radar Vol. 34 pass added small distribution, sandboxing, durability, edge-adapter, and collaboration-metric refinements.
+- The Lattice framework pass added small orientation, design-checkpoint, verification-pass, and feedback-routing refinements.
 - Changes were intentionally small and applied to existing canonical docs.
 - No new canonical files, maps, or manifests were needed.
 
@@ -19,6 +20,7 @@
 - `docs/research/source-ingestion-workflow.md`
 - `docs/research/source-reading-map.md`
 - `docs/research/source-review-thoughtworks-tech-radar-vol34.md`
+- `docs/research/source-review-lattice-framework.md`
 
 ## Accepted changes
 
@@ -41,6 +43,10 @@
 | `src-prop-015` | Long-running agent workflows need durable restart, cancellation, and recovery state. | `context/patterns/04-agent-work-orchestration-patterns.md`; `context/review/06-agent-operability-checklist.md` | Tightened continuation and recovery guidance. | Low | No new workflow pattern required. |
 | `src-prop-016` | Protocol-heavy adapters should not be default when direct CLIs or scripts provide enough structure and fidelity. | `context/playbooks/11-agent-ready-repository-playbook.md`; `context/patterns/04-agent-work-orchestration-patterns.md`; `context/review/06-agent-operability-checklist.md` | Added an edge-adapter heuristic. | Low | Tool-specific protocols remain edge concerns. |
 | `src-prop-017` | Coding-agent success should be evaluated by collaboration quality, not throughput alone. | `context/review/06-agent-operability-checklist.md` | Added checks for acceptance, failed checks, rework, and review burden. | Low | Avoids adding a metrics framework to core. |
+| `src-prop-018` | Agent-ready repos need compact project orientation artifacts before tool-specific skills help. | `context/playbooks/11-agent-ready-repository-playbook.md`; `context/review/06-agent-operability-checklist.md` | Added orientation-artifact checks for stack, structure, trusted sources, conventions, and anti-patterns. | Low | Keeps project knowledge repo-owned and tool-neutral. |
+| `src-prop-019` | Non-trivial AI implementation should separate design checkpoints from code generation. | `context/playbooks/11-agent-ready-repository-playbook.md`; `context/review/06-agent-operability-checklist.md` | Added pre-code checkpoint wording for capabilities, responsibilities, interactions, and contracts. | Low | Avoids importing Lattice's full methodology as a template. |
+| `src-prop-020` | Agent output is safer when generation and verification happen as separate passes. | `context/review/06-agent-operability-checklist.md` | Added a verification-pass check against relevant standards and anti-patterns. | Low | Complements existing validation-ladder guidance. |
+| `src-prop-021` | Feedback should be routed by root-cause destination: context, instruction, workflow, or failure guardrail. | `context/playbooks/11-agent-ready-repository-playbook.md` | Added compact feedback-routing wording. | Low | Keeps the flywheel actionable without adding a new taxonomy doc. |
 
 ## Rejected or deferred changes
 
@@ -52,7 +58,8 @@
 | Add DMMF-specific implementation mechanics to canonical docs | Rejected | Canonical docs should keep the modeling move while remaining language-neutral. |
 | Add external DMMF review excerpts to canonical docs | Rejected | Reviews are second-order evidence; canonical docs should contain only the portable reviewed claims. |
 | Add Thoughtworks Radar as a main design input | Rejected | The Radar is valuable calibration evidence but too time-sensitive to become a stable foundation. |
-| Add skills, MCP, SPDD, or context-graph templates to core | Rejected/deferred | These remain tool- or method-specific edge concerns until repeated field evidence justifies an ADR. |
+| Add Lattice as a main design input | Rejected | Lattice is valuable operational evidence, but its plugin and skill distribution surface is too tool-facing to be a stable foundation. |
+| Add skills, MCP, SPDD, Lattice commands, or context-graph templates to core | Rejected/deferred | These remain tool- or method-specific edge concerns until repeated field evidence justifies an ADR. |
 
 ## Manifest impact
 
