@@ -52,7 +52,7 @@ Required checks:
 Recommended on NixOS or with Nix installed:
 
 ```bash
-nix shell nixpkgs#yq nixpkgs#ripgrep -c ./tooling/run-checks.sh
+nix shell nixpkgs#yq nixpkgs#ripgrep nixpkgs#python3 -c ./tooling/run-checks.sh
 ```
 
 Or run the pieces separately:
@@ -60,13 +60,26 @@ Or run the pieces separately:
 ```bash
 nix shell nixpkgs#yq -c ./tooling/validate-manifests.sh
 ./tooling/check-doc-budgets.sh
+nix shell nixpkgs#yq nixpkgs#ripgrep -c ./tooling/check-map-manifest-coverage.sh
+nix shell nixpkgs#python3 -c ./tooling/check-internal-links.sh
 ```
+
+## Proof-of-work packet
+
+Keep PR evidence compact and tied to the change. Include:
+
+- what changed and why
+- validation commands run and result
+- map, manifest, glossary, source-review, and ADR impact when relevant
+- deferred follow-up or known limits
+
+Do not paste long logs unless the failure or evidence would be hard to reproduce.
 
 ## Pull request checklist
 
 - [ ] I updated maps and manifests where needed
 - [ ] I kept one abstraction level per file
-- [ ] I ran `tooling/run-checks.sh`
+- [ ] I included validation evidence
 - [ ] I added or updated an ADR if the change altered structure or policy
 
 ## Style guidance

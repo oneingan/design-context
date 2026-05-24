@@ -29,7 +29,7 @@ Release notes are maintained in `CHANGELOG.md`.
 ## Local validation
 
 ```bash
-nix shell nixpkgs#yq nixpkgs#ripgrep -c ./tooling/run-checks.sh
+nix shell nixpkgs#yq nixpkgs#ripgrep nixpkgs#python3 -c ./tooling/run-checks.sh
 ```
 
 ## Suggested GitHub push flow

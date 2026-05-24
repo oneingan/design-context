@@ -6,6 +6,8 @@ Current tools:
 - `tooling/run-checks.sh` — run the lightweight validation checks
 - `tooling/validate-manifests.sh` — validate YAML manifests with `yq`
 - `tooling/check-doc-budgets.sh` — warn when docs exceed soft size budgets
+- `tooling/check-map-manifest-coverage.sh` — validate that canonical context docs are covered by maps and manifests
+- `tooling/check-internal-links.sh` — validate internal markdown links and heading anchors
 - `tooling/check-core-pack.sh` — validate the preferred `docs/vendor/design-context/` core-pack boundary
 - `tooling/check-source-ingestion.sh` — validate source-ingestion boundaries for ignored source inputs and source-only research
 - `tooling/tooling-evaluation.md` — explains what is implemented now vs deferred
@@ -13,7 +15,7 @@ Current tools:
 Local validation:
 
 ```bash
-nix shell nixpkgs#yq nixpkgs#ripgrep -c ./tooling/run-checks.sh
+nix shell nixpkgs#yq nixpkgs#ripgrep nixpkgs#python3 -c ./tooling/run-checks.sh
 ```
 
 Current stance:

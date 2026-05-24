@@ -5,6 +5,7 @@
 - Lightweight validation is worth doing now.
 - Heavy export automation should be deferred until the corpus stabilizes further.
 - Retrieval helpers are useful, but should stay simple until real usage patterns emerge.
+- Map/manifest coverage and internal links are useful computational sensors for this repo's own harnessability.
 - Tooling must reduce maintenance cost, not create a parallel system that is harder than the docs themselves.
 
 ## Evaluation outcomes
@@ -35,7 +36,7 @@ Implemented now:
 
 Deferred:
 - full markdown style linting
-- link graph enforcement
+- full link graph or retrieval-effectiveness enforcement
 - duplicate-content detection
 
 ### 3. Core-pack boundary validation
@@ -62,7 +63,31 @@ Reason:
 Implemented now:
 - `tooling/check-source-ingestion.sh`
 
-### 5. Retrieval helper scripts
+### 5. Map/manifest coverage validation
+
+**Decision:** implement now.
+
+Reason:
+- maps and manifests are the primary retrieval interface
+- broken coverage can make canonical docs hard to find even when YAML syntax is valid
+- the check is cheap and produces deterministic feedback
+
+Implemented now:
+- `tooling/check-map-manifest-coverage.sh`
+
+### 6. Internal markdown link validation
+
+**Decision:** implement now.
+
+Reason:
+- source-only and process docs can drift during refactors
+- broken internal links are cheap to detect and easy for agents to fix
+- heading-anchor checks reduce fragile documentation references
+
+Implemented now:
+- `tooling/check-internal-links.sh`
+
+### 7. Retrieval helper scripts
 
 **Decision:** partially defer.
 
@@ -71,10 +96,10 @@ Reason:
 - premature automation could hard-code assumptions before the corpus matures
 
 Current stance:
-- rely on maps and manifests first
+- rely on maps, manifests, and the coverage sensor first
 - consider a future `read-next` helper only after repeated manual patterns appear
 
-### 6. Agent-specific export paths
+### 8. Agent-specific export paths
 
 **Decision:** defer automatic export generation.
 
@@ -89,7 +114,7 @@ Recommended future export targets:
 - Copilot instruction export
 - Cursor rule export
 
-### 7. CI warning and noise management
+### 9. CI warning and noise management
 
 CI should stay aligned with the local checks and avoid optional steps that create noisy external-service warnings without enough value for a small repository.
 
@@ -98,7 +123,7 @@ Current stance:
 - pin action versions instead of following floating `@main`
 - avoid cache steps that add warning noise or external auth requirements unless the speedup clearly matters
 
-### 8. Complexity management rule
+### 10. Complexity management rule
 
 If a tool does not clearly reduce retrieval cost, validation risk, or maintenance burden, defer it.
 
@@ -106,6 +131,8 @@ If a tool does not clearly reduce retrieval cost, validation risk, or maintenanc
 
 Good to keep now:
 - manifest validation
+- map/manifest coverage validation
+- internal markdown link validation
 - doc budget warnings
 - core-pack boundary validation
 - source-ingestion boundary validation
@@ -123,5 +150,7 @@ Good to defer:
 - `docs/adr/0005-core-context-pack-and-vendoring-boundary.md`
 - `tooling/validate-manifests.sh`
 - `tooling/check-doc-budgets.sh`
+- `tooling/check-map-manifest-coverage.sh`
+- `tooling/check-internal-links.sh`
 - `tooling/check-core-pack.sh`
 - `tooling/check-source-ingestion.sh`

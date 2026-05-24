@@ -2,6 +2,18 @@
 
 All notable changes to `design-context` are summarized here.
 
+## Unreleased
+
+### Added
+
+- Self-dogfooding agent-operability audit for the repository.
+- Lightweight map/manifest coverage and internal markdown link checks.
+
+### Changed
+
+- PR template now asks for a compact proof-of-work evidence packet.
+- Local and CI validation commands include the new lightweight sensors.
+
 ## v0.4.0 — 2026-05-13
 
 ### Added
