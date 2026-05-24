@@ -5,6 +5,7 @@
 - Agent work becomes safer when work state, isolation, runner protocols, and proof surfaces are explicit.
 - These patterns describe reusable orchestration shapes without prescribing a tracker, model, or runtime.
 - Use them to compare how a repo should coordinate autonomous or semi-autonomous design and implementation work.
+- Apply them when orchestration improves domain modeling, boundaries, workflows, contracts, persistence edges, review, or evolution.
 - Keep orchestration policy in repo-owned artifacts and tool integrations at the edges.
 
 ## Load this when

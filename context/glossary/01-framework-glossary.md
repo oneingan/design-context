@@ -19,8 +19,9 @@
 | Term | Meaning | Notes |
 |---|---|---|
 | agent context framework | A repository of reusable guidance that agents can load progressively to design, review, and evolve systems. | This repository's overall role. |
-| agent-operable repository | A repository whose context, work contracts, checks, isolation, and evidence surfaces let agents perform work with bounded human supervision. | Tool-agnostic; does not imply full autonomy. |
-| harnessability | The degree to which a repository's structure, docs, checks, and evidence make agent work steerable, observable, and correctable. | Prefer improving code, docs, schemas, and checks before adding prompt instructions. |
+| agent-operable repository | A repository whose context, work contracts, checks, isolation, and evidence surfaces let agents apply framework guidance with bounded human supervision. | Tool-agnostic; does not imply full autonomy. |
+| agent enablement layer | Agent-operability guidance that helps agents apply the domain-design core rather than becoming an independent AI-workflow core. | Defined by ADR 0007. |
+| harnessability | The degree to which a repository's structure, docs, checks, and evidence make framework-guided agent work steerable, observable, and correctable. | Prefer improving code, docs, schemas, and checks before adding prompt instructions. |
 | canonical | The primary source of truth for a topic. | Canonical docs outrank downstream summaries or ad hoc guidance. |
 | design deviation | A scoped, justified departure from canonical guidance. | Should record affected guidance, rationale, risk, and revisit trigger. |
 | map | A navigation document that says what exists and what to read next. | Usually `00-map.md` or a local `README.md`. |
@@ -62,3 +63,4 @@ Aliases are allowed only when:
 - `context/glossary/02-naming-and-term-introduction.md`
 - `context/principles/02-ubiquitous-language-and-naming.md`
 - `context/review/04-vocabulary-drift-checklist.md`
+- `docs/adr/0007-agent-enable-domain-design.md`

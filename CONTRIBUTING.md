@@ -19,6 +19,7 @@ Start with:
 - update maps and manifests whenever canonical docs move or new canonical docs are added
 - update `VENDORING.md` when consumption or distribution boundaries change
 - preserve language-agnostic wording unless a language-specific lesson is the point
+- for agent-operability changes, name the domain-design capability enabled: modeling, language, boundaries, workflows, invariants, events, contracts, persistence edges, review, or evolution
 
 ## What kind of contribution is this?
 

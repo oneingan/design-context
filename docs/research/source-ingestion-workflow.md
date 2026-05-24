@@ -134,6 +134,7 @@ Source:
 Locator:
 Claim:
 Framework consequence:
+Domain-design capability enabled (agentic/tooling sources only):
 Potential canonical home:
 Gap classification:
 Do not import:
