@@ -71,7 +71,7 @@ This follows `docs/research/source-ingestion-workflow.md`: source material is tr
 | `context/playbooks/11-agent-ready-repository-playbook.md` | Add compact guidance for sandbox boundaries and for preferring simple structured CLI/script adapters before protocol-heavy edge adapters. |
 | `context/patterns/04-agent-work-orchestration-patterns.md` | Tighten runner-adapter and continuation/recovery patterns without increasing the file beyond budget. |
 | `context/review/06-agent-operability-checklist.md` | Add review items for sandboxing, resumable state, idempotent recovery, and collaboration-quality metrics. |
-| `docs/research/source-inventory.md` | Register `thoughtworks-tech-radar-vol34` and compact the inventory to stay within doc budgets. |
+| `docs/research/source-inventory.md` | Register `thoughtworks-tech-radar-vol34` while preserving the detailed source notes. |
 | `docs/research/source-canonical-change-proposals.md` | Record the accepted Radar-derived proposals. |
 
 ## Rejected or deferred
