@@ -70,6 +70,12 @@ This repo is being designed from three main sources:
    - error prevention over error handling
    - comments, naming, and ADRs as design tools
 
+## Agent enablement stance
+
+Agent-operability guidance is an enabling layer for the design core, not a second independent core. It exists to help agents and teams apply the framework to domain models, ubiquitous language, bounded contexts, workflows, invariants, events, contracts, persistence boundaries, and review.
+
+Recent sources such as Fowler agentic patterns, Thoughtworks Radar, and Lattice are calibration evidence. They may refine existing guidance, but tool-specific skills, prompts, protocols, plugins, and workflow fashions stay at the edge unless promoted by ADR.
+
 ## Repository stance
 
 The canonical layer should be mostly:
@@ -101,6 +107,7 @@ Keep any illustrative material small, local to the canonical document that needs
 - `docs/adr/0004-license-choice.md` — repository license choice
 - `docs/adr/0005-core-context-pack-and-vendoring-boundary.md` — third-party vendoring boundary
 - `docs/adr/0006-agent-operability-boundary.md` — boundary for agent-operability guidance
+- `docs/adr/0007-agent-enable-domain-design.md` — agent enablement as support for domain design
 
 ## Success criteria
 
@@ -116,7 +123,7 @@ A good release should let an agent:
 
 The repository now includes:
 
-- ADRs for information architecture, tooling strategy, publication baseline, license choice, vendoring boundary, and agent-operability boundary
+- ADRs for information architecture, tooling strategy, publication baseline, license choice, vendoring boundary, agent-operability boundary, and agent enablement as domain-design support
 - canonical principles derived from the source books
 - reusable patterns for boundaries, workflows, errors, and agent work orchestration
 - glossary and naming governance

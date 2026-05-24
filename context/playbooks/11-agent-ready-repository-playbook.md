@@ -2,7 +2,7 @@
 
 ## Summary
 
-- Make the repository itself the agent's reliable source of truth.
+- Make the repository itself the agent's reliable source of truth for applying domain-design guidance.
 - Keep agent entrypoints short and map-like; put detail in discoverable docs.
 - Provide explicit work contracts, cheap validation, isolated workspaces, and observable evidence.
 - Convert repeated agent failures into docs, schemas, checks, or tooling.
@@ -12,7 +12,7 @@
 
 - preparing a consumer repo to use this framework
 - improving a repo where agents miss context, break conventions, or need frequent steering
-- designing autonomous or semi-autonomous issue/PR workflows
+- designing autonomous or semi-autonomous issue/PR workflows that support design and implementation work
 - reviewing whether a repo can support concurrent agent work safely
 
 ## Inputs
@@ -112,7 +112,7 @@ Checks should be fast enough to run often and should fail with actionable remedi
 
 For generated code, prefer a separate verification pass against relevant standards and anti-patterns before handoff.
 
-Treat the repo's agent harness as both guides and sensors:
+Treat the repo's agent harness as support for design and implementation work through guides and sensors:
 - guides steer agents before work, such as maps, specs, ADRs, examples, and work contracts
 - sensors let agents correct after action, such as tests, linters, type checks, schema checks, structural rules, and review packets
 - prefer computational sensors for frequent checks; reserve inferential sensors for semantic review where cost, noise, and trust are acceptable
@@ -212,3 +212,4 @@ Open gaps: <missing docs/checks/tools>
 - `context/patterns/04-agent-work-orchestration-patterns.md`
 - `context/review/06-agent-operability-checklist.md`
 - `docs/adr/0006-agent-operability-boundary.md`
+- `docs/adr/0007-agent-enable-domain-design.md`

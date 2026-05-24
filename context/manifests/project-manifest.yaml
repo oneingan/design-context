@@ -2,8 +2,9 @@ repo:
   name: design-context
   status: v0.4.0-released
   purpose: >-
-    A reusable, language-agnostic AI agent context framework optimized for
-    progressive loading under limited context windows.
+    A reusable, language-agnostic design-context framework for domain modeling
+    and software design, optimized for progressive loading by AI agents under
+    limited context windows.
 
 entrypoints:
   - README.md
@@ -164,6 +165,8 @@ canonical_documents:
     topic: vendoring-boundary
   - path: docs/adr/0006-agent-operability-boundary.md
     topic: agent-operability-boundary
+  - path: docs/adr/0007-agent-enable-domain-design.md
+    topic: agent-enablement-domain-design
 
 size_budgets:
   root_docs_max_lines: 200
@@ -172,6 +175,7 @@ size_budgets:
 
 policies:
   language_agnostic_core: true
+  agent_enablement_serves_domain_design: true
   manifests_required_for_major_areas: true
   link_instead_of_duplicate: true
   update_maps_and_manifests_with_canonical_changes: true

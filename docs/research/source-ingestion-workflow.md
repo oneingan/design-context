@@ -17,6 +17,20 @@ This is a source-only research workflow. It informs repository maintenance but i
 
 Use this workflow when incorporating ideas from books, articles, talks, transcripts, or other external material into `design-context`.
 
+## Source hierarchy and alignment
+
+Classify each external source before proposing canonical changes:
+
+| Source role | Meaning | Promotion rule |
+|---|---|---|
+| Foundational | Defines core design concepts or priorities. | May shape canonical concepts; structural changes need ADR review. |
+| Calibration | Provides field evidence or sharper wording for existing guidance. | Prefer small edits to existing docs. |
+| Tool-specific edge | Describes a vendor, protocol, plugin, prompt pack, command surface, or runtime. | Keep source-only, deferred, or adapter-specific unless an ADR promotes it. |
+
+For agentic or tooling sources, state which domain-design capability the source improves: domain modeling, ubiquitous language, bounded contexts, workflows, invariants, events, contracts, persistence edges, review, or evolution.
+
+If it improves none of those, do not promote it into `context/**` by default.
+
 ## Workflow
 
 ### 1. Register the source
@@ -97,6 +111,7 @@ Before changing `context/**`, run the relevant checks:
 - Do not add new canonical docs when a small update to an existing doc would work.
 - Do not update maps or manifests unless canonical docs change.
 - Do not include source-only research in the core context pack.
+- Do not promote generic AI-workflow advice unless it serves the domain-design core or an ADR changes the boundary.
 
 ## Artifact shapes
 
@@ -149,3 +164,4 @@ ADR needed:
 - `context/review/04-vocabulary-drift-checklist.md`
 - `context/principles/01-information-architecture-and-manifests.md`
 - `context/principles/06-deep-modules-and-information-hiding.md`
+- `docs/adr/0007-agent-enable-domain-design.md`

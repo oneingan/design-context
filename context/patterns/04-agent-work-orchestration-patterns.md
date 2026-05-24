@@ -4,7 +4,7 @@
 
 - Agent work becomes safer when work state, isolation, runner protocols, and proof surfaces are explicit.
 - These patterns describe reusable orchestration shapes without prescribing a tracker, model, or runtime.
-- Use them to compare how a repo should coordinate autonomous or semi-autonomous implementation work.
+- Use them to compare how a repo should coordinate autonomous or semi-autonomous design and implementation work.
 - Keep orchestration policy in repo-owned artifacts and tool integrations at the edges.
 
 ## Load this when
@@ -209,3 +209,4 @@ A work item is large enough that one agent run or one PR may hide unfinished beh
 - `context/principles/04-workflows-invariants-and-state.md`
 - `context/principles/05-errors-and-edge-responsibilities.md`
 - `context/review/06-agent-operability-checklist.md`
+- `docs/adr/0007-agent-enable-domain-design.md`

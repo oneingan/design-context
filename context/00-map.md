@@ -31,6 +31,7 @@ Read:
 2. `context/patterns/04-agent-work-orchestration-patterns.md`
 3. `context/review/06-agent-operability-checklist.md`
 4. `docs/adr/0006-agent-operability-boundary.md` if scope or tool boundary trade-offs matter
+5. `docs/adr/0007-agent-enable-domain-design.md` if agent guidance risks becoming disconnected from domain design
 
 ### Compare reusable design shapes
 Read:
