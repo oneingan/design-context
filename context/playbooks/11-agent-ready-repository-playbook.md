@@ -43,9 +43,12 @@ Move durable guidance out of chat, oral history, and private memory into version
 
 Prefer:
 - `docs/00-map.md` or equivalent knowledge-store map
+- project orientation notes with stack versions, structure, trusted sources, conventions, and known anti-patterns
 - architecture or codemap docs for physical orientation
 - ADRs for durable trade-offs
 - small task-specific guides for recurring workflows
+
+If standards live mostly in senior engineers' heads, use a short calibration interview to turn them into repo-owned artifacts.
 
 ### 3. Define the work contract
 
@@ -77,7 +80,8 @@ For multi-hour tasks, migrations, or risky refactors, use a living execution pla
 A good plan records:
 - purpose and observable outcome
 - progress
-- decisions and rationale
+- decisions and rationale, including rejected alternatives when they matter
+- feature-specific constraints and open questions distinct from project-wide standards
 - surprises or discoveries
 - validation and acceptance
 - recovery or resume notes
@@ -87,6 +91,8 @@ Treat execution plans as task artifacts, not canonical framework docs.
 ### 5. Decompose into independently testable slices
 
 When the work is larger than one small change, split it into slices that can be validated independently.
+
+Before non-trivial implementation, record lightweight design checkpoints: expected capabilities, responsibilities, interactions, and contracts. Do not let first generated code be the first place design decisions appear.
 
 Prefer:
 - one user-visible or workflow-visible outcome per slice
@@ -103,6 +109,8 @@ Give agents a small validation ladder:
 3. CI or release gate when relevant
 
 Checks should be fast enough to run often and should fail with actionable remediation where practical.
+
+For generated code, prefer a separate verification pass against relevant standards and anti-patterns before handoff.
 
 Treat the repo's agent harness as both guides and sensors:
 - guides steer agents before work, such as maps, specs, ADRs, examples, and work contracts
@@ -151,6 +159,8 @@ Prefer direct CLIs or scripts with clear help, structured output, and predictabl
 ### 10. Feed failures back into the repo
 
 When an agent repeatedly fails, avoid only adding prompt admonitions.
+
+Route the lesson by root cause: context gaps to orientation docs, instruction gaps to standards or work contracts, workflow gaps to playbooks, and recurring failures to checks or anti-patterns.
 
 Prefer promoting the lesson into:
 - clearer docs or maps
