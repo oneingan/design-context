@@ -112,6 +112,7 @@ If the consumer repo has a `docs/00-map.md`, point to the vendored framework fro
 - Prefer replacing the vendored pack from a known commit or tag over editing it in place.
 - Put consumer-specific adaptations outside the vendored directory.
 - Keep project-specific docs local to the consumer repo and let them override generic guidance when needed.
+- Service templates or reference applications may distribute the pack, but should not make their local overrides look canonical.
 - If a local change should benefit all consumers, upstream it here rather than forking silently.
 
 ## Relationship to future exports

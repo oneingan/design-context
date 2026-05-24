@@ -80,7 +80,7 @@ A good plan records:
 - decisions and rationale
 - surprises or discoveries
 - validation and acceptance
-- recovery notes
+- recovery or resume notes
 
 Treat execution plans as task artifacts, not canonical framework docs.
 
@@ -141,12 +141,12 @@ Choose evidence by task type, not by tool fashion.
 Issue trackers, agent runners, app servers, browser automation, cloud APIs, and secrets are edge concerns.
 
 Document:
-- where credentials come from
-- what permissions are required
-- which commands or tools are allowed
+- where credentials come from and how they are scoped
+- filesystem, network, resource, and sandbox boundaries when agents run code
+- which commands, tools, or protocol adapters are allowed
 - how operational failures are retried, timed out, or escalated
 
-Do not let a vendor protocol become the core workflow model.
+Prefer direct CLIs or scripts with clear help, structured output, and predictable errors before adding protocol-heavy adapters. Do not let a vendor protocol become the core workflow model.
 
 ### 10. Feed failures back into the repo
 

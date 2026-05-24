@@ -71,7 +71,8 @@ The workflow should survive changing agent runtimes, CLIs, or app servers.
 
 ### Shape
 
-- define a small runner contract such as start, send work, stream events, stop
+- define the smallest runner contract needed, such as start, send work, stream events, stop
+- prefer direct CLIs or scripts before protocol adapters when they provide enough structure
 - normalize runtime events before they affect orchestration state
 - keep approvals, sandboxing, tokens, and protocol details inside the adapter
 
@@ -142,7 +143,7 @@ Agent work may take many turns, stall, fail, or need retries.
 - distinguish normal continuation from failure retry
 - define stall, timeout, blocked, cancelled, and terminal outcomes
 - use bounded retries or explicit human handoff
-- preserve enough state for safe restart
+- preserve resumable state, decisions, validation evidence, and recovery notes
 
 ### Benefits
 
