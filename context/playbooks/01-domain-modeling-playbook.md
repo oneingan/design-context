@@ -21,6 +21,15 @@
 - domain expert language, if available
 - known constraints or policies
 
+## When knowledge lives with experts
+
+If important domain knowledge is in a human expert's head, use a short elicitation interview before modeling further.
+
+- ask one question at a time
+- distinguish accepted facts from assumptions and open questions
+- draft a compact context note from the answers
+- ask the expert to correct the note, especially vocabulary, invariants, and boundary assumptions
+
 ## When starting from a feature or spec
 
 Before implementation planning, make sure the feature description exposes:

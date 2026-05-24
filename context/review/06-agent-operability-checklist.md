@@ -52,6 +52,14 @@
 - [ ] failures produce actionable messages where practical
 - [ ] architecture, naming, schema, or lint invariants are enforced mechanically when they matter
 
+### Guides, sensors, and harnessability
+
+- [ ] repo-local guides steer agents before work: maps, specs, ADRs, examples, work contracts
+- [ ] feedback sensors let agents self-correct: tests, linters, type checks, schema checks, structural rules, review packets
+- [ ] cheap computational sensors are preferred for frequent checks
+- [ ] inferential sensors are reserved for semantic review where cost, noise, and trust are acceptable
+- [ ] code, docs, schemas, and examples are clear enough that agents do not rely only on prompt instructions
+
 ### Isolation and safety
 
 - [ ] concurrent work has isolated workspaces or clear mutation boundaries

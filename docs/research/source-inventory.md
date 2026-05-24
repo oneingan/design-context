@@ -170,6 +170,31 @@ Do not import:
 - vendor claims without mapping them to portable review claims
 - community implementation choices as required architecture
 
+### `martinfowler-agentic-patterns-2026`
+
+| Field | Value |
+|---|---|
+| Title | Martin Fowler / Thoughtworks agentic programming pattern sources, 2026 |
+| Author/origin | Martin Fowler site posts by Martin Fowler, Thoughtworks authors, and cited practitioners |
+| Type | Source bundle |
+| Local input | Public web pages fetched to temporary files only |
+| Status | source-only; reviewed in `docs/research/source-review-martinfowler-agentic-patterns-2026.md` |
+| Primary framework role | Calibrate agent harness, sensor, intent, elicitation, vocabulary, and ADR-lifecycle guidance. |
+
+High-level relevance:
+- guides and sensors as a control-system model for agent work
+- computational vs inferential feedback sensors
+- harnessability through repo structure, checks, examples, and vocabulary
+- interrogatory LLMs for eliciting or validating context
+- semantic diffusion risks for fashionable AI terms
+- ADR advice, confidence, revisit, and superseding practices
+
+Do not import:
+- SPDD or REASONS Canvas as required core workflow
+- Lattice skills, command names, or tool-specific packaging as core policy
+- long article prose, prompts, or examples as canonical text
+- speculative autonomous-harness claims without local validation evidence
+
 ## Use rules
 
 - Use source ids in research notes and gap analyses.

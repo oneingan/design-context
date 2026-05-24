@@ -6,6 +6,7 @@
 - The first dry run used APOSD naming, deep-module, and rationale guidance.
 - The deep-dive pass resolved APOSD and DMMF partial gaps with small canonical edits.
 - The DMMF external-source pass added small business-outcome and collaborative-event refinements.
+- The Martin Fowler 2026 agentic-pattern pass added small harness, elicitation, ADR-lifecycle, and semantic-diffusion refinements.
 - Changes were intentionally small and applied to existing canonical docs.
 - No new canonical files, maps, or manifests were needed.
 
@@ -29,6 +30,10 @@
 | `src-prop-006` | Split/join heuristics apply to documents and modules, not only bounded contexts. | `context/patterns/01-boundary-and-decomposition-patterns.md`; `context/review/02-architecture-review-checklist.md` | Added a language-neutral split/join decomposition pattern and review prompt. | Low | Deep module guidance remains the conceptual home; the pattern gives an actionable heuristic. |
 | `src-prop-007` | Domain modeling should stay anchored to business/customer outcomes, not just model shape. | `context/playbooks/01-domain-modeling-playbook.md` | Added outcome and decision-pressure prompts to the modeling scope and inputs. | Low | Tightens an existing playbook; no new canonical concept. |
 | `src-prop-008` | Event discovery is strongest when it is collaborative across upstream and downstream roles. | `context/playbooks/08-business-event-discovery-and-event-catalog-playbook.md` | Added cross-role/silo discovery guidance and made disagreement a first-class finding. | Low | Event catalog checklist already owns downstream artifact review. |
+| `src-prop-009` | Agent harness guidance is clearer when guides, sensors, and harnessability are explicit. | `context/glossary/01-framework-glossary.md`; `context/playbooks/11-agent-ready-repository-playbook.md`; `context/review/06-agent-operability-checklist.md` | Added compact guide/sensor and harnessability wording. | Low | Agent-operability boundary keeps tool-specific harnesses out of core. |
+| `src-prop-010` | Expert-held domain knowledge can be elicited by an interrogatory LLM before modeling. | `context/playbooks/01-domain-modeling-playbook.md` | Added one-question-at-a-time expert elicitation guidance. | Low | Domain modeling playbook owns early context capture. |
+| `src-prop-011` | ADRs for broad-impact decisions should record advice, confidence, revisit triggers, and supersede rather than rewrite accepted records. | `context/playbooks/04-adr-writing-playbook.md` | Added compact advice and lifecycle guidance. | Low | ADR playbook remains the canonical home. |
+| `src-prop-012` | Fashionable AI terms are vulnerable to semantic diffusion. | `context/review/04-vocabulary-drift-checklist.md` | Added semantic-diffusion checks and prompts. | Low | Vocabulary drift checklist owns term ambiguity review. |
 
 ## Rejected or deferred changes
 

@@ -21,6 +21,7 @@
 - [ ] nearby principles, playbooks, manifests, and review docs use the same term consistently
 - [ ] no conflicting meaning exists in the same scope
 - [ ] technical placeholder names are not displacing the domain term by accident
+- [ ] fashionable AI or architecture terms are not being used with multiple meanings in the same scope
 - [ ] an ADR was written if the rename changes structure or meaning substantially
 
 ## Review prompts
@@ -28,6 +29,7 @@
 - Did anything get renamed without a glossary update?
 - Are two near-synonyms competing in the same area?
 - Would an agent know which term to prefer?
+- Is a term undergoing semantic diffusion, such as `vibe coding`, `agentic programming`, `harness`, `skill`, or `agent`?
 - Did a transport or tool name become the dominant concept label?
 
 ## Related docs

@@ -104,6 +104,12 @@ Give agents a small validation ladder:
 
 Checks should be fast enough to run often and should fail with actionable remediation where practical.
 
+Treat the repo's agent harness as both guides and sensors:
+- guides steer agents before work, such as maps, specs, ADRs, examples, and work contracts
+- sensors let agents correct after action, such as tests, linters, type checks, schema checks, structural rules, and review packets
+- prefer computational sensors for frequent checks; reserve inferential sensors for semantic review where cost, noise, and trust are acceptable
+- improve harnessability by making module boundaries, schemas, architectural constraints, examples, and errors clear without relying only on prompt text
+
 ### 7. Isolate concurrent work
 
 If multiple agents or long-running tasks may run at once, define isolation for:

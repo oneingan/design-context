@@ -20,6 +20,7 @@
 |---|---|---|
 | agent context framework | A repository of reusable guidance that agents can load progressively to design, review, and evolve systems. | This repository's overall role. |
 | agent-operable repository | A repository whose context, work contracts, checks, isolation, and evidence surfaces let agents perform work with bounded human supervision. | Tool-agnostic; does not imply full autonomy. |
+| harnessability | The degree to which a repository's structure, docs, checks, and evidence make agent work steerable, observable, and correctable. | Prefer improving code, docs, schemas, and checks before adding prompt instructions. |
 | canonical | The primary source of truth for a topic. | Canonical docs outrank downstream summaries or ad hoc guidance. |
 | design deviation | A scoped, justified departure from canonical guidance. | Should record affected guidance, rationale, risk, and revisit trigger. |
 | map | A navigation document that says what exists and what to read next. | Usually `00-map.md` or a local `README.md`. |

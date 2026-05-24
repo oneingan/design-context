@@ -35,6 +35,15 @@ Before writing an ADR, check that the decision is:
 
 If these are not true, prefer a smaller note, design deviation, issue comment, or no durable record.
 
+## Advice and lifecycle
+
+For decisions that affect other teams, contexts, security, operations, data ownership, or public contracts:
+
+- record who was consulted or what advice was sought
+- summarize important dissent or rejected advice
+- record confidence and revisit triggers when uncertainty is material
+- move accepted ADRs forward by superseding them, not by rewriting history
+
 ## ADR vs design deviation
 
 Not every exception needs an ADR. Use the smallest durable record that preserves future understanding.
