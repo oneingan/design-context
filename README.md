@@ -139,6 +139,7 @@ The repository now includes:
 
 ## Release status
 
-- current release after agent-operability and source-calibration updates: **v0.4.0**
-- prior tags: `v0.1.0`, `v0.2.0`, `v0.3.0`
+- current release after agent-enablement alignment, source-calibration, and validation-sensor updates: **v0.5.0**
+- prior release tags: `v0.3.0`, `v0.4.0`
+- earlier changelog milestones: `v0.1.0`, `v0.2.0`
 - changelog: `CHANGELOG.md`

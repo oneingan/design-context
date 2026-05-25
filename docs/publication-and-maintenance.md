@@ -3,7 +3,7 @@
 ## Summary
 
 - v0 is published as `design-context`.
-- **v0.4.0** is the current release after agent-operability and source-calibration updates.
+- **v0.5.0** is the current release after agent-enablement alignment, source-calibration, and validation-sensor updates.
 - CI should run the same lightweight checks used locally.
 - Export automation to other agent formats remains intentionally deferred.
 - The core framework should stay compact and canonical before adding distribution conveniences.
@@ -21,6 +21,7 @@
 - [x] push the renamed repository and validate the remote
 - [x] publish release `v0.3.0`
 - [x] publish release `v0.4.0`
+- [x] publish release `v0.5.0`
 
 ## Changelog
 

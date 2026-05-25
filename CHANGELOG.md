@@ -4,15 +4,27 @@ All notable changes to `design-context` are summarized here.
 
 ## Unreleased
 
+## v0.5.0 — 2026-05-25
+
 ### Added
 
+- ADR 0007: agent enablement serves domain design.
+- Source reviews for Martin Fowler agentic patterns, Thoughtworks Technology Radar Vol. 34, and Lattice as calibration inputs.
 - Self-dogfooding agent-operability audit for the repository.
 - Lightweight map/manifest coverage and internal markdown link checks.
 
 ### Changed
 
+- Reframed agent-operability as an enablement layer for domain modeling, boundaries, workflows, events, contracts, persistence edges, review, and evolution.
+- Tightened agent-ready guidance around harnessability, guides and sensors, sandbox boundaries, resumable recovery, simple edge adapters, orientation artifacts, design checkpoints, verification passes, collaboration-quality metrics, and feedback routing.
+- Expanded domain-modeling, ADR, and vocabulary-review guidance with expert elicitation, ADR lifecycle/revisit prompts, and semantic-diffusion checks.
 - PR template now asks for a compact proof-of-work evidence packet.
 - Local and CI validation commands include the new lightweight sensors.
+
+### Validation
+
+- Passed `nix shell nixpkgs#yq nixpkgs#ripgrep nixpkgs#python3 -c ./tooling/run-checks.sh`.
+- Passed `git diff --check`.
 
 ## v0.4.0 — 2026-05-13
 
