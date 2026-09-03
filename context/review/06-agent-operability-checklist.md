@@ -3,7 +3,7 @@
 ## Summary
 
 - Use this checklist to evaluate whether a repository is ready for agent work that applies the design core.
-- Focus on discoverability, work contracts, validation, isolation, observability, and edge safety.
+- Focus on discoverability, work and interaction contracts, validation, isolation, observability, and edge safety.
 - A repo does not need full autonomy to be agent-operable.
 - Findings should become docs, checks, schemas, or tooling when they recur.
 
@@ -48,6 +48,16 @@
 - [ ] long-running work has a plan, checkpoint, resumable state, or handoff artifact
 - [ ] non-trivial implementation has pre-code checkpoints for capabilities, responsibilities, interactions, or contracts
 
+### Interaction modes and handoffs
+
+- [ ] each focused interaction declares scope, relevant vocabulary, one current mode, constraints, and expected handoff
+- [ ] `explore`, `brainstorm`, `decide`, and `implement` have distinct allowed behavior
+- [ ] a mode pivot ends the old mode and starts the next from its handoff, with clean context when prior alternatives or noise are irrelevant
+- [ ] a carry-only-conclusions handoff retains decisions and rationale, active constraints, relevant evidence, open questions and owners, and the next mode or output
+- [ ] unresolved strategic model choices or consequential trade-offs block implementation until an accountable human decides
+- [ ] interaction charters link to rather than replace agent-ready briefs, plans, or ADRs
+- [ ] an interaction or session is not treated as a bounded context merely because it has a scope
+
 ### Validation and guardrails
 
 - [ ] local validation commands are documented and runnable by agents
@@ -88,6 +98,15 @@
 - [ ] resumable state and idempotent recovery are defined where failed retries could duplicate work
 - [ ] user-input or approval requests cannot leave background work stalled indefinitely
 - [ ] vendor-specific failures are translated into stable operational categories before they shape core policy
+
+### Probabilistic boundaries
+
+- [ ] variable output is constrained by a narrow contract grounded in accepted domain concepts
+- [ ] raw output is parsed as untrusted data and foreign labels are translated at the edge
+- [ ] allowed values, invariants, and risk-relevant evidence are checked before acceptance
+- [ ] nonconforming output is rejected, quarantined for review, or escalated through stable categories
+- [ ] provider, prompt, confidence, and protocol details remain behind the adapter
+- [ ] probabilistic output does not settle open domain meaning or human-owned trade-offs
 
 ### Continuous cleanup
 

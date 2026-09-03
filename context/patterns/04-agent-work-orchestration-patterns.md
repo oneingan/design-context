@@ -2,9 +2,8 @@
 
 ## Summary
 
-- Agent work becomes safer when work state, isolation, runner protocols, and proof surfaces are explicit.
-- These patterns describe reusable orchestration shapes without prescribing a tracker, model, or runtime.
-- Use them to compare how a repo should coordinate autonomous or semi-autonomous design and implementation work.
+- Agent work becomes safer when work state, interaction mode, isolation, runner boundaries, and proof surfaces are explicit.
+- These reusable shapes help compare orchestration without prescribing a tracker, provider, or runtime.
 - Apply them when orchestration improves domain modeling, boundaries, workflows, contracts, persistence edges, review, or evolution.
 - Keep orchestration policy in repo-owned artifacts and tool integrations at the edges.
 
@@ -25,20 +24,20 @@ A team wants to manage deliverables instead of supervising individual agent sess
 
 - represent work as an issue, ticket, task, or local board item
 - define eligible, active, blocked, review, and terminal states
-- let state and blockers decide dispatch or handoff
+- let state and blockers decide dispatch or handoff through a short, versioned repo-owned work contract
 - attach an agent-ready brief when a work item becomes delegable
 - keep PRs, branches, comments, and evidence attached to the work item
 
 ### Benefits
 
-- humans manage work at the level of outcomes
+- humans manage outcomes through reviewable, versioned policy
 - agents can resume or hand off without hidden chat context
 - durable briefs reduce dependency on stale chat history
 
 ### Risks
 
-- vague states create accidental autonomy
-- briefs that prescribe steps instead of behavior can become stale quickly
+- vague states or stale policy create accidental autonomy
+- a giant workflow prompt or prescriptive brief becomes stale quickly
 - tracker-specific labels can become hidden domain language
 
 ## Pattern 2: Isolated Workspace per Work Item
@@ -87,28 +86,34 @@ The workflow should survive changing agent runtimes, CLIs, or app servers.
 - leaky abstractions if runtime-specific states become workflow states
 - under-specified adapters can stall on approvals or user-input requests
 
-## Pattern 4: Repository-Owned Work Contract
+## Pattern 4: Interaction Charter and Mode Pivot
 
 ### Use when
 
-Agents must follow a team workflow that was previously implicit.
+A focused interaction may explore, brainstorm, decide, or implement, and one kind of work should not bleed silently into the next.
 
 ### Shape
 
-- write the work policy in a versioned repo artifact
-- include state meanings, required checks, handoff rules, and escalation rules
-- keep the artifact short enough to load with task context
-- split detailed skills or commands into focused docs
+- declare scope, relevant vocabulary, one current mode, constraints, and expected handoff
+- use `explore` to gather evidence and unknowns without selecting
+- use `brainstorm` to generate labeled alternatives without implying acceptance
+- use `decide` to compare trade-offs and record an accountable human choice or unresolved question
+- use `implement` to apply accepted decisions and verify them
+- at a pivot, end the old mode and start the next from the handoff; use clean context when prior alternatives or noise are irrelevant
+- issue a carry-only-conclusions handoff with decisions and rationale, active constraints, relevant evidence, open questions and owners, and the next mode or output
+- retain rejected alternatives only when needed to understand an accepted decision
+- stop for accountable human judgment when a model or consequential trade-off remains open
+- keep the charter subordinate to briefs, plans, and ADRs; an interaction scope is not a bounded context
 
 ### Benefits
 
-- turns tribal workflow into reviewable context
-- lets process changes version with code
+- separates divergent, convergent, and execution work while reducing stale-context drag
+- makes authority, retained context, and the next action reviewable
 
 ### Risks
 
-- a giant workflow prompt becomes another monolithic manual
-- stale policy can be worse than no policy
+- mode labels become ceremony if behavior does not change
+- an over-compressed handoff can erase rationale needed to contest a decision
 
 ## Pattern 5: Proof-of-Work Packet
 
@@ -164,8 +169,8 @@ Most implementation work can run autonomously but some decisions require humans.
 
 ### Shape
 
-- define which blockers require human judgment, credentials, or product intent
-- require a concise blocker brief and evidence
+- define which blockers require human judgment, strategic model acceptance, credentials, product intent, or a consequential trade-off
+- require a concise blocker brief with the decision needed and supporting evidence
 - stop or pause rather than guessing across irreversible boundaries
 
 ### Benefits
