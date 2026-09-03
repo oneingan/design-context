@@ -8,6 +8,7 @@
 - A context should expose a small stable surface and hide internal detail.
 - Split or merge contexts based on semantic, change, and strategic pressure, not fashion.
 - Modeling depth should match the context's business importance.
+- Context maps must declare whether they show the current view, a desired view, or the route between them.
 
 ## Load this when
 
@@ -112,6 +113,18 @@ When documenting multiple contexts, capture the relationship explicitly. Example
 
 The exact notation may vary, but the semantic relationship must be clear.
 
+## Map state and transition
+
+A context map is a model expression. Declare which view it represents rather than blending current evidence and design intent:
+
+- `as-is` — current relationships and ownership; keep disputed or unknown details visible
+- `to-be` — desired relationships and ownership; distinguish accepted decisions from proposals
+- `transition` — intermediate boundary, responsibility, and relationship changes connecting the two
+
+When change is intended, make the route from `as-is` to `to-be` reviewable. Show known intermediate states, decisions still required, and evidence that permits the next change. Keep the views separate when an overlay would hide their view or working knowledge status.
+
+Do not infer target ownership, contracts, events, or migration order from context names or technical topology. If the route is unsettled, represent that uncertainty instead of completing the map speculatively.
+
 ## Review questions
 
 - Does this boundary protect meaning or just mirror folders?
@@ -119,6 +132,8 @@ The exact notation may vary, but the semantic relationship must be clear.
 - Are shared terms truly shared, or only assumed to be shared?
 - Is translation explicit where vocabularies differ?
 - Is the modeling depth appropriate for the business importance of this context?
+- Does each map identify its view and keep proposals distinct from current evidence?
+- Is the transition route explicit without inventing unsettled ownership or sequence?
 - Is the boundary earning its cost?
 
 ## Related docs
@@ -126,3 +141,4 @@ The exact notation may vary, but the semantic relationship must be clear.
 - `context/principles/02-ubiquitous-language-and-naming.md`
 - `context/principles/04-workflows-invariants-and-state.md`
 - `context/principles/05-errors-and-edge-responsibilities.md`
+- `context/playbooks/02-bounded-context-definition-playbook.md`
