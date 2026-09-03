@@ -2,7 +2,9 @@
 
 ## Product vision
 
-Build a reusable repository of agent-readable context that helps design and evolve software systems with strong boundaries, clear domain language, explicit workflows, and low accidental complexity.
+Build a reusable repository of agent-readable context that helps people and agents collaboratively discover, challenge, apply, and evolve domain models with strong boundaries, clear language, explicit workflows, and low accidental complexity.
+
+Keep accepted model expressions, decisions, and evidence easy to find and contest without presenting the repository as a complete substitute for situated domain knowledge.
 
 ## What it should feel like
 
@@ -33,12 +35,19 @@ An agent using this repo should feel like it was handed:
 6. **Reusable across projects**
    The framework should work as a reference corpus, a starter pack, or a source for project-specific agent instructions.
 
+7. **Versioned expressions are partial**
+   Repository artifacts preserve accepted expressions and decisions; they do not exhaust tacit or situated knowledge.
+
+8. **Contestable work**
+   Proposals and implementations should expose assumptions, accountable decisions, and relevant evidence so people can challenge and correct them.
+
 ## Non-goals for early versions
 
 - not a giant monolithic handbook
 - not a language cookbook
 - not a code generator
 - not a replacement for project-specific context
+- not a replacement for domain experts or accountable product judgment
 
 ## Desired long-term outcomes
 

@@ -22,7 +22,7 @@
 | agent-operable repository | A repository whose context, work contracts, checks, isolation, and evidence surfaces let agents apply framework guidance with bounded human supervision. | Tool-agnostic; does not imply full autonomy. |
 | agent enablement layer | Agent-operability guidance that helps agents apply the domain-design core rather than becoming an independent AI-workflow core. | Defined by ADR 0007. |
 | harnessability | The degree to which a repository's structure, docs, checks, and evidence make framework-guided agent work steerable, observable, and correctable. | Prefer improving code, docs, schemas, and checks before adding prompt instructions. |
-| canonical | The primary source of truth for a topic. | Canonical docs outrank downstream summaries or ad hoc guidance. |
+| canonical | The primary operational authority for a topic within this framework. | Canonical docs outrank downstream summaries or ad hoc guidance; authority does not imply complete domain knowledge. |
 | design deviation | A scoped, justified departure from canonical guidance. | Should record affected guidance, rationale, risk, and revisit trigger. |
 | map | A navigation document that says what exists and what to read next. | Usually `00-map.md` or a local `README.md`. |
 | manifest | Machine-readable retrieval metadata for an area. | Used for discovery and automation. |
@@ -32,6 +32,8 @@
 | glossary | A set of stable term definitions. | Keeps language aligned. |
 | review artifact | A checklist, rubric, or gate used to evaluate proposed changes. | Review docs are evaluative, not explanatory. |
 | ADR | Architecture Decision Record: a durable note of a structural decision, trade-offs, and consequences. | Use for meaningful design choices. |
+| domain model | A purposeful system of abstractions chosen to understand a domain and make decisions about it. | Not identical to any one artifact or implementation. |
+| model expression | A partial representation of a domain model in conversation, a document, diagram, UI, contract, schema, test, code, or data. | Different expressions may serve different audiences; unexplained drift between them is a modeling signal. |
 | bounded context | The semantic scope within which a model and vocabulary are valid. | Boundary of meaning before technology. |
 | strategic role | A context classification that guides modeling investment, such as core differentiator, supporting capability, or generic capability. | Optional; does not replace semantic boundaries. |
 | workflow | A meaningful sequence of business steps that transforms one situation into another. | Should expose states, decisions, and outputs. |
@@ -61,6 +63,7 @@ Aliases are allowed only when:
 ## Related docs
 
 - `context/glossary/02-naming-and-term-introduction.md`
+- `context/principles/01-information-architecture-and-manifests.md`
 - `context/principles/02-ubiquitous-language-and-naming.md`
 - `context/review/04-vocabulary-drift-checklist.md`
 - `docs/adr/0007-agent-enable-domain-design.md`

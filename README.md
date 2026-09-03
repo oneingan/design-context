@@ -15,6 +15,8 @@ The goal is broader than the original project:
 - optimized for **agent consumption under limited context windows**
 - reusable across **multiple languages, stacks, and project types**
 
+`design-context` distinguishes the domain model from the conversations, documents, schemas, tests, code, and data that express it. Versioned artifacts can govern agent action without claiming to contain all tacit or situated knowledge; unresolved meaning still requires collaboration with people who know the domain and are accountable for its decisions.
+
 ## Repo identity at a glance
 
 - **Canonical name:** `design-context`
@@ -73,6 +75,8 @@ This repo is being designed from three main sources:
 ## Agent enablement stance
 
 Agent-operability guidance is an enabling layer for the design core, not a second independent core. It exists to help agents and teams apply the framework to domain models, ubiquitous language, bounded contexts, workflows, invariants, events, contracts, persistence boundaries, and review.
+
+Agents may surface hypotheses, compare alternatives, apply accepted decisions, and gather evidence. They do not replace domain experts or accountable decision makers: strategic model choices need human acceptance, and outputs should remain traceable and contestable.
 
 Recent sources such as Fowler agentic patterns, Thoughtworks Radar, and Lattice are calibration evidence. They may refine existing guidance, but tool-specific skills, prompts, protocols, plugins, and workflow fashions stay at the edge unless promoted by ADR.
 
