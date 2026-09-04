@@ -4,6 +4,25 @@ All notable changes to `design-context` are summarized here.
 
 ## Unreleased
 
+## v0.6.1 — Explicit Policy Acceptance — 2026-09-04
+
+### Changed
+
+- Separated accountable acceptance of consequential recovery policies from factual authority, edge-mechanism execution, reconciliation ownership, and bounded-context ownership of local state and consequences.
+- Required recovery records to name the policy acceptor and declared scope, or keep the gap unknown and the policy decision open.
+- Added a concise architecture check against inferring policy acceptance from component ownership, authority access, or mechanism execution.
+
+### Evaluation
+
+- Against candidate `202b1fb`, B4 preserved `T=2` and obtained `R3=2` in 2/2 runs with every applicable R criterion at 2.
+- H7 preserved `T=2`, obtained `G3=2` in 2/2 runs, and invented no owner or authority; one `G5=1` remained at the prior floor and outside the candidate gate.
+- Blinded scoring used a separate model ID from the same provider family; backend immutability and provider-independence limits remain explicit.
+
+### Validation
+
+- Passed `nix shell nixpkgs#yq nixpkgs#ripgrep nixpkgs#python3 -c ./tooling/run-checks.sh`.
+- Passed `git diff --check`.
+
 ## v0.6.0 — Living, Bounded and Verifiable Domain Context — 2026-09-04
 
 ### Added

@@ -1,6 +1,6 @@
 repo:
   name: design-context
-  status: v0.6.0-released
+  status: v0.6.1-released
   purpose: >-
     A reusable, language-agnostic design-context framework for domain modeling
     and software design, optimized for progressive loading by AI agents under
