@@ -5,6 +5,7 @@
 - This inventory tracks external sources that inform `design-context`.
 - Sources are source-only inputs; they do not define canonical framework behavior by themselves.
 - Source material should be paraphrased into claims and reviewed before changing `context/**`.
+- The DDD Europe 2026 bundle is partially canonicalized in v0.6.0; unavailable recordings remain explicitly pending rather than reconstructed from abstracts.
 - Local EPUB files are ignored inputs and should not be copied into the vendored core pack.
 
 ## Source status meanings
@@ -169,6 +170,36 @@ Do not import:
 - long prompts, workflow specs, or protocol transcripts as canonical docs
 - vendor claims without mapping them to portable review claims
 - community implementation choices as required architecture
+
+### `ddd-europe-2026`
+
+| Field | Value |
+|---|---|
+| Title | DDD Europe 2026 direct and adjacent source bundle |
+| Author/origin | DDD Europe speakers, conference program, official playlist, speaker material, and clearly separated adjacent publications |
+| Type | Conference source bundle |
+| Local input | Public pages, decks, videos, and subtitles inspected through temporary files only; reviewed on 2026-09-04 |
+| Status | source-only; partially canonicalized for v0.6.0 through existing glossary, principles, patterns, playbooks, and review docs |
+| Primary framework role | Calibrate living domain modeling, knowledge provenance, honest context maps, probabilistic seams, interaction pivots, distributed uncertainty, and evidence by responsibility and risk. |
+
+High-level relevance:
+- domain models as purposeful systems of abstractions and artifacts as partial model expressions
+- collaborative discovery with provenance, missing perspectives, contrasting scenarios, and accountable acceptance
+- separate `as-is`, proposed `to-be`, and transition views without inventing ownership or sequence
+- Published Language and provider-neutral probabilistic boundaries
+- interaction modes and carry-only-conclusions handoffs that remain subordinate to DDD
+- unknown outcomes, idempotent business intention, authority, reconciliation, and claim-shaped evidence
+
+Availability at release preparation:
+- direct recordings and decks used by the review remain listed with their evidence level in `docs/research/source-review-ddd-europe-2026.md`
+- the Eric Evans keynote, Evans/Fowler interview, and other named target recordings not available when the review closed remain pending
+- pending material does not authorize reconstructed claims or delay already supported, bounded changes
+
+Do not import:
+- every LLM conversation as a DDD bounded context
+- an AI system as domain authority or as a substitute for accountable participants
+- provider, prompt, taxonomy, test pyramid, or session-length prescriptions as universal core policy
+- abstracts or adjacent material as if they were recordings of unpublished sessions
 
 ### `martinfowler-agentic-patterns-2026`
 

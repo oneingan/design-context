@@ -6,6 +6,8 @@
 - Make inputs, outputs, decisions, and state transitions visible.
 - Invariants are part of the model and must be documented where they matter.
 - Separate workflow steps from the technologies used to execute them.
+- Treat an unknown outcome as an explicit result or state, not as a confirmed failure.
+- Preserve one business intention across retries; an idempotency key only represents it at an edge.
 - Use state descriptions, tables, and pseudocode when types alone are unavailable.
 
 ## Load this when
@@ -68,21 +70,35 @@ When a workflow is non-trivial, use one or more of:
 - input/output schemas
 - short pseudocode focused on business intent
 
-### 6. Be explicit about long-running workflows
+### 6. Be explicit about long-running and distributed workflows
 
-For long-running or asynchronous workflows, document:
-- checkpoints
-- waiting states
-- retry or timeout conditions
-- idempotency or duplicate-handling expectations
-- compensating or recovery paths if relevant
+When an external effect may outlive the call that requested it, distinguish:
+- confirmed success
+- explicit domain rejection
+- confirmed operational failure
+- **unknown outcome**: available evidence does not establish whether the effect occurred
 
-### 7. Keep workflow names intention-revealing
+A timeout confirms that a response was not observed; it does not by itself confirm that the requested operation failed. Represent the unknown outcome explicitly. If the workflow persists across the uncertainty, keep it in a waiting or reconciliation state until authoritative evidence permits a transition.
+
+Document:
+- checkpoints and waiting states
+- which source can authoritatively confirm each business-significant fact
+- reconciliation when observations are missing or systems disagree
+- retry eligibility, time or attempt budgets, and duplicate handling
+- compensating actions or customer remediation when relevant
+
+### 7. Preserve business intention across attempts
+
+Give a side-effecting business intention a stable domain identity. At a boundary, map that identity to an idempotency key whose format and scope follow the boundary contract.
+
+The key represents the intention for duplicate detection; it is not the intention itself and does not define the business consequence of a duplicate. Retries of the same intention should reuse the same mapped key within its contract scope. Creating a new intention, and therefore a new key, requires an explicit domain decision rather than an incidental retry.
+
+### 8. Keep workflow names intention-revealing
 
 Prefer names like:
 - place order
 - approve claim
-- approve claim
+- collect payment
 
 Avoid names that mainly reflect technical implementation.
 
@@ -96,8 +112,9 @@ A canonical workflow description should usually include:
 4. outputs
 5. ordered steps or transitions
 6. invariants
-7. failure modes
-8. external dependencies, if any
+7. rejection, failure, and unknown outcomes
+8. external dependencies and fact authority, if any
+9. retry, duplicate, and reconciliation policies when relevant
 
 ## Minimal workflow structure
 
@@ -128,6 +145,8 @@ Invariants:
 - Are invariants documented where readers need them?
 - Could the workflow be understood if the transport or database changed?
 - Are long-running behaviors explicit rather than implied?
+- Are confirmed failure and unknown outcome represented separately?
+- Do retries preserve the same business intention and lead to reconciliation when needed?
 
 ## Related docs
 

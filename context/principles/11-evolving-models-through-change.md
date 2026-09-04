@@ -6,6 +6,7 @@
 - Re-evaluate language, invariants, workflows, and boundaries before modifying code or downstream docs.
 - Let trusted representations and explicit workflow steps show you where the change really lands.
 - Prefer designs that make ripple effects visible instead of hiding them.
+- Evolve through small discovery, design, test, and learning cycles sized to uncertainty and risk.
 - Use ADRs, manifests, and review checklists to keep evolution coherent over time.
 
 ## Load this when
@@ -39,15 +40,26 @@ Walk through changes in this order:
 5. persistence or integration mappings
 6. review artifacts and manifests
 
-### 3. Let explicit models reveal the impact
+### 3. Use evidence-sized learning cycles
+
+Choose a cycle small enough to answer the current modeling question and proportionate to uncertainty and risk, not a fixed cadence or artifact count.
+
+1. **Discover** — gather relevant observations and perspectives; expose disputed and unknown claims.
+2. **Design** — express a candidate distinction, rule, workflow, or boundary with its assumptions visible.
+3. **Test** — use contrasting scenarios, counterexamples, or independently checkable behavior against the candidate.
+4. **Learn** — have the accountable participant confirm, refine, reject, or leave the candidate open; update affected model expressions and working knowledge status.
+
+Keep the conclusion, supporting evidence, and next unknown recoverable. Activity alone is not evidence that the model improved.
+
+### 4. Let explicit models reveal the impact
 
 If the model uses clear step boundaries, named outcomes, and trusted representations, requirement changes should show their impact more honestly. That is a feature, not a problem.
 
-### 4. Resist patching around an outdated model
+### 5. Resist patching around an outdated model
 
 If the old model no longer reflects the domain, local implementation fixes usually increase hidden complexity.
 
-### 5. Record structural change decisions
+### 6. Record structural change decisions
 
 When a change alters boundaries, naming, retrieval behavior, or other durable design choices, use ADRs and update maps/manifests accordingly.
 
@@ -64,11 +76,14 @@ Refactor when you see:
 - Did we revisit the domain meaning before editing the implementation?
 - Which invariant, state, or boundary changed?
 - Does the model now express the new requirement explicitly?
+- Did the learning cycle produce decision-relevant evidence rather than ceremony?
+- Are conclusions, changed working knowledge status, and remaining unknowns recoverable?
 - Were ADRs, maps, and manifests updated where needed?
 
 ## Related docs
 
 - `context/principles/02-ubiquitous-language-and-naming.md`
 - `context/principles/09-workflow-pipelines-effects-and-dependencies.md`
+- `context/playbooks/01-domain-modeling-playbook.md`
 - `context/playbooks/04-adr-writing-playbook.md`
 - `context/review/01-quality-gates.md`

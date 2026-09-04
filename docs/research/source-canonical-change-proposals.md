@@ -9,6 +9,7 @@
 - The Martin Fowler 2026 agentic-pattern pass added small harness, elicitation, ADR-lifecycle, and semantic-diffusion refinements.
 - The Thoughtworks Radar Vol. 34 pass added small distribution, sandboxing, durability, edge-adapter, and collaboration-metric refinements.
 - The Lattice framework pass added small orientation, design-checkpoint, verification-pass, and feedback-routing refinements.
+- The DDD Europe 2026 pass added explicit domain-model ontology, collaborative discovery, honest map views, probabilistic seams, interaction pivots, distributed uncertainty, and claim-shaped evidence.
 - Changes were intentionally small and applied to existing canonical docs.
 - No new canonical files, maps, or manifests were needed.
 
@@ -21,6 +22,9 @@
 - `docs/research/source-reading-map.md`
 - `docs/research/source-review-thoughtworks-tech-radar-vol34.md`
 - `docs/research/source-review-lattice-framework.md`
+- `docs/research/source-review-ddd-europe-2026.md`
+- `docs/research/v0.6.0-implementation-brief.md`
+- `docs/research/v0.6.0-behavioral-baseline.md`
 
 ## Accepted changes
 
@@ -47,6 +51,14 @@
 | `src-prop-019` | Non-trivial AI implementation should separate design checkpoints from code generation. | `context/playbooks/11-agent-ready-repository-playbook.md`; `context/review/06-agent-operability-checklist.md` | Added pre-code checkpoint wording for capabilities, responsibilities, interactions, and contracts. | Low | Avoids importing Lattice's full methodology as a template. |
 | `src-prop-020` | Agent output is safer when generation and verification happen as separate passes. | `context/review/06-agent-operability-checklist.md` | Added a verification-pass check against relevant standards and anti-patterns. | Low | Complements existing validation-ladder guidance. |
 | `src-prop-021` | Feedback should be routed by root-cause destination: context, instruction, workflow, or failure guardrail. | `context/playbooks/11-agent-ready-repository-playbook.md` | Added compact feedback-routing wording. | Low | Keeps the flywheel actionable without adding a new taxonomy doc. |
+| `src-prop-022` | A domain model is purposeful and distinct from any one expression; versioned artifacts may govern action without containing all situated knowledge. | `README.md`; `vision.md`; `context/glossary/01-framework-glossary.md`; principles 01/02 | Defined `domain model` and `model expression`, bounded operational authority, and retained expert/accountable-human validation. | Low | Vocabulary and ADR 0007 reviews passed; no claim that artifacts or agents replace people. |
+| `src-prop-023` | Drift between model expressions and natural-language translations can reveal unresolved modeling choices. | `context/principles/02-ubiquitous-language-and-naming.md`; `context/review/04-vocabulary-drift-checklist.md` | Made expression drift and consequential translation choices explicit, including scoped aliases and native terms. | Low | Existing ubiquitous-language homes absorb the concern; no language mandated. |
+| `src-prop-024` | Collaborative discovery should preserve provenance, missing perspectives, acceptance, linguistic clues, and contrasting evidence. | playbook 01; principle 11; `context/review/04-vocabulary-drift-checklist.md` | Added working knowledge statuses, validation ownership, counterexamples, and evidence-sized discover/design/test/learn cycles. | Low | Statuses are actionable, not confidence scores or mandatory ceremony. |
+| `src-prop-025` | Context maps should not blend current evidence, desired design, and migration intent. | `context/principles/03-bounded-contexts-and-boundaries.md`; playbook 02 | Separated `as-is`, `to-be`, and transition views and required unknown ownership or sequence to remain visible. | Low | The views describe map state; they do not redefine bounded context. |
+| `src-prop-026` | Generic capabilities may use a Published Language, while variable output needs contract, parsing, translation, validation, and rejection. | pattern 01; playbook 10; `context/review/06-agent-operability-checklist.md` | Added a Published Language option and a provider-neutral probabilistic boundary. | Low | Internal models remain private; the seam is explicitly not a bounded context. |
+| `src-prop-027` | Exploration, brainstorming, decision, and implementation need distinct behavior and a bounded handoff at pivots. | pattern 04; playbook 11; `context/review/06-agent-operability-checklist.md` | Added interaction charters, explicit modes, clean pivots, carry-only-conclusions handoffs, and accountable-human gates. | Low | Charters remain subordinate to briefs/ADRs and do not form a second design core. |
+| `src-prop-028` | A timeout may leave an effect unknown; retries must preserve one business intention and converge through named authority and reconciliation. | principles 04/05; playbooks 03/09; `context/review/02-architecture-review-checklist.md` | Separated rejection, confirmed failure, and unknown outcome; located retry/backoff at edges and intention/consequence in the domain. | Low | Prevents edge symptoms and idempotency keys from defining business meaning. |
+| `src-prop-029` | Evidence scope should follow responsibility, boundary, risk, and needed confidence rather than a universal test taxonomy. | `context/playbooks/03-workflow-and-state-modeling-playbook.md`; `context/review/02-architecture-review-checklist.md` | Added claim-shaped test selection and separated mechanical checks from human semantic judgment. | Low | No test pyramid, ratio, framework, or provider entered the core. |
 
 ## Rejected or deferred changes
 
@@ -60,6 +72,12 @@
 | Add Thoughtworks Radar as a main design input | Rejected | The Radar is valuable calibration evidence but too time-sensitive to become a stable foundation. |
 | Add Lattice as a main design input | Rejected | Lattice is valuable operational evidence, but its plugin and skill distribution surface is too tool-facing to be a stable foundation. |
 | Add skills, MCP, SPDD, Lattice commands, or context-graph templates to core | Rejected/deferred | These remain tool- or method-specific edge concerns until repeated field evidence justifies an ADR. |
+| Treat each LLM interaction as a DDD bounded context or add a generic agent-work area | Rejected | Interaction modes enable domain work but do not redefine DDD ontology or justify a second core. |
+| Import fixed session thresholds, a universal test pyramid, or unpublished-session claims | Rejected/deferred | The first two overgeneralize mechanisms; unavailable recordings remain pending and are not reconstructed from abstracts. |
+
+## Corte E evaluation
+
+The fixed B1-B6 repetition against the v0.6.0 candidate found no score or output-size regression. Specific behavior improved from `20/24` to `24/24` and the applicable transversal rubric from `160/172` to `168/172`. B1 still did not explicitly distinguish model from expression in either run; this residual and the baseline ceiling are documented rather than converted into another canonical change.
 
 ## Manifest impact
 

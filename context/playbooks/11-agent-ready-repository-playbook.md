@@ -4,7 +4,7 @@
 
 - Make the repository itself the agent's reliable source of truth for applying domain-design guidance.
 - Keep agent entrypoints short and map-like; put detail in discoverable docs.
-- Provide explicit work contracts, cheap validation, isolated workspaces, and observable evidence.
+- Provide explicit work and interaction contracts, cheap validation, isolated workspaces, and observable evidence.
 - Convert repeated agent failures into docs, schemas, checks, or tooling.
 - Keep vendor tools, secrets, permissions, and runtime protocols at the edges.
 
@@ -52,43 +52,54 @@ If standards live mostly in senior engineers' heads, use a short calibration int
 
 ### 3. Define the work contract
 
-Document how work moves through the repo's normal lifecycle.
+Document how work moves through the repo's normal lifecycle. State:
+- eligibility and work-state meanings
+- when to stop, retry, or escalate and who has authority
+- how plans, branches, PRs, comments, and handoffs are updated
+- evidence required before review or merge
 
-A work contract should answer:
-- what work items are eligible to start?
-- what states or labels mean?
-- when should an agent stop, retry, or escalate?
-- how are plans, branches, PRs, comments, and handoffs updated?
-- what evidence is required before review or merge?
-
-For delegable work, define what an agent-ready brief contains:
-- current behavior or starting point
-- desired behavior or outcome
-- key interfaces, contracts, or invariants to respect
-- concrete acceptance criteria
-- explicit out-of-scope boundaries
+For delegable work, give the agent a behavioral, durable brief with:
+- current behavior and desired outcome
+- key interfaces, contracts, or invariants
+- acceptance criteria and explicit out-of-scope boundaries
 - expected validation evidence
 
-Keep briefs behavioral and durable. Avoid line numbers, fragile file paths, and step-by-step implementation instructions unless they are truly part of the contract.
+Avoid fragile line numbers, paths, or prescribed implementation steps unless they are part of the contract. Keep this policy in `WORKFLOW.md`, project docs, issue templates, or another repo-owned artifact.
 
-This may live in `WORKFLOW.md`, project docs, issue templates, or another repo-owned artifact.
+### 4. Charter focused interactions and mode changes
 
-### 4. Use execution plans for large or ambiguous work
+Before a focused interaction, record an **interaction charter**:
+- **Scope** — the question or outcome and what is out of scope
+- **Vocabulary** — relevant domain terms and explicit translations
+- **Mode** — one current mode from the table below
+- **Constraints** — accepted decisions, precedence, budgets, and safety limits
+- **Expected handoff** — conclusions, evidence, recipient, or next mode
 
-For multi-hour tasks, migrations, or risky refactors, use a living execution plan.
+| Mode | Work allowed |
+|---|---|
+| `explore` | gather evidence, assumptions, and unknowns; do not select a solution |
+| `brainstorm` | generate labeled alternatives and counterexamples; do not imply acceptance |
+| `decide` | compare trade-offs and record the accountable human's selection or unresolved choice |
+| `implement` | apply accepted decisions and verify them; reopen only on a concrete contradiction |
 
-A good plan records:
-- purpose and observable outcome
-- progress
-- decisions and rationale, including rejected alternatives when they matter
-- feature-specific constraints and open questions distinct from project-wide standards
-- surprises or discoveries
+Modes control an interaction, not decision authority or domain state. At a pivot, end the old mode and begin the next from the handoff. Start a clean interaction whenever prior context contains alternatives or noise irrelevant to the new mode.
+
+Use a **carry-only-conclusions handoff**: transfer accepted decisions and rationale, active constraints, relevant evidence, open questions and decision owners, and the next expected mode or output. Leave behind transcript, discarded alternatives, and speculative notes unless needed to understand an accepted decision.
+
+If the model or a consequential trade-off remains open, do not enter `implement` or guess; ask the accountable human. A charter does not replace an agent-ready brief, execution plan, or ADR, and an interaction or session is never a bounded context merely because it has a scope.
+
+### 5. Use execution plans for large or ambiguous work
+
+For multi-hour tasks, migrations, or risky refactors, use a living execution plan. Record:
+- purpose, observable outcome, and progress
+- accepted decisions and rationale; rejected alternatives only when they matter
+- task-specific constraints, open questions, and discoveries
 - validation and acceptance
 - recovery or resume notes
 
-Treat execution plans as task artifacts, not canonical framework docs.
+Treat plans as task artifacts, not canonical framework docs.
 
-### 5. Decompose into independently testable slices
+### 6. Decompose into independently testable slices
 
 When the work is larger than one small change, split it into slices that can be validated independently.
 
@@ -100,83 +111,42 @@ Prefer:
 - explicit checkpoints before moving to the next slice
 - parallel work only when files, state, and dependencies do not overlap
 
-### 6. Provide cheap, repeatable validation
+### 7. Provide cheap, repeatable validation
 
 Give agents a small validation ladder:
-
 1. targeted check for the changed area
 2. broader local gate before handoff
 3. CI or release gate when relevant
 
-Checks should be fast enough to run often and should fail with actionable remediation where practical.
+Make checks fast and failures actionable. Use a separate verification pass against relevant standards and anti-patterns before handing off generated code.
 
-For generated code, prefer a separate verification pass against relevant standards and anti-patterns before handoff.
+Guides such as maps, specs, ADRs, examples, and work contracts steer before action. Sensors such as tests, linters, type or schema checks, structural rules, and review packets enable correction afterward. Prefer cheap computational sensors for frequent checks and reserve inferential sensors for semantic review where their cost, noise, and trust fit.
 
-Treat the repo's agent harness as support for design and implementation work through guides and sensors:
-- guides steer agents before work, such as maps, specs, ADRs, examples, and work contracts
-- sensors let agents correct after action, such as tests, linters, type checks, schema checks, structural rules, and review packets
-- prefer computational sensors for frequent checks; reserve inferential sensors for semantic review where cost, noise, and trust are acceptable
-- improve harnessability by making module boundaries, schemas, architectural constraints, examples, and errors clear without relying only on prompt text
+Improve harnessability through clear module boundaries, schemas, constraints, examples, and errors rather than prompt text alone.
 
-### 7. Isolate concurrent work
+### 8. Isolate concurrent work
 
-If multiple agents or long-running tasks may run at once, define isolation for:
+For concurrent or long-running work, isolate workspaces, ports, databases, caches, logs, temporary files, credentials, and permission scopes. Agents should not guess which shared resource is safe to mutate.
 
-- filesystem workspaces or worktrees
-- ports
-- databases and caches
-- logs and temporary files
-- credentials and permission scopes
+### 9. Make evidence legible
 
-Agents should not need to guess which shared resource is safe to mutate.
+Define proof by task type, not tool fashion. Use relevant test, lint, or typecheck output; UI captures; logs, metrics, or traces; and review packets. For bugs, include reproduction-before and validation-after evidence when possible.
 
-### 8. Make evidence legible
+### 10. Keep edge adapters explicit
 
-Define what proof of work looks like for the repo.
+Issue trackers, agent runners, app servers, browser automation, cloud APIs, and secrets are edge concerns. Document:
+- credential sources and scopes
+- filesystem, network, resource, and sandbox boundaries
+- allowed commands, tools, or protocol adapters
+- retry, timeout, cancellation, and escalation behavior
 
-Examples:
-- test output
-- lint or typecheck output
-- screenshots or videos for UI behavior
-- logs, metrics, traces, or dashboards
-- PR comments or review packets
-- reproduction-before and validation-after notes
+Prefer direct CLIs or scripts with clear help, structured output, and predictable errors before protocol-heavy adapters. Do not let a provider or protocol become the core workflow model.
 
-Choose evidence by task type, not by tool fashion.
+### 11. Feed learning back and clean up
 
-### 9. Keep edge adapters explicit
+When an agent repeatedly fails, do not add only prompt admonitions. Route context gaps to orientation docs, instruction gaps to standards or work contracts, workflow gaps to playbooks, and recurring failures to checks or anti-patterns.
 
-Issue trackers, agent runners, app servers, browser automation, cloud APIs, and secrets are edge concerns.
-
-Document:
-- where credentials come from and how they are scoped
-- filesystem, network, resource, and sandbox boundaries when agents run code
-- which commands, tools, or protocol adapters are allowed
-- how operational failures are retried, timed out, or escalated
-
-Prefer direct CLIs or scripts with clear help, structured output, and predictable errors before adding protocol-heavy adapters. Do not let a vendor protocol become the core workflow model.
-
-### 10. Feed failures back into the repo
-
-When an agent repeatedly fails, avoid only adding prompt admonitions.
-
-Route the lesson by root cause: context gaps to orientation docs, instruction gaps to standards or work contracts, workflow gaps to playbooks, and recurring failures to checks or anti-patterns.
-
-Prefer promoting the lesson into:
-- clearer docs or maps
-- stricter schemas or state tables
-- better validation messages
-- linters or tests
-- smaller modules or clearer names
-
-### 11. Schedule cleanup
-
-Agent-generated work can amplify uneven patterns. Add a lightweight cadence for:
-
-- stale-doc review
-- duplicated helper cleanup
-- quality grade or checklist review
-- retiring obsolete plans and temporary notes
+Promote lessons into clearer docs or maps, stricter schemas or state tables, actionable validation, tests, smaller modules, or clearer names. Schedule lightweight review of stale docs, duplicated helpers, uneven quality, and obsolete plans or temporary notes.
 
 ## Output shape
 
@@ -186,6 +156,8 @@ Design capability enabled: <domain modeling | boundaries | workflows | contracts
 Entrypoint: <path>
 Knowledge map: <path>
 Work contract: <path or missing>
+Interaction charter: <scope, vocabulary, mode, constraints, expected handoff>
+Mode handoff: <decisions and rationale, constraints, evidence, open questions, next mode>
 Validation ladder: <commands>
 Isolation story: <workspace/resource rules>
 Agent-ready brief: <current behavior, desired behavior, acceptance criteria, out of scope>
@@ -200,6 +172,9 @@ Open gaps: <missing docs/checks/tools>
 - Can an agent find the right starting docs in under two hops?
 - Is the work lifecycle documented in repo-local terms?
 - Are agent-ready briefs behavioral, scoped, and independently verifiable?
+- Does each focused interaction declare one mode without treating its scope as a bounded context?
+- Do pivots carry decisions, rationale, constraints, evidence, and open questions rather than the transcript?
+- Does unresolved model or trade-off authority remain with an accountable human?
 - Are validation and evidence requirements explicit?
 - Is larger work split into independently testable slices where possible?
 - Can concurrent agent work run without resource cross-talk?

@@ -3,7 +3,8 @@
 ## Summary
 
 - Design the repository as a retrieval system, not a single handbook.
-- Treat repo-local, versioned artifacts as the source of truth agents can reliably use.
+- Treat repo-local, versioned artifacts as operational authority agents can reliably inspect, within their declared scope.
+- Do not confuse that authority with complete domain knowledge; expose paths to validation when meaning is unresolved.
 - Each layer must have a clear responsibility and a different abstraction level.
 - Every major area needs a small map and, when stable enough, a manifest.
 - Documents should be independently readable and small enough to load selectively.
@@ -41,11 +42,13 @@
 4. smallest relevant leaf docs
 5. ADRs if trade-offs matter
 
-## Source-of-truth contract
+## Operational authority contract
 
-Agents can only rely on context they can discover and inspect. Durable project knowledge should live in repo-local files, manifests, ADRs, schemas, or checks rather than only in chat, issue comments, personal memory, or external documents.
+Agents can only rely on context they can discover and inspect. Repo-local, versioned artifacts therefore govern agent action when they are canonical for the topic. Within their declared scope, they outrank chat history, ad hoc summaries, and unsupported inference.
 
-If external systems remain authoritative for a workflow, document the bridge from the repo to that system and keep vendor-specific details at the edge.
+That authority is operational, not a claim of complete knowledge. Artifacts preserve model expressions, decisions, constraints, and evidence, but cannot contain every tacit or situated fact. A missing statement is an unknown, not permission to invent it.
+
+When action depends on absent knowledge, document how to reach the responsible domain experts, accountable decision makers, or authoritative external system and what validation is required. Keep vendor-specific details at the edge.
 
 ## Directory contract
 
@@ -176,6 +179,7 @@ If a file tries to answer all of these questions, split it.
 - `context/00-map.md`
 - `context/principles/00-map.md`
 - `context/principles/06-deep-modules-and-information-hiding.md`
+- `context/glossary/01-framework-glossary.md`
 - `context/manifests/project-manifest.yaml`
 - `context/manifests/principles-manifest.yaml`
 - `VENDORING.md`

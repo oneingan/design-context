@@ -6,6 +6,9 @@
 - Prefer one primary term per concept inside a scope.
 - Name boundaries, workflows, and artifacts in domain language before technical language.
 - Treat glossary maintenance as modeling work.
+- Keep the domain model distinct from any one expression of it.
+- Treat unexplained drift between model expressions as a modeling signal.
+- Make natural-language translation choices explicit when they affect meaning.
 - Use naming rules to reduce ambiguity for both humans and agents.
 
 ## Load this when
@@ -20,6 +23,12 @@
 A model becomes easier to build, review, and evolve when the same important concept has the same name across discussions, documents, diagrams, tests, and code-facing artifacts.
 
 Language is not decoration around the model. It is one of the main ways the model exists.
+
+## Model and expressions
+
+Use `domain model` and `model expression` as defined in the framework glossary. No conversation, document, UI, contract, schema, test, codebase, or dataset is the whole model; each expression selects detail for an audience and purpose.
+
+When expressions disagree, do not mechanically force names to match or assume one artifact is correct. Investigate whether the difference is stale wording, deliberate translation across a boundary, an unrecorded model change, or unresolved disagreement. Have domain experts and accountable decision makers settle the intended meaning, then update or explicitly translate the affected expressions.
 
 ## Rules
 
@@ -96,6 +105,17 @@ Over:
 
 in canonical docs.
 
+### 8. Make natural-language translation deliberate
+
+When domain work spans natural languages:
+
+- record the working language and the language of important terms
+- preserve a native term when translation would erase a domain distinction
+- document approved translations as scoped aliases rather than silent replacements
+- treat translation disagreements as modeling questions for the people who use and govern the domain language
+
+Do not require every artifact or code identifier to use one language mechanically. Require readers to be able to recover the intended meaning and scope.
+
 ## Naming guidance by artifact type
 
 | Artifact | Naming preference |
@@ -114,6 +134,8 @@ Watch for these red flags:
 - one bounded context uses another context's term without translation
 - different workflows use the same word with different meanings
 - reviewers need to ask "what does this term mean here?"
+- model expressions disagree without an explicit translation or rationale
+- a natural-language translation collapses distinct domain concepts
 
 ## Minimum outputs for new concepts
 
@@ -131,6 +153,8 @@ When introducing an important concept, add at least:
 - Are aliases documented instead of floating informally?
 - Do document titles reinforce the intended vocabulary?
 - Would an agent know which term is canonical?
+- Do model expressions disagree about meaning, not just representation?
+- Is the natural-language translation policy explicit where needed?
 
 ## Related docs
 

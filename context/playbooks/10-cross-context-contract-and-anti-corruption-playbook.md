@@ -3,9 +3,9 @@
 ## Summary
 
 - Treat context-to-context communication as part of the model, not as plumbing.
-- Record who owns the contract, which terms are shared, which are translated, and what failure surface is stable.
-- Use anti-corruption layers when a foreign model should not leak inward.
-- Keep contract notes compact, but explicit enough that readers can review ownership and change impact.
+- Choose deliberately among narrow shared vocabulary, a Published Language, supplier or consumer ownership, and translation.
+- Use anti-corruption and probabilistic boundaries when foreign or variable output should not leak inward.
+- Keep contracts compact, owned, and explicit about stable outcomes, validation, rejection, and change impact.
 
 ## Use this when
 
@@ -13,6 +13,7 @@
 - integrating with a vendor or legacy system
 - reviewing whether a seam is leaking foreign concepts
 - documenting a stable event or request/response contract
+- integrating a probabilistic component whose output must not enter the trusted model directly
 
 ## Inputs
 
@@ -20,6 +21,7 @@
 - workflow or event catalog
 - glossary terms for both sides of the seam
 - persistence or ownership notes if data moves across the boundary
+- accepted outcomes, invariants, and validation policy when output can vary
 
 ## Steps
 
@@ -37,13 +39,14 @@ Examples:
 
 ### 2. Choose the relationship model
 
-Ask which seam shape best fits:
-- shared vocabulary by agreement
+Ask which relationship and seam shapes apply:
+- narrow shared vocabulary by agreement
+- documented **Published Language** when a generic capability benefits from an interoperable exchange contract
 - supplier-owned contract that the consumer conforms to
 - consumer-driven contract
 - anti-corruption layer translating a foreign model
 
-Do not flatten these into one generic “integration” label.
+A Published Language standardizes the exchange surface, not either side's internal model. Adopt it only with accountable agreement on semantics and compatibility; translate when local meanings differ. Do not flatten these shapes into one generic “integration” label.
 
 ### 3. Record the stable contract surface
 
@@ -71,15 +74,29 @@ That boundary should:
 
 The point is semantic protection, not just validation.
 
-### 6. Record ownership expectations
+### 6. Add a probabilistic boundary when output can vary
+
+When a component can return variable, malformed, unsupported, or invented output, keep it behind a **probabilistic boundary**. This validation seam is not a bounded context.
+
+Make the path explicit:
+1. **Contract** — constrain the request and allowed output concepts using the accepted domain model.
+2. **Parse** — turn the raw response into an untrusted representation; parsing failure is not a domain outcome.
+3. **Translate** — map foreign labels and shapes into local vocabulary at the edge.
+4. **Validate** — check structure, allowed values, invariants, and any independent evidence required by risk.
+5. **Accept or reject** — admit only validated outcomes; otherwise reject, quarantine for review, or escalate through stable categories.
+
+Keep provider prompts, confidence formats, and protocols inside the edge adapter. Component output may inform a choice, but it must not settle an open model, vocabulary question, or trade-off; name the decision and accountable human instead.
+
+### 7. Record ownership expectations
 
 Note which side owns:
 - the business meaning of the interaction
 - durable state changes
 - identifiers introduced by the seam
 - backward-compatibility expectations
+- acceptance, rejection, and human-review policy for probabilistic output
 
-### 7. Include failure and recovery expectations
+### 8. Include failure and recovery expectations
 
 A useful contract should answer:
 - what failures are domain-significant here?
@@ -87,7 +104,7 @@ A useful contract should answer:
 - who retries or compensates?
 - what should the receiver rely on when the interaction is incomplete or delayed?
 
-### 8. Link the contract back to workflows and data ownership
+### 9. Link the contract back to workflows and data ownership
 
 A contract artifact should point to:
 - the emitting or calling workflow
@@ -98,10 +115,10 @@ A contract artifact should point to:
 ## Output shape
 
 Use a compact contract note with:
-- summary table
-- shared/translated terms
+- purpose, participants, ownership, and relationship shape
+- shared terms, any Published Language surface, and local translations
 - stable outcomes and failures
-- anti-corruption notes
+- anti-corruption notes or the probabilistic parse/translate/validate/reject path
 - change and compatibility notes
 
 ## Review questions
@@ -110,7 +127,9 @@ Use a compact contract note with:
 - Which terms are truly shared versus merely similar?
 - Where does translation happen, and what stays private behind it?
 - Does the contract expose only what the receiver needs?
-- Would a vendor or storage change force unnecessary changes in the core model?
+- If a Published Language is used, does it support a stable generic capability without colonizing local models?
+- Can variable output enter the trusted model without parsing, translation, validation, and explicit acceptance or rejection?
+- Would a vendor, probabilistic component, protocol, or storage change force unnecessary changes in the core model?
 
 ## Related docs
 

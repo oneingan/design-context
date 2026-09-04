@@ -146,4 +146,4 @@ The actionable implementation backlog for this repo lives in `.pi/todos/`.
 
 Recent repository refinements aligned the public repository name, vendoring path, validation checks, and canonical packaging around **`design-context`**.
 
-The latest publication milestone is **v0.5.0**.
+The latest publication milestone is **v0.6.0 — Living, Bounded and Verifiable Domain Context**.
