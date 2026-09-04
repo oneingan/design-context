@@ -3,7 +3,7 @@
 ## Summary
 
 - v0 is published as `design-context`.
-- **v0.6.0 — Living, Bounded and Verifiable Domain Context** is the current release, strengthening collaborative domain modeling, explicit boundaries and transitions, distributed outcome handling, and evidence.
+- **v0.6.1 — Explicit Policy Acceptance** is the current release, separating accountable acceptance of consequential recovery policies from factual authority and operational ownership.
 - CI should run the same lightweight checks used locally.
 - Export automation to other agent formats remains intentionally deferred.
 - The core framework should stay compact and canonical before adding distribution conveniences.
@@ -23,6 +23,7 @@
 - [x] publish release `v0.4.0`
 - [x] publish release `v0.5.0`
 - [x] prepare release `v0.6.0`
+- [x] prepare release `v0.6.1`
 
 ## Changelog
 
