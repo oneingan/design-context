@@ -6,7 +6,7 @@
 - Keep confirmed failure distinct from an unknown outcome.
 - Keep transport, persistence, serialization, vendor, and agent-runtime details at the edges.
 - Translate edge observations without turning delivery mechanisms into business consequences.
-- Make retry, idempotency, authority, and reconciliation responsibilities explicit.
+- Make retry, idempotency, fact authority, operational ownership, and accountable acceptance of consequential recovery policies explicit.
 
 ## Load this when
 
@@ -77,13 +77,16 @@ The domain owns the identity and duplicate semantics of a business intention. An
 
 Reuse the mapped key when retrying the same intention. A fresh key must not silently turn a delivery retry into a second business action; a genuinely new intention requires a domain-authorized transition.
 
-### 8. Name authority and reconciliation responsibilities
+### 8. Separate fact authority, operational ownership, and policy acceptance
 
-For each business-significant external fact, state:
+For each business-significant external fact and consequential recovery policy, state:
 - which source is authoritative for asserting the external fact
-- which bounded context owns its local state and business consequence
-- who or what reconciles missing or conflicting observations
-- which evidence permits the workflow to leave an unknown state
+- who owns execution of each edge mechanism
+- who operates reconciliation and which evidence permits the workflow to leave an unknown state
+- which bounded context owns local state and the business consequence
+- which accountable person or role accepts the retry, reconciliation, compensation, escalation, or remediation policy and its trade-offs for a declared purpose and scope
+
+One party may hold several responsibilities, but the design must say so. Owning a component, accessing an authoritative fact, or executing a mechanism or reconciliation does not by itself imply accountable acceptance of the policy. If evidence does not identify the acceptor or scope, keep the gap unknown and the policy decision open; do not invent either to enable effects that are difficult to reverse.
 
 Do not assume one system is authoritative for every fact. Preserve disagreement until the relevant authority can be consulted, then apply the owning context's rules for compensation, escalation, or remediation.
 
@@ -113,7 +116,7 @@ An unclassified error means its meaning is unresolved. An unknown outcome means 
 | invariant definitions | core model |
 | outcomes and state transitions, including unknown outcome | core model |
 | intention identity and duplicate meaning | core model |
-| external fact authority and ownership agreement | boundary/context relationship |
+| external fact authority, operational ownership, and accountable policy acceptance | boundary/context relationship |
 | input shape and idempotency-key mapping | edge |
 | transport and persistence details | edge |
 | retry budget, backoff, and scheduling | edge |
@@ -129,7 +132,7 @@ A meaningful workflow or boundary description should usually answer:
 - where are observations detected and translated?
 - which source is authoritative for each disputed fact?
 - how are retries correlated to one business intention?
-- who reconciles disagreement and decides the business consequence?
+- who owns execution of each edge mechanism, who operates reconciliation, which bounded context owns local state and consequences, and which accountable person or role accepts the policy for its declared purpose and scope?
 - what can the caller or downstream context rely on?
 
 ## Review questions
@@ -138,7 +141,7 @@ A meaningful workflow or boundary description should usually answer:
 - Are business-significant failures named in domain language?
 - Could a timeout or exhausted retry budget be mistaken for a confirmed failure?
 - Are retry and idempotency mechanisms governed by business intent and risk?
-- Are authority and reconciliation explicit when systems may disagree?
+- Are fact authority, operational ownership, local consequence ownership, and accountable policy acceptance explicit when systems may disagree, with any missing acceptor left unknown?
 - Have we prevented obvious invalid states rather than only catching them?
 - Would a dependency change force unnecessary model changes?
 

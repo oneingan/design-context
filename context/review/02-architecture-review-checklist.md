@@ -56,7 +56,7 @@
 - [ ] timeout or retry exhaustion is not treated as proof that an effect failed
 - [ ] retry budget and backoff stay at the edge and trace to business value and risk
 - [ ] idempotency keys represent stable business intentions within an explicit contract scope
-- [ ] fact authority, local ownership, and reconciliation are explicit where systems can disagree
+- [ ] fact authority, edge execution, reconciliation ownership, local consequence ownership, and accountable acceptance of consequential recovery policies for a declared scope are explicit rather than inferred from one another; missing acceptors remain unknown
 - [ ] edge mechanisms are separated from business states, consequences, and remediation
 
 ### Evidence and confidence

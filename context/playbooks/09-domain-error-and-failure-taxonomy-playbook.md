@@ -5,7 +5,7 @@
 - Start from workflow meaning and invariants, not from exception classes or transport codes.
 - Distinguish domain rejections, contract failures, confirmed operational failures, unknown outcomes, and unexpected outcomes.
 - Translate edge observations into stable envelopes without inventing business consequences.
-- Record authority, recovery mechanics, reconciliation, and business ownership separately.
+- Record fact authority, recovery mechanics, reconciliation ownership, business ownership, and accountable acceptance of consequential recovery policies separately.
 
 ## Use this when
 
@@ -80,15 +80,19 @@ Keep detailed originals for diagnostics, but do not let them become core languag
 
 Record whether the workflow still permits another attempt of the same business intention. At the edge, assign bounded retry or time budgets, backoff, and scheduling based on value at stake, duplicate risk, deadlines, customer impact, and dependency limits. Keep the same intention and mapped idempotency key across those attempts.
 
-Budget exhaustion is an operational observation, not proof of rejection or non-execution. Name the workflow state and the domain owner who decides whether to wait, reconcile, escalate, compensate, or remediate.
+Budget exhaustion is an operational observation, not proof of rejection or non-execution. Name the workflow state and the bounded context that owns local state and the business consequence. Record edge-mechanism execution and policy acceptance separately in the recovery record.
 
-### 7. Record authority and reconciliation
+### 7. Record authority, ownership, and policy acceptance
 
 For each significant failure or uncertain outcome, note:
 - where the observation is detected and translated
 - which source is authoritative for the disputed external fact
+- who owns execution of each edge mechanism
+- who operates reconciliation and which evidence permits convergence
 - which bounded context owns local state and business consequences
-- who runs reconciliation and which evidence permits convergence
+- which accountable person or role accepts each consequential retry, reconciliation, compensation, escalation, or remediation policy and its trade-offs for a declared purpose and scope
+
+One party may fill several responsibilities, but record that explicitly. Component ownership, access to the factual authority, and execution of a mechanism or reconciliation do not imply policy acceptance. If evidence does not identify the acceptor or scope, record the gap as `unknown` and keep the policy decision open; do not invent either to enable effects that are difficult to reverse.
 
 When systems disagree, preserve the discrepancy until the relevant authority is consulted. Do not make arrival order, retries, or a generic last-write rule the accidental arbiter of business meaning.
 
@@ -96,9 +100,9 @@ When systems disagree, preserve the discrepancy until the relevant authority is 
 
 Recommended shape:
 
-| Observation or outcome | Category | Evidence/authority | Stable surface | Recovery mechanism | Business owner/consequence |
-|---|---|---|---|---|---|
-| response absent after charge submission | unknown outcome | payment provider; lookup pending | payment outcome unknown | reconcile using same intention | Payments keeps collection pending |
+| Observation or outcome | Category | Evidence / fact authority | Stable surface | Edge mechanism / execution owner | Reconciliation owner | Business owner / consequence | Policy acceptor / scope |
+|---|---|---|---|---|---|---|---|
+| response absent after charge submission | unknown outcome | payment provider; lookup pending | payment outcome unknown | provider lookup using same intention; owner `unknown` | `unknown` | Payments keeps collection pending | `unknown`; payment-recovery acceptance remains open |
 
 ### 9. Link the taxonomy to workflows, trust boundaries, and contracts
 
@@ -116,7 +120,8 @@ A strong taxonomy should connect back to:
 - [ ] detailed edge observations are translated no further than evidence permits
 - [ ] retry and backoff stay at the edge while business consequences stay in the workflow
 - [ ] retries preserve one business intention and its mapped idempotency key
-- [ ] fact authority, reconciliation ownership, and business ownership are explicit
+- [ ] fact authority, mechanism-execution ownership, reconciliation ownership, and business ownership are explicit
+- [ ] consequential recovery policies name an accountable acceptor and declared scope, or keep the gap `unknown` and the decision open
 
 ## Review questions
 
@@ -124,7 +129,8 @@ A strong taxonomy should connect back to:
 - What evidence makes each operational failure confirmed?
 - Are retry budget and backoff edge mechanisms aligned with named business risk?
 - Does a retry preserve the same intention rather than create a fresh action?
-- Can disagreement converge through a named authority and reconciliation owner?
+- Can disagreement converge through a named fact authority and reconciliation owner?
+- Does each consequential recovery policy name an accountable acceptor and scope, or preserve the gap as `unknown`?
 - Would a vendor or transport change force the stable taxonomy to change?
 - Can a neighboring context rely on the stable failure and uncertainty envelope?
 - Are any vague categories such as `unknown error` hiding modeling work?
