@@ -4,6 +4,34 @@ All notable changes to `design-context` are summarized here.
 
 ## Unreleased
 
+## v0.6.0 — Living, Bounded and Verifiable Domain Context — 2026-09-04
+
+### Added
+
+- Canonical definitions for `domain model` and `model expression`, with operational authority bounded by situated knowledge and accountable human validation.
+- Knowledge-provenance statuses, missing-perspective prompts, linguistic clues, contrasting scenarios, and evidence-sized learning cycles for collaborative discovery.
+- Explicit `as-is`, `to-be`, and transition views for context maps.
+- Published Language guidance, provider-neutral probabilistic boundaries, interaction charters, mode pivots, and carry-only-conclusions handoffs.
+- Unknown outcomes, stable business intention across retries, fact authority, reconciliation, and claim-shaped evidence for distributed workflows.
+- A DDD Europe 2026 source review and reproducible v0.5.0/v0.6.0 behavioral evaluation.
+
+### Changed
+
+- Clarified that DDD remains the core while agent interaction and verification guidance enable discovery, application, and protection of accepted domain models.
+- Tightened workflow and failure guidance so timeout, retry exhaustion, and idempotency mechanisms do not invent business outcomes.
+- Derived test scope from responsibility, boundary, risk, and needed confidence rather than a universal test taxonomy.
+
+### Evaluation
+
+- Repeated B1-B6 with the exact v0.5.0 protocol: 12/12 runs completed without error or stderr.
+- Specific behavior improved from `20/24` to `24/24`; the applicable transversal rubric improved from `160/172` to `168/172`, with no observed score regression.
+- Outputs above 450 words decreased from 2/12 to 0/12; B1's residual model/expression ambiguity, ceiling effects, and single-model limits remain documented.
+
+### Validation
+
+- Passed `nix shell nixpkgs#yq nixpkgs#ripgrep nixpkgs#python3 -c ./tooling/run-checks.sh`.
+- Passed `git diff --check`.
+
 ## v0.5.0 — 2026-05-25
 
 ### Added

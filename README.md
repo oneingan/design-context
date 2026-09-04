@@ -143,7 +143,7 @@ The repository now includes:
 
 ## Release status
 
-- current release after agent-enablement alignment, source-calibration, and validation-sensor updates: **v0.5.0**
-- prior release tags: `v0.3.0`, `v0.4.0`
+- current release, strengthening collaborative domain modeling, explicit boundaries and transitions, distributed outcome handling, and evidence: **v0.6.0 — Living, Bounded and Verifiable Domain Context**
+- prior release tags: `v0.3.0`, `v0.4.0`, `v0.5.0`
 - earlier changelog milestones: `v0.1.0`, `v0.2.0`
 - changelog: `CHANGELOG.md`
